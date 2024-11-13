@@ -26,20 +26,15 @@
 <meta property="og:site_name" content="NatureWind Blog">
 <meta property="og:description" content="日期：2024-09-24 前言前几日从 BD6CR 进货一些晶振，用的时候却犯了难：如何测量晶振的参数呢？想到好像在 NanoVNA 里看到过 SERIES XTAL (S21) 的选项，拿来一看果然有，随笔一写。 测量过程： 把晶振的两端接到 NanoVNA 两 SMA 口的内芯里   我们需要查看 NanoVNA 的 S21 相角，依照晶振标定频率调节 NanoVNA 的频率上下限能看到相角">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://naturewind846.github.io/2024/09/24/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE%E7%A4%BA.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/09/24/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE1.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/09/24/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE2.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/09/24/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE3.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/09/24/xomeasure/%E6%99%B6%E6%8C%AF%E7%AD%89%E6%95%88%E7%94%B5%E8%B7%AF.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/09/24/xomeasure/%E6%99%B6%E6%8C%AF%E7%9A%84%E9%98%BB%E6%8A%97%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF%E4%B8%8E%E7%9B%B8%E9%A2%91%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF.webp">
+<meta property="og:image" content="http://naturewind846.github.io/img/%E6%B5%8B%E9%87%8F%E5%9B%BE%E7%A4%BA.webp">
 <meta property="article:published_time" content="2024-09-24T12:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-13T10:23:01.434Z">
+<meta property="article:modified_time" content="2024-11-13T13:58:55.509Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
 <meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="XTAL晶振">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://naturewind846.github.io/2024/09/24/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE%E7%A4%BA.webp">
+<meta name="twitter:image" content="http://naturewind846.github.io/img/%E6%B5%8B%E9%87%8F%E5%9B%BE%E7%A4%BA.webp">
   
   
   
@@ -81,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"naturewind846.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"naturewind846.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -203,7 +198,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/T.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -383,9 +378,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/13/helloworld/" title="Hello World! Blog的第一篇文章">
+                      <a href="/2024/10/11/langfangyanji/" title="廊坊验机记——廊坊第一部合法的自制电台">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World! Blog的第一篇文章</span>
+                        <span class="hidden-mobile">廊坊验机记——廊坊第一部合法的自制电台</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

@@ -26,18 +26,15 @@
 <meta property="og:site_name" content="NatureWind Blog">
 <meta property="og:description" content="设计分享日期：2024-08-31   成品自动电键太贵了，用立创 PCB 免费打印面板，螺丝和磁铁拧起来就是一个像模像样的自动键   制作的外形其实参考了淘宝上的“盔甲增强版 双桨自动键”。这个电键用的是CNC加工，可以直接开孔攻丝，不需要额外的螺母固定。不过相对的，pcb的好处是不用费心做绝缘，一个板子足以全部制作好，至于桨柱上的走线更多是为了过嘉立创的防拼版审核（）。 日期：2024-09-">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://naturewind846.github.io/2024/08/31/pcbpaddlekey/%E6%88%90%E5%93%81%E5%9B%BE.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/08/31/pcbpaddlekey/pcblayout%E5%9B%BE.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/08/31/pcbpaddlekey/%E9%98%B2%E6%AD%A2%E9%98%BB%E7%84%8A%E7%A3%A8%E5%9D%8F%E7%9A%84%E5%B0%8F%E6%94%B9%E8%BF%9B.webp">
-<meta property="og:image" content="http://naturewind846.github.io/2024/08/31/pcbpaddlekey/%E9%98%B2%E6%AD%A2%E7%9F%AD%E8%B7%AF%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95.webp">
+<meta property="og:image" content="http://naturewind846.github.io/img/%E6%88%90%E5%93%81%E5%9B%BE.webp">
 <meta property="article:published_time" content="2024-08-31T12:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-13T10:21:57.012Z">
+<meta property="article:modified_time" content="2024-11-13T14:01:45.761Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
-<meta property="article:tag" content="CW">
 <meta property="article:tag" content="DIY制作">
+<meta property="article:tag" content="CW">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://naturewind846.github.io/2024/08/31/pcbpaddlekey/%E6%88%90%E5%93%81%E5%9B%BE.webp">
+<meta name="twitter:image" content="http://naturewind846.github.io/img/%E6%88%90%E5%93%81%E5%9B%BE.webp">
   
   
   
@@ -79,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"naturewind846.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"naturewind846.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -201,7 +198,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/T.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -316,9 +313,9 @@
       
         <a href="/tags/Ham/" class="print-no-link">#Ham</a>
       
-        <a href="/tags/CW/" class="print-no-link">#CW</a>
-      
         <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
+      
+        <a href="/tags/CW/" class="print-no-link">#CW</a>
       
     </div>
   
@@ -384,6 +381,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/12/03/tx136-2/" title="TX136 2 准备、制作与调试">
+                        <span class="hidden-mobile">TX136 2 准备、制作与调试</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
