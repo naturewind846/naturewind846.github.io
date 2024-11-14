@@ -22,9 +22,9 @@
       
       <tag>Ham</tag>
       
-      <tag>DIY制作</tag>
-      
       <tag>CW</tag>
+      
+      <tag>DIY制作</tag>
       
       <tag>JumaTX136长波发射机</tag>
       
@@ -37,13 +37,27 @@
   
   
   <entry>
-    <title>136khz-2</title>
-    <link href="/2024/11/14/136khz-2/"/>
-    <url>/2024/11/14/136khz-2/</url>
+    <title>136khz介绍：迈向长波世界</title>
+    <link href="/2024/11/14/136khz/"/>
+    <url>/2024/11/14/136khz/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>正在施工，喵了个喵</p><h3 id="历史与来源"><a href="#历史与来源" class="headerlink" title="历史与来源"></a>历史与来源</h3><p>136kHz很可能是业余无线电爱好者最早操作使用的频段。早在无线电发展的蛮荒时代，在法律还没有对空中的电波做出任何限制时，早期的无线电爱好者就已经用线圈、莱顿瓶和类似今天白金机那样的变压器，在小屋里滋滋的操作电火花，少部分能量进入耦合的天线里，进入无垠的天空中。</p><p>但是实际上，<strong>法律真正许可136kHz给业余频段始于2007年11月9日</strong>。当天，在日内瓦举行的<a href="https://en.wikipedia.org/wiki/International_Telecommunication_Union">国际电信联盟</a> 2007 年世界无线电通信大会 （WRC-07） 同意将 135.7–137.8 kHz 以次要业务划分给业余业务。虽然早在ITU分配前，一些国家就已经基于<code>CEPT / ERC Recommendation 62-01 E (&quot;Use of the band 135.7–137.8 kHz by the Amateur Service&quot;, Mainz 1997)</code>将这一频段许可给业余业务。该建议书建议将135.7-137.8kHz以次要业务划分给业余频段，最大功率为E.I.R.P. 1W。在这之前，130–148.5 kHz的频段的主要业务是水上移动业务和固定业务。主要用户是海军潜艇的单向传输和无线电定位系统。</p><p>此外，ITU 2区的一些国家还许可了LowFER频段，比如美国和加拿大允许任何人（不需要无线电操作证明，只需要提交申请）在160-190kHz之间进行无线电通讯实验。但是<strong>要求</strong>：</p><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs gcode"><span class="hljs-comment">(a)</span> 最终射频阶段的总输入功率（不包括灯丝或加热器功率）不得超过<span class="hljs-number">1</span>瓦。<br><br><span class="hljs-comment">(b)</span> 传输线、天线和接地线（如使用）总长度不得超过<span class="hljs-number">15</span>米。<br><br><span class="hljs-comment">(c)</span> 所有<span class="hljs-number">160</span> kHz以下或<span class="hljs-number">190</span> kHz以上的辐射应至少衰减<span class="hljs-number">20</span> dB，低于未调制载波的水平。是否符合<span class="hljs-number">20</span> dB衰减要求的判定可以基于对电台天线输出端的测量，除非电台使用永久性附加的天线，在这种情况下，合规性应通过测量辐射电磁场来验证。<br></code></pre></td></tr></table></figure><h3 id="我国的法规现状"><a href="#我国的法规现状" class="headerlink" title="我国的法规现状"></a>我国的法规现状</h3><p><strong>我国的135.7-137.8kHz业余频段起源于2010年12月1日</strong>起施行的 《中华人民共和国无线电频率划分规定》（工业和信息化部令 第16号）</p><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-strong">*为适应无线电业务和无线电技术的发展，满足我国各行业、各部门对无线电频率资源的需求，并与《无线电规则》中国际频率划分保持一致，根据《中华人民共和国无线电管理条例》的相关规定，工业和信息化部于2008年决定对2006年颁布实施的《中华人民共和国无线电频率划分规定》进行修订。*</span><br></code></pre></td></tr></table></figure><p>目前该频段业余业务频率划分状况为：次要业务</p><table><thead><tr><th><u>135.7—137.8</u></th><th>固定 水上移动 无线电导航 [业余]</th></tr></thead></table><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">5</span>.<span class="hljs-number">64</span> 固定业务电台在划分给该业务的<span class="hljs-number">90</span> kHz与<span class="hljs-number">160</span> kHz（在第一区为<span class="hljs-number">148</span>.<span class="hljs-number">5</span> kHz）之间频带内和水上移动业务电台在划分给该业务的<span class="hljs-number">110</span> kHz与<span class="hljs-number">160</span> kHz（在第一区为<span class="hljs-number">148</span>.<span class="hljs-number">5</span> kHz）之间频带内，只准使用A1A或F1B、A2C、A3C、F1C或F3C类发射。水上移动业务电台在<span class="hljs-number">110</span> kHz与<span class="hljs-number">160</span> kHz（第一区为<span class="hljs-number">148</span>.<span class="hljs-number">5</span> kHz）之间频带内，例外地也可准予使用J2B或J7B类发射。<br><br><span class="hljs-attribute">5</span>.<span class="hljs-number">67</span> 附加划分：在蒙古国、吉尔吉斯斯坦和土库曼斯坦，<span class="hljs-number">130</span>-<span class="hljs-number">148</span>.<span class="hljs-number">5</span>kHz频段亦划分给作为次要业务的无线电导航业务。在这些国家内和国家间，此项业务具有平等运行权。（WRC-<span class="hljs-number">07</span>）<br><br><span class="hljs-attribute">5</span>.<span class="hljs-number">67</span>A 使用<span class="hljs-number">135</span>.<span class="hljs-number">7</span>-<span class="hljs-number">137</span>.<span class="hljs-number">8</span> kHz频段内频率的业余业务台站，其最大辐射功率不得超过<span class="hljs-number">1</span>瓦（e.i.r.p.），且不应对在第<span class="hljs-number">5</span>.<span class="hljs-number">67</span>款所列国家内运行的无线电导航业务台站造成有害干扰。（WRC-<span class="hljs-number">07</span>）<br><br><span class="hljs-attribute">5</span>.<span class="hljs-number">67</span>B 在阿尔及利亚、埃及、伊朗伊斯兰共和国、伊拉克、黎巴嫩、阿拉伯叙利亚共和国、苏丹、南苏丹和突尼斯，<span class="hljs-number">135</span>.<span class="hljs-number">7</span>-<span class="hljs-number">137</span>.<span class="hljs-number">8</span> kHz频段的使用限于固定和水上移动业务。在上述国家，业余业务不得使用<span class="hljs-number">135</span>.<span class="hljs-number">7</span>-<span class="hljs-number">137</span>.<span class="hljs-number">8</span> kHz频段，授权此类使用的国家应将此考虑在内。（WRC-<span class="hljs-number">12</span>）<br></code></pre></td></tr></table></figure><h3 id="发射机系统与天馈系统"><a href="#发射机系统与天馈系统" class="headerlink" title="发射机系统与天馈系统"></a>发射机系统与天馈系统</h3><h3 id="传播特性与主要干扰"><a href="#传播特性与主要干扰" class="headerlink" title="传播特性与主要干扰"></a>传播特性与主要干扰</h3><h4 id="传播特性"><a href="#传播特性" class="headerlink" title="传播特性"></a>传播特性</h4><p>在低频范围内有两种基本的传播模式：地波传播和天波传播。</p><p>地面波传播涉及电磁场沿地球表面传播，同时感应和被感应于地球表面及其稍微下方的电流。有时这些场被称为<strong>表面波</strong>。 如果地球土壤的电气性质是理想的，即具有无限的导电性、单位介电常数和单位磁导率，那么地面波的场强将严格遵循“反距离法则”。   具体来说，如果在1公里的距离下，场强为1mV&#x2F;m，那么在10公里时场强为100μV&#x2F;m，在1000公里时为1μV&#x2F;m。 然而，实际情况并非如此，因为地球作为导体并不完美。地面中的射频电流会将射频场的能量转化为热量。</p><p>为了实地预测地面波的场强，国际无线电咨询委员会（CCIR）发布了368-6号推荐，提供了一组适用于典型地面性质的图表。   每个图表显示了25个频率（从10kHz到30MHz）在不同距离下的场强分布。   该方法基于数学模型编制，并通过实际测量验证，提供了准确的数据。</p><h3 id="常用的模式"><a href="#常用的模式" class="headerlink" title="常用的模式"></a>常用的模式</h3><ol><li><h4 id="CW"><a href="#CW" class="headerlink" title="CW"></a>CW</h4><p>没什么好说的，CW需要的信噪比远比其他模式要高。</p></li><li><h4 id="QRSS和DFCW"><a href="#QRSS和DFCW" class="headerlink" title="QRSS和DFCW"></a>QRSS和DFCW</h4><p><strong>QRSS</strong> 是一种 非常慢的CW模式，名字来源于“QRS”，意思是请降低拍发速度。这种模式下，接收器带宽急剧减少，WPM速率减慢到超过通常人耳可读的速度。</p><img src="/2024/11/14/136khz/a72e47a5-71a4-452a-8e0f-834e198e6aea.png" class="" title="a72e47a5-71a4-452a-8e0f-834e198e6aea"><p>由于接收噪声与接收器带宽成正比，因此在 QRSS 中使用小于 1Hz 的带宽是很常见的。这样，选用很慢的频谱速度，随着时间积分，人眼就能在频谱上辨别出原本低于环境底噪的QRSS信号。但同时由于使用的带宽较窄，频率稳定性对于接收器和发射器都至关重要。</p><p><strong>DFCW</strong>与QRSS相似，不同的地方是DFCW使用微小的频率偏移（甚至可以只偏移0.1Hz）来表示点和划而不是长度。这样的优点是可以减少发送时间，代价是需要更宽的带宽，更稳定的晶振或者DDS。由于使用两个频率，因此每个对都会受到噪声和干扰的影响。</p><img src="/2024/11/14/136khz/321b749e-1748-4499-8cd6-6974fd3d4d89.png" class="" title="321b749e-1748-4499-8cd6-6974fd3d4d89"></li><li><h4 id="FST4和FST4W"><a href="#FST4和FST4W" class="headerlink" title="FST4和FST4W"></a>FST4和FST4W</h4><p> FST4 和 FST4W 是两种特别设计用于长波和中波的两种现代数字通信协议。在这些频段上，该协议的基础灵敏度比其他使用相同序列长度的 WSJT-X 模式更好，接近其信息吞吐率的理论极限。FST4 主要优化用于双向通讯（QSOs），而 FST4W 适用于类似 WSPR 的准信标消息传输。与像 EbNaut 这类模式需要严格独立的时间同步和相位锁定不同，FST4 和 FST4W 不要求这些条件。</p><p>这两种新模式采用 4-GFSK 调制方式。FST4 提供 15、30、60、120、300、900 和 1800 秒的 T&#x2F;R 序列长度，而 FST4W 则省略了 120 秒以下的长度。各子模式的名称为 FST4-60、FST4W-300 等，数字表示序列长度（单位：秒）。消息有效载荷与 FT4、FT8 和 MSK144 相同，包含 77 位数据，FST4W 的 WSPR 风格消息则包含 50 位数据。与其他 77 位和 50 位模式类似，WSJT-X 显示的消息格式也相同。前向错误校正使用低密度奇偶校验（LDPC）码，包含 240 个信息和奇偶校验位。传输由 160 个符号组成：120 个承载信息的符号，每个符号包含两个比特，间隔着五组预定的 8 个同步符号。</p><p>FST4 和 FST4W 各子模式的基本参数如表格所示。阈值灵敏度（即在 2500 Hz 带宽下，解码成功概率为 50% 时的信噪比）是通过在加性白高斯噪声（AWGN）通道中进行仿真测量的。</p><table><thead><tr><th>发射时间(s)</th><th>Symbol Length (s)</th><th>音调间隔 (Hz)</th><th>占用带宽 (Hz)</th><th>FST4 信噪比(dB)</th><th>FST4W 信噪比 (dB)</th></tr></thead><tbody><tr><td>15</td><td>0.060</td><td>16.67</td><td>67.7</td><td>20.7</td><td></td></tr><tr><td>30</td><td>0.140</td><td>7.14</td><td>28.6</td><td>24.2</td><td></td></tr><tr><td>60</td><td>0.324</td><td>3.09</td><td>12.4</td><td>28.1</td><td></td></tr><tr><td>120</td><td>0.683</td><td>1.46</td><td>5.9</td><td>31.3</td><td>32.8</td></tr><tr><td>300</td><td>1.792</td><td>0.56</td><td>2.2</td><td>35.3</td><td>36.8</td></tr><tr><td>900</td><td>5.547</td><td>0.180</td><td>0.72</td><td>40.2</td><td>41.7</td></tr><tr><td>1800</td><td>11.200</td><td>0.089</td><td>0.36</td><td>43.2</td><td>44.8</td></tr></tbody></table><p>FST4-60 比 JT9 灵敏度高约 1.7 dB，主要因为它在适当的情况下使用了多符号块检测。使用 FST4 的 AP 解码时，这个差异可以达到 4.7 dB。FST4-120 及更长序列长度的模式灵敏度相对更高。FST4W-120 比标准 WSPR 灵敏度高约 1.4 dB，而使用 30 分钟序列的 FST4W-1800，其阈值 SNR 可接近 -45 dB。我们强烈建议在 LF 和 MF 频段使用 JT9 和 WSPR 的用户转而使用 FST4 和 FST4W。</p><p>你可能会想到这些新模式的其他应用，除了这里讨论的应用之外。请记住，这些模式带宽非常窄；要实现表中列出的灵敏度，需要振荡器漂移和路径引起的多普勒频移必须小于音调间隔，并且要保持在整个序列长度内。例如，短序列子模式 FST4-15 在 50 MHz 电离层散射路径上表现非常有效。在传输时长的极端应用上，VK7MO 和 VK7ZBX 使用 FST4W-1800 成功地进行非视距光学散射通信，跨越了长达 153 公里的阻挡路径，采用了 LED 阵列、菲涅耳透镜和光电探测器。</p></li><li><h4 id="WSPR"><a href="#WSPR" class="headerlink" title="WSPR"></a>WSPR</h4></li><li><h4 id="JT9"><a href="#JT9" class="headerlink" title="JT9"></a>JT9</h4></li><li><h4 id="JASON"><a href="#JASON" class="headerlink" title="JASON"></a>JASON</h4><p><a href="https://www.i2phd.org/jason/index.html">Jason官网</a></p></li><li><h4 id="WSQ2"><a href="#WSQ2" class="headerlink" title="WSQ2"></a>WSQ2</h4></li><li></li></ol>]]></content>
     
     
+    <categories>
+      
+      <category>无线电</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Ham</tag>
+      
+      <tag>长波</tag>
+      
+    </tags>
     
   </entry>
   
@@ -81,9 +95,9 @@
       
       <tag>Ham</tag>
       
-      <tag>DIY制作</tag>
-      
       <tag>CW</tag>
+      
+      <tag>DIY制作</tag>
       
       <tag>JumaTX136长波发射机</tag>
       
@@ -112,9 +126,9 @@
       
       <tag>Ham</tag>
       
-      <tag>uSDX</tag>
-      
       <tag>DIY制作</tag>
+      
+      <tag>uSDX</tag>
       
     </tags>
     
@@ -141,11 +155,11 @@
       
       <tag>Ham</tag>
       
+      <tag>DIY制作</tag>
+      
       <tag>uSDX</tag>
       
       <tag>BOX-6</tag>
-      
-      <tag>DIY制作</tag>
       
       <tag>自制验机</tag>
       
@@ -203,9 +217,9 @@
       
       <tag>Ham</tag>
       
-      <tag>DIY制作</tag>
-      
       <tag>CW</tag>
+      
+      <tag>DIY制作</tag>
       
     </tags>
     
@@ -232,9 +246,9 @@
       
       <tag>Ham</tag>
       
-      <tag>DIY制作</tag>
-      
       <tag>CW</tag>
+      
+      <tag>DIY制作</tag>
       
       <tag>JumaTX136长波发射机</tag>
       
@@ -249,7 +263,7 @@
     <link href="/2023/11/14/tx136-1/"/>
     <url>/2023/11/14/tx136-1/</url>
     
-    <content type="html"><![CDATA[<p><em>日期：2023-11-14</em></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2023年的10月，我开始对长波波段感兴趣。从网上四处搜集资料。国内关于这方面的资料并不多，国外的成品设备也不多。这个机器几乎是当时唯一能找到的成品机器。</p><p>原本的套件事实上已经停产，juma官方公开了全部制作资料、源代码，并允许个人或者俱乐部使用这些资料。感谢juma的设计者 <strong>OH2NLT</strong> 和 <strong>OH7SV</strong> </p><p>JumaTX136官网：<a href="http://www.jumaradio.com/juma-tx136/">http://www.jumaradio.com/juma-tx136/</a></p><p>更加让我惊喜的是，这个机器有热心的法国ham F4GCB开发增加了各种功能的第三方固件，直到2023年还在更新。</p><p>于是开始计划着复刻。</p><h2 id="Juma-TX136官方宣传页"><a href="#Juma-TX136官方宣传页" class="headerlink" title="Juma TX136官方宣传页"></a>Juma TX136官方宣传页</h2><img src="/2023/11/14/tx136-1/juma-tx136-front-370.jpg" class="" title="juma-tx136-front-370"><p>Juma TX136 前视图</p><img src="/2023/11/14/tx136-1/juma-tx136-rear-370.jpg" class="" title="juma-tx136-rear-370"><p>后视图</p><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Juma TX136 是一款数字控制的 CW 发射器，适用于 136 kHz（2200 米）业余无线电频段。该发射器作为组件套件提供，包含所有电气和机械组件。</p><p>Juma TX136 采用超高效的 CMCD 放大器（电流模式 D 类放大器）拓扑结构作为最终 RF 放大器。最终的晶体管产生的热量几乎可以忽略不计。这意味着，您可以在仅使用 14 VDC 电源提供 5A 电流的情况下输出 60 瓦特的功率。TX136 是一款无限键控时间保护的发射器。参见输出和效率测量图。Juma TX136 的频率稳定性和信号纯度非常优秀。</p><img src="/2023/11/14/tx136-1/juma-tx136-out-versus-frequency.gif" class="" title="juma-tx136-out-versus-frequency"><p>Juma TX136 是 136 kHz 频段的多功能构建模块，内置天线切换功能，支持连接任意 136 kHz 接收机。TX136 通过内置的窄带前端滤波器以及可选择的 10dB&#x2F;20dB 前置放大器，可以增强您的接收性能。如果没有 136 kHz 接收机，您可以开启内置的高动态范围 RX 上变频器，并使用 10.1 MHz 接收机监听 136 kHz 频段。</p><p>此外，Juma TX136 可以配置为独立的信标模式。您可以输入所需的 CW 消息并启动连续的信标传输。</p><p>您可以下载 Juma TX136&#x2F;TX500 Windows 控制软件，尤其在慢速 QRSS CW 中非常有用，支持最低 0.1 wpm 的速度。查看这里的示例截图。</p><p>该套件包含已编程的 CPU。新的固件版本可以通过 Juma 网站轻松下载并通过 PC 上传。</p><img src="/2023/11/14/tx136-1/tx136-buttons-370.jpg" class="" title="tx136-buttons-370"><style>.xkqwvrhkjmlc{zoom:50%;}</style><img src="/2023/11/14/tx136-1/tx136-lcd.jpg" class="xkqwvrhkjmlc" alt="tx136-lcd"><p>Juma TX136 用户界面</p><h3 id="一般特性"><a href="#一般特性" class="headerlink" title="一般特性"></a>一般特性</h3><ul><li>RF 输出功率 60 W，支持无限键控时间</li><li>四个功率级别（MIN 4W，LOW 15W，HI 35W，MAX 60W）</li><li>供电电压标称 14 VDC（范围 12 ~15 VDC）</li><li>典型最大电流 5 A（带过流保护）</li><li>频率范围 130 kHz…150 kHz（步进 10 Hz）</li><li>使用 Windows 控制软件时，频率步进为 1 Hz</li><li>高品质CW keyer，速度范围为 1 wpm~50 wpm</li><li>通过串行控制，速度范围为 0.1 wpm~50 wpm</li><li>优良的无“Click”按键声 CW 键控波形</li><li>T&#x2F;R 切换器，带 CW 速度自适应释放延迟</li><li>RX 前置放大器</li><li>RX 上变频器，从 136 kHz 转换到 10.136 MHz</li><li>信标模式</li><li>Windows 软件支持 PC 控制</li><li>小尺寸，宽度 180 mm，高度 60 mm，深度 124 mm</li></ul><h3 id="多功能-LCD-显示"><a href="#多功能-LCD-显示" class="headerlink" title="多功能 LCD 显示"></a>多功能 LCD 显示</h3><ul><li>输出功率</li><li>SWR 显示</li><li>供电电压指示</li><li>漏电流指示</li><li>CW 速度指示（WPM）</li><li>状态指示（STBY，OPER，TX）</li><li>频率显示（5 位数，例如 136.00 kHz）</li></ul><h3 id="可配置特性"><a href="#可配置特性" class="headerlink" title="可配置特性"></a>可配置特性</h3><ul><li>RX 前置放大器（关闭，10 dB，20 dB）</li><li>RX 转换器开&#x2F;关</li><li>CW侧音开&#x2F;关</li><li>可调驻波保护，每个功率级别有单独的保护电平</li><li>键控类型（点优先，Iambic A&#x2F;B，直键，信标模式）</li><li>LCD 亮度和对比度调节</li><li>串行通信设置</li></ul><h3 id="连接性"><a href="#连接性" class="headerlink" title="连接性"></a>连接性</h3><ul><li>电源供电，标称 14 VDC &#x2F; 5A（标准 DC 插座）</li><li>天线 50 欧姆（BNC 连接器）</li><li>RX 136 kHz 或 10.136 MHz，50 欧姆（BNC 连接器）</li><li>自动桨键&#x2F;手键（3.5 mm 插孔）</li><li>RS232，用于固件&#x2F;信标编程（3.5 mm 插孔）</li><li>外部 PTT 输入&#x2F;输出（3.5 mm 插孔）</li></ul><h3 id="模块化构造"><a href="#模块化构造" class="headerlink" title="模块化构造"></a>模块化构造</h3><p>Juma TX136 的组装非常简单。需要组装的有两个组件模块，主模块包括 RF 电路，控制模块包括控制处理器和用户界面。这两个模块通过扁平电缆互连，构建图示。只有三只简单的环形线圈需要绕制。机械零件已准备好进行组装，并且电路板上没有可调节的部分。</p><img src="/2023/11/14/tx136-1/tx136-main.jpg" class="" title="tx136-main"><img src="/2023/11/14/tx136-1/tx136-control-module.jpg" class="" title="tx136-control-module"><img src="/2023/11/14/tx136-1/juma-tx136-construction-1731495327657-8.jpg" class="" title="juma-tx136-construction"><h2 id="JumaTX136设计理解"><a href="#JumaTX136设计理解" class="headerlink" title="JumaTX136设计理解"></a>JumaTX136设计理解</h2><p>JumaTX136使用dspic30F6014A 30I-PF作为主控MCU，ControlBroad是作者另一个作品PA100的主控部分。MainBroad是重新设计的。电源首先经过7.5A的保险，然后经过用于给MAX4373TESA测量电流、设置保护电流（8A）用的R010采样电阻，然后经过作为键控开关的FQB27P06T MOS管进入功放。发射频率使用AD9833BRMZ DDS频率合成芯片，直接合成2倍发射频率，经过DDS低通、单片机控制的NC7S04整形后，使用74HC74的Q和反Q分成一倍发射频率的相反的两个电压，再进入2N7002转换电压到Vcc，进入MIC4423YM MOS管驱动芯片，最后进入一对IRFI540组成D类功放。功放使用749196500 6绕组变压器，通过继电器变换次级绕组为1、2、3、4个绕组，实现功率挡位切换。</p><p>接收部分，采用FST3253实现了10MHz上变频和发射的保护衰减。</p><h2 id="相关资料链接"><a href="#相关资料链接" class="headerlink" title="相关资料链接"></a>相关资料链接</h2><p>收集了一些官方的资料，放在我的Github仓库里了。</p><p><a href="https://github.com/naturewind846/JumaTX136Controler/tree/main">naturewind846&#x2F;JumaTX136Controler</a></p>]]></content>
+    <content type="html"><![CDATA[<p><em>日期：2023-11-14</em></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2023年的10月，我开始对长波波段感兴趣。从网上四处搜集资料。国内关于这方面的资料并不多，国外的成品设备也不多。这个机器几乎是当时唯一能找到的成品机器。</p><p>原本的套件事实上已经停产，juma官方公开了全部制作资料、源代码，并允许个人或者俱乐部使用这些资料。感谢juma的设计者 <strong>OH2NLT</strong> 和 <strong>OH7SV</strong> </p><p>JumaTX136官网：<a href="http://www.jumaradio.com/juma-tx136/">http://www.jumaradio.com/juma-tx136/</a></p><p>更加让我惊喜的是，这个机器有热心的法国ham F4GCB开发增加了各种功能的第三方固件，直到2023年还在更新。</p><p>于是开始计划着复刻。</p><h2 id="Juma-TX136官方宣传页"><a href="#Juma-TX136官方宣传页" class="headerlink" title="Juma TX136官方宣传页"></a>Juma TX136官方宣传页</h2><img src="/2023/11/14/tx136-1/juma-tx136-front-370.jpg" class="" title="juma-tx136-front-370"><p>Juma TX136 前视图</p><img src="/2023/11/14/tx136-1/juma-tx136-rear-370.jpg" class="" title="juma-tx136-rear-370"><p>后视图</p><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Juma TX136 是一款数字控制的 CW 发射器，适用于 136 kHz（2200 米）业余无线电频段。该发射器作为组件套件提供，包含所有电气和机械组件。</p><p>Juma TX136 采用超高效的 CMCD 放大器（电流模式 D 类放大器）拓扑结构作为最终 RF 放大器。最终的晶体管产生的热量几乎可以忽略不计。这意味着，您可以在仅使用 14 VDC 电源提供 5A 电流的情况下输出 60 瓦特的功率。TX136 是一款无限键控时间保护的发射器。参见输出和效率测量图。Juma TX136 的频率稳定性和信号纯度非常优秀。</p><img src="/2023/11/14/tx136-1/juma-tx136-out-versus-frequency.gif" class="" title="juma-tx136-out-versus-frequency"><p>Juma TX136 是 136 kHz 频段的多功能构建模块，内置天线切换功能，支持连接任意 136 kHz 接收机。TX136 通过内置的窄带前端滤波器以及可选择的 10dB&#x2F;20dB 前置放大器，可以增强您的接收性能。如果没有 136 kHz 接收机，您可以开启内置的高动态范围 RX 上变频器，并使用 10.1 MHz 接收机监听 136 kHz 频段。</p><p>此外，Juma TX136 可以配置为独立的信标模式。您可以输入所需的 CW 消息并启动连续的信标传输。</p><p>您可以下载 Juma TX136&#x2F;TX500 Windows 控制软件，尤其在慢速 QRSS CW 中非常有用，支持最低 0.1 wpm 的速度。查看这里的示例截图。</p><p>该套件包含已编程的 CPU。新的固件版本可以通过 Juma 网站轻松下载并通过 PC 上传。</p><img src="/2023/11/14/tx136-1/tx136-buttons-370.jpg" class="" title="tx136-buttons-370"><style>.mefkvqdxadao{zoom:50%;}</style><img src="/2023/11/14/tx136-1/tx136-lcd.jpg" class="mefkvqdxadao" alt="tx136-lcd"><p>Juma TX136 用户界面</p><h3 id="一般特性"><a href="#一般特性" class="headerlink" title="一般特性"></a>一般特性</h3><ul><li>RF 输出功率 60 W，支持无限键控时间</li><li>四个功率级别（MIN 4W，LOW 15W，HI 35W，MAX 60W）</li><li>供电电压标称 14 VDC（范围 12 ~15 VDC）</li><li>典型最大电流 5 A（带过流保护）</li><li>频率范围 130 kHz…150 kHz（步进 10 Hz）</li><li>使用 Windows 控制软件时，频率步进为 1 Hz</li><li>高品质CW keyer，速度范围为 1 wpm~50 wpm</li><li>通过串行控制，速度范围为 0.1 wpm~50 wpm</li><li>优良的无“Click”按键声 CW 键控波形</li><li>T&#x2F;R 切换器，带 CW 速度自适应释放延迟</li><li>RX 前置放大器</li><li>RX 上变频器，从 136 kHz 转换到 10.136 MHz</li><li>信标模式</li><li>Windows 软件支持 PC 控制</li><li>小尺寸，宽度 180 mm，高度 60 mm，深度 124 mm</li></ul><h3 id="多功能-LCD-显示"><a href="#多功能-LCD-显示" class="headerlink" title="多功能 LCD 显示"></a>多功能 LCD 显示</h3><ul><li>输出功率</li><li>SWR 显示</li><li>供电电压指示</li><li>漏电流指示</li><li>CW 速度指示（WPM）</li><li>状态指示（STBY，OPER，TX）</li><li>频率显示（5 位数，例如 136.00 kHz）</li></ul><h3 id="可配置特性"><a href="#可配置特性" class="headerlink" title="可配置特性"></a>可配置特性</h3><ul><li>RX 前置放大器（关闭，10 dB，20 dB）</li><li>RX 转换器开&#x2F;关</li><li>CW侧音开&#x2F;关</li><li>可调驻波保护，每个功率级别有单独的保护电平</li><li>键控类型（点优先，Iambic A&#x2F;B，直键，信标模式）</li><li>LCD 亮度和对比度调节</li><li>串行通信设置</li></ul><h3 id="连接性"><a href="#连接性" class="headerlink" title="连接性"></a>连接性</h3><ul><li>电源供电，标称 14 VDC &#x2F; 5A（标准 DC 插座）</li><li>天线 50 欧姆（BNC 连接器）</li><li>RX 136 kHz 或 10.136 MHz，50 欧姆（BNC 连接器）</li><li>自动桨键&#x2F;手键（3.5 mm 插孔）</li><li>RS232，用于固件&#x2F;信标编程（3.5 mm 插孔）</li><li>外部 PTT 输入&#x2F;输出（3.5 mm 插孔）</li></ul><h3 id="模块化构造"><a href="#模块化构造" class="headerlink" title="模块化构造"></a>模块化构造</h3><p>Juma TX136 的组装非常简单。需要组装的有两个组件模块，主模块包括 RF 电路，控制模块包括控制处理器和用户界面。这两个模块通过扁平电缆互连，构建图示。只有三只简单的环形线圈需要绕制。机械零件已准备好进行组装，并且电路板上没有可调节的部分。</p><img src="/2023/11/14/tx136-1/tx136-main.jpg" class="" title="tx136-main"><img src="/2023/11/14/tx136-1/tx136-control-module.jpg" class="" title="tx136-control-module"><img src="/2023/11/14/tx136-1/juma-tx136-construction-1731495327657-8.jpg" class="" title="juma-tx136-construction"><h2 id="JumaTX136设计理解"><a href="#JumaTX136设计理解" class="headerlink" title="JumaTX136设计理解"></a>JumaTX136设计理解</h2><p>JumaTX136使用dspic30F6014A 30I-PF作为主控MCU，ControlBroad是作者另一个作品PA100的主控部分。MainBroad是重新设计的。电源首先经过7.5A的保险，然后经过用于给MAX4373TESA测量电流、设置保护电流（8A）用的R010采样电阻，然后经过作为键控开关的FQB27P06T MOS管进入功放。发射频率使用AD9833BRMZ DDS频率合成芯片，直接合成2倍发射频率，经过DDS低通、单片机控制的NC7S04整形后，使用74HC74的Q和反Q分成一倍发射频率的相反的两个电压，再进入2N7002转换电压到Vcc，进入MIC4423YM MOS管驱动芯片，最后进入一对IRFI540组成D类功放。功放使用749196500 6绕组变压器，通过继电器变换次级绕组为1、2、3、4个绕组，实现功率挡位切换。</p><p>接收部分，采用FST3253实现了10MHz上变频和发射的保护衰减。</p><h2 id="相关资料链接"><a href="#相关资料链接" class="headerlink" title="相关资料链接"></a>相关资料链接</h2><p>收集了一些官方的资料，放在我的Github仓库里了。</p><p><a href="https://github.com/naturewind846/JumaTX136Controler/tree/main">naturewind846&#x2F;JumaTX136Controler</a></p>]]></content>
     
     
     <categories>
@@ -263,9 +277,9 @@
       
       <tag>Ham</tag>
       
-      <tag>DIY制作</tag>
-      
       <tag>CW</tag>
+      
+      <tag>DIY制作</tag>
       
       <tag>JumaTX136长波发射机</tag>
       
