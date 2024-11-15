@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+Allow: /fonts/
+Allow: /js/
+
+Disallow: /vendors/
+Disallow: /css/
+Disallow: /fancybox/
+
+https://naturewind846.github.io/sitemap.xml
