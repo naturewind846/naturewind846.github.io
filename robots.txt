@@ -11,4 +11,4 @@ Disallow: /vendors/
 Disallow: /css/
 Disallow: /fancybox/
 
-https://naturewind846.github.io/sitemap.xml
+Sitemap: https://naturewind846.github.io/sitemap.xml
