@@ -19,16 +19,16 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。 突破偶然的机会，BI4KSR发给我一份uSDX88s的设计，这个设计用的是T30-2和T30-6，因此匝数和王老师设计的uSDX使用T37大小磁环并不一样。   奇怪的，电容配置都一模一样，但是uSDX88s可以出六七瓦的功率。王老师的解答也发过来了。   心一横，开始拆焊改绕磁环。 参数的话，">
+    <meta name="description" content="uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。   如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="uSDX的功放改造">
 <meta property="og:url" content="http://naturewind846.github.io/2024/10/29/usdxlpftransform/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="前言uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。 突破偶然的机会，BI4KSR发给我一份uSDX88s的设计，这个设计用的是T30-2和T30-6，因此匝数和王老师设计的uSDX使用T37大小磁环并不一样。   奇怪的，电容配置都一模一样，但是uSDX88s可以出六七瓦的功率。王老师的解答也发过来了。   心一横，开始拆焊改绕磁环。 参数的话，">
+<meta property="og:description" content="uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。   如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/c6dcb484f3c0d514164355d7a1a7fc22.jpg">
 <meta property="article:published_time" content="2024-10-29T04:56:41.000Z">
-<meta property="article:modified_time" content="2024-11-14T10:32:19.292Z">
+<meta property="article:modified_time" content="2024-11-16T13:10:09.290Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
 <meta property="article:tag" content="uSDX">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          371 字
+          532 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -291,14 +291,17 @@
             
               <div class="markdown-body">
                 
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。</p>
-<h3 id="突破"><a href="#突破" class="headerlink" title="突破"></a>突破</h3><p>偶然的机会，BI4KSR发给我一份uSDX88s的设计，这个设计用的是T30-2和T30-6，因此匝数和王老师设计的uSDX使用T37大小磁环并不一样。</p>
+                <p>uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。</p>
+<img src="/2024/10/29/usdxlpftransform/image-20241116210036546.png" srcset="/img/loading.gif" lazyload class="" title="image-20241116210036546">
+
+<p>如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx为了提供电抗，消除电压和电流之间的相位差，使功率因数为1。RFC为射频扼流圈，防止高频信号流入电源。RFC没有确定值，一般选用铁氧体磁环绕制，设计时计算出最小值，比它大即可。</p>
+<p>偶然的机会，BI4KSR发给我一份uSDX88s的设计，这个设计用的是T30-2和T30-6，因此匝数和王老师设计的uSDX使用T37大小磁环并不一样。</p>
 <img src="/2024/10/29/usdxlpftransform/dcd50b7113c74ffc720523a7b3f0f5d.png" srcset="/img/loading.gif" lazyload class="" title="dcd50b7113c74ffc720523a7b3f0f5d">
 
-<p>奇怪的，电容配置都一模一样，但是uSDX88s可以出六七瓦的功率。王老师的解答也发过来了。</p>
+<p>同样的电容配置，但是uSDX88s可以出六七瓦的功率。王老师的解答也发过来了。</p>
 <img src="/2024/10/29/usdxlpftransform/22f5169862526531854865ea4603ff6.jpg" srcset="/img/loading.gif" lazyload class="" title="22f5169862526531854865ea4603ff6">
 
-<p>心一横，开始拆焊改绕磁环。</p>
+<p>开始拆焊改绕磁环。</p>
 <p>参数的话，就计算uSDX88S的磁环感值，换算到T37磁环上吧。</p>
 <table>
 <thead>
@@ -369,7 +372,7 @@
 
 <img src="/2024/10/29/usdxlpftransform/c6dcb484f3c0d514164355d7a1a7fc22.jpg" srcset="/img/loading.gif" lazyload class="" title="c6dcb484f3c0d514164355d7a1a7fc22">
 
-<p>21MHz更是来到6W，杂散也有-52dbc，非常喜人。</p>
+<p>21MHz更是来到6W，杂散也有-52dbc。</p>
 <img src="/2024/10/29/usdxlpftransform/d05d97b7550d36ad99ce7457aa7d6818.jpg" srcset="/img/loading.gif" lazyload class="" title="d05d97b7550d36ad99ce7457aa7d6818">
 
 <p>28MHz改后虽然只有4.3W，但是杂散合格了，也不错。</p>
@@ -476,9 +479,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/30/tx136-3/" title="TX136 3 终于成功发射了，但是还没完">
+                      <a href="/2024/10/30/tx136-3/" title="Juma TX136 3 终于成功发射了，但是还没完">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">TX136 3 终于成功发射了，但是还没完</span>
+                        <span class="hidden-mobile">Juma TX136 3 终于成功发射了，但是还没完</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

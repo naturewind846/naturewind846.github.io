@@ -19,29 +19,30 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   看图就明白了，寥寥无几的功能。     再看看v115作者写的文档，足足三大页的串口指令，你还要我怎样~~ 话虽如此，虽然是想写一个">
+    <meta name="description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 下文提到的所有程序都附在我的github库里： JumaTX136Controler 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   看图就明白了，寥寥无几的功能。     再看看">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TX136 4 控制软件神通广大，ChatGPT大显神威">
+<meta property="og:title" content="Juma TX136 4 控制软件神通广大，ChatGPT大显神威">
 <meta property="og:url" content="http://naturewind846.github.io/2024/11/14/tx136-4/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   看图就明白了，寥寥无几的功能。     再看看v115作者写的文档，足足三大页的串口指令，你还要我怎样~~ 话虽如此，虽然是想写一个">
+<meta property="og:description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 下文提到的所有程序都附在我的github库里： JumaTX136Controler 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   看图就明白了，寥寥无几的功能。     再看看">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/1730529724-248708-image.webp">
 <meta property="article:published_time" content="2024-11-13T18:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-14T09:46:12.506Z">
+<meta property="article:modified_time" content="2024-11-16T13:17:20.270Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
-<meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="长波">
+<meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="CW">
 <meta property="article:tag" content="JumaTX136">
+<meta property="article:tag" content="长波发射机">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://naturewind846.github.io/img/1730529724-248708-image.webp">
   
   
   
-  <title>TX136 4 控制软件神通广大，ChatGPT大显神威 - NatureWind Blog</title>
+  <title>Juma TX136 4 控制软件神通广大，ChatGPT大显神威 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">TX136 4 控制软件神通广大，ChatGPT大显神威</span>
+            <span id="subtitle">Juma TX136 4 控制软件神通广大，ChatGPT大显神威</span>
           
         </div>
 
@@ -289,13 +290,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">TX136 4 控制软件神通广大，ChatGPT大显神威</h1>
+            <h1 id="seo-header">Juma TX136 4 控制软件神通广大，ChatGPT大显神威</h1>
             
             
               <div class="markdown-body">
                 
                 <p><em>日期：2024-11-14</em></p>
 <p>硬件基本折腾完了，现在准备动手写软件。</p>
+<p>下文提到的所有程序都附在我的github库里： <a target="_blank" rel="noopener" href="https://github.com/naturewind846/JumaTX136Controler">JumaTX136Controler</a></p>
 <h3 id="串口控制上位软件"><a href="#串口控制上位软件" class="headerlink" title="串口控制上位软件"></a>串口控制上位软件</h3><p>事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。</p>
 <img src="/2024/11/14/tx136-4/1730530050-118615-image.webp" srcset="/img/loading.gif" lazyload class="" title="1730530050-118615-image">
 
@@ -304,17 +306,15 @@
 
 
 
-<p>再看看v115作者写的文档，足足三大页的串口指令，你还要我怎样~~</p>
-<p>话虽如此，虽然是想写一个GUI的程序。但是一来我没有接触过GUI，二来的话，电脑编程已经是很久以前上大计基的事情，我还是学的C语言编写各种程序上机考试。如今差不多也忘光了。<br>还好，我听说别人有用ChatGPT来写程序的，赶紧来试试。</p>
+<p>再看看v115作者写的文档，足足三大页的串口指令，真心佩服开发第三方固件的F4GCB。</p>
+<p>话虽如此，虽然是想写一个GUI的程序。但是一来我没有接触过GUI，二来的话，电脑编程已经是很久以前上大计基的事情，我还是学的C语言编写各种程序上机考试。如今差不多也忘光了。<br>好在，还有ChatGPT，赶紧来试试。</p>
 <img src="/2024/11/14/tx136-4/1730529724-248708-image.webp" srcset="/img/loading.gif" lazyload class="" title="1730529724-248708-image">
 
-<p>ChatGPT果然神通广大，把需求描述给他，提交原文档的描述，噌噌噌，只消一会功夫就写好了一段代码，我再添油加醋催他写，只一个晚上就写好了足足四五百行的串口控制GUI。功能一切正常~</p>
-<p>隔两天，我再把其他什么的乱七八糟串口功能也一股脑的灌进Chatgpt，这次比较费劲了，因为代码已经来到了八九百行的规模，chatgpt4o到上限了。我只能一个一个功能的往里填，在人力复制粘贴出来。CrtlC CtrlV好累啊！（叹气）</p>
-<p>但是最终，还是完成了成品。</p>
+<p>ChatGPT果然神通广大，把需求描述给他，提交原文档的描述，噌噌噌，只消一会功夫就写好了一段代码，再添油加醋催他写，只一个晚上就写好了足足四五百行的串口控制GUI。功能一切正常。</p>
+<p>隔两天，我再把其他什么的乱七八糟串口功能也一股脑的灌进Chatgpt，这次比较费劲了，因为代码已经来到了八九百行的规模，chatgpt4o到上限了。我只能一个一个功能的往里填，在人力复制粘贴出来。最终，还是完成了成品。</p>
 <img src="/2024/11/14/tx136-4/102bddc6-ffa0-4540-b433-e5c516a4b672.png" srcset="/img/loading.gif" lazyload class="" title="102bddc6-ffa0-4540-b433-e5c516a4b672">
 
-<p>这个代码已经完美包括了所有的串口功能。唯一的缺点是tk到上限了，开始变卡了。</p>
-<p>哎，Python终究不是个高效的语言，不仅运行速度慢，编译出来的exe程序足足有30MB的夸张大小。未来有机会还是用VB或者别的语言来写吧。</p>
+<p>这个代码已经完美包括了所有的串口功能。唯一的缺点是tk到上限了，开始变卡了。Python终究不是个高效的语言，不仅运行速度慢，编译出来的exe程序足足有30MB的夸张大小。未来有机会还是用VB或者别的语言来写吧。</p>
 <p>顺带一提，V115的作者还在代码里留了个Bug，导致External REMOTE不能正常控制。</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;R&#x27;</span>: <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;r&#x27;</span>:<br><span class="hljs-keyword">switch</span>(cmd_buf[<span class="hljs-number">2</span>])<br>&#123;<br><span class="hljs-keyword">default</span>:<br>set_cw_shift(get_number(<span class="hljs-number">2</span>), <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br><span class="hljs-keyword">break</span>;<br><br><span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;S&#x27;</span>: <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;s&#x27;</span>:<br>set_rem_soft(get_number(<span class="hljs-number">2</span>), <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br><span class="hljs-keyword">break</span>;<br>&#125;<br><span class="hljs-keyword">break</span>;<br></code></pre></td></tr></table></figure>
 
@@ -328,8 +328,7 @@
 <img src="/2024/11/14/tx136-4/f422e662-e367-430e-b490-a32616c8ca0c.png" srcset="/img/loading.gif" lazyload class="" title="f422e662-e367-430e-b490-a32616c8ca0c">
 
 <p>不过，既然最终是用串口来发射的，那么直接用python程序效果应该也是一样的。</p>
-<p>音频处理我同样也不了解，好在我有</p>
-<p><u><strong>CHATGPT，启动！！！</strong></u></p>
+<p>音频处理我同样也不了解，好在我有<u><strong>CHATGPT，启动！！！</strong></u></p>
 <p>这次编写的飞快。我向chatgpt说明我的需求，它飞快的写出来一个程序。程序的功能很让我满意，但是它的频率精度却不尽如人意。</p>
 <p>看来是书到用时方恨少。FFT size是个什么东西？凭着经验，我感觉这个东西调大可以让运算精度变得更细致。但是调大之后，这个程序就会变得非常非常的卡。原本我的设想是每20毫秒输出一次频率串口命令，调大之后100毫秒输出一次都难。到底是为什么呢？</p>
 <p>于是上网四处搜查资料，学习音频处理，看FFT相关的学习视频。最后终于搞明白了，事实上我可以在fft计算出的峰值附近采用抛物线三点插值法，用FFT计算出的幅度最大值点和它附近的两个点来计算抛物线的极大值。这样可以把原本的5Hz精度提升到0.01Hz级。</p>
@@ -375,13 +374,15 @@
       
         <a href="/tags/Ham/" class="print-no-link">#Ham</a>
       
-        <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
-      
         <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
+      
+        <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
       
         <a href="/tags/CW/" class="print-no-link">#CW</a>
       
         <a href="/tags/JumaTX136/" class="print-no-link">#JumaTX136</a>
+      
+        <a href="/tags/%E9%95%BF%E6%B3%A2%E5%8F%91%E5%B0%84%E6%9C%BA/" class="print-no-link">#长波发射机</a>
       
         <a href="/tags/Python/" class="print-no-link">#Python</a>
       
@@ -395,7 +396,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>TX136 4 控制软件神通广大，ChatGPT大显神威</div>
+      <div>Juma TX136 4 控制软件神通广大，ChatGPT大显神威</div>
       <div>http://naturewind846.github.io/2024/11/14/tx136-4/</div>
     </div>
     <div class="license-meta">
@@ -450,8 +451,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/13/helloworld/" title="Hello World! Blog的第一篇文章">
-                        <span class="hidden-mobile">Hello World! Blog的第一篇文章</span>
+                      <a href="/2024/11/13/helloworld/" title="Hello World! BH3PTS Blog的第一篇文章">
+                        <span class="hidden-mobile">Hello World! BH3PTS Blog的第一篇文章</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
