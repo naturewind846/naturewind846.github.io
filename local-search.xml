@@ -35,7 +35,7 @@
     <link href="/2024/11/16/tx136-5/"/>
     <url>/2024/11/16/tx136-5/</url>
     
-    <content type="html"><![CDATA[<p>正在施工，喵了个咪。</p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>由于juma tx136的fst3253工作不明原因的异常，准备另起炉灶，在上面飞一块接收用的板。</p><h3 id="探索"><a href="#探索" class="headerlink" title="探索"></a>探索</h3><p>首先是日本アイキャスエンタープライズ iCAS Enterprise给出的两个套件解决方案：</p><img src="/2024/11/16/tx136-5/basic.jpg" class="" title="basic"><p><a href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a> 利用NE5534放大、然后SA612混频输入声卡。频率使用8MHz的有源振荡器和计数器芯片。</p><img src="/2024/11/16/tx136-5/isdr-136-kit-03.jpg" class="" title="isdr-136-kit-03"><p><a href="https://icas.to/lineup/isdr-136-kit.htm">136kHz帯　SDR受信機キット</a> 这个SDR方案频率和上面的一样，不过混频用的FST3253。而且元件又多又杂。</p><img src="/2024/11/16/tx136-5/5970B425.BMP" class="" title="5970B425"><p>目前我的TX136带通和10&#x2F;20db前置放大器工作正常，我希望能混频到100KHz，并能有192khz采样率，最好是双adc输入的声卡，以便接收图中100-190kHz的带通通带。</p><p>不过翻看德州仪器的选型表时：</p><img src="/2024/11/16/tx136-5/image-20241117000059085.png" class="" title="image-20241117000059085"><p>如今的音频adc已经超出我的想象，TLV320ADC5120几乎完美符合我的需求，<strong>32位、768kHz采样率的双输入adc</strong>，前面构思的混频、放大没有意义，完全可以用这个芯片配合很少的外围电路直采100-190kHz的信号。</p><p>控制芯片，原生支持768kHz I2S的单片机或者别的控制芯片确实难找。不过 <a href="https://community.st.com/t5/stm32-mcus-products/i2s-at-384khz-can-it-be-done/td-p/510918/page/2">这篇帖子</a> 提到，似乎把stm32f4系的I2S 在头文件里简单修改值是可行的</p><img src="/2024/11/16/tx136-5/image-20241117015822250.png" class="" title="image-20241117015822250"><p>或者降低要求，选用384kHz的采样率，仍然能勉强满足190kHz以内的接收。</p><p>另一种方案是用国产的CH32V305&#x2F;7系列</p><img src="/2024/11/16/tx136-5/image-20241117130502580.png" class="" title="image-20241117130502580"><img src="/2024/11/16/tx136-5/image-20241117130656098.png" class="" title="image-20241117130656098"><p>文档介绍最高支持562.2kHz</p><h3 id="CH32V305FBP6引脚定义"><a href="#CH32V305FBP6引脚定义" class="headerlink" title="CH32V305FBP6引脚定义"></a>CH32V305FBP6引脚定义</h3><img src="/2024/11/16/tx136-5/image-20241117130816640.png" class="" title="image-20241117130816640"><img src="/2024/11/16/tx136-5/image-20241117130833311.png" class="" title="image-20241117130833311"> <img src="/2024/11/16/tx136-5/image-20241117130847750.png" class="" title="image-20241117130847750"> <img src="/2024/11/16/tx136-5/image-20241117130928149.png" class="" title="image-20241117130928149"> <img src="/2024/11/16/tx136-5/image-20241117130941910.png" class="" title="image-20241117130941910"> <img src="/2024/11/16/tx136-5/image-20241117131021301.png" class="" title="image-20241117131021301"> <img src="/2024/11/16/tx136-5/image-20241117131032889.png" class="" title="image-20241117131032889"> <img src="/2024/11/16/tx136-5/image-20241117131042598.png" class="" title="image-20241117131042598"> <img src="/2024/11/16/tx136-5/image-20241117131539184.png" class="" title="image-20241117131539184"> <img src="/2024/11/16/tx136-5/image-20241117131053755.png" class="" title="image-20241117131053755"> <img src="/2024/11/16/tx136-5/image-20241117131102816.png" class="" title="image-20241117131102816"> <img src="/2024/11/16/tx136-5/image-20241117131119756.png" class="" title="image-20241117131119756"> <img src="/2024/11/16/tx136-5/image-20241117131137443.png" class="" title="image-20241117131137443"> <img src="/2024/11/16/tx136-5/image-20241117131216859.png" class="" title="image-20241117131216859"> <img src="/2024/11/16/tx136-5/image-20241117131518827.png" class="" title="image-20241117131518827"> <img src="/2024/11/16/tx136-5/image-20241117131558550.png" class="" title="image-20241117131558550"> <img src="/2024/11/16/tx136-5/image-20241117131325893.png" class="" title="image-20241117131325893"> <img src="/2024/11/16/tx136-5/image-20241117165259187.png" class="" title="image-20241117165259187"><p>根据datasheet，先画出测试版的原理图。</p><p>等待施工，喵了个咪~meow</p>]]></content>
+    <content type="html"><![CDATA[<p>正在施工，喵了个咪。</p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>由于juma tx136的fst3253工作不明原因的异常，准备另起炉灶，在上面飞一块接收用的板。</p><h3 id="探索"><a href="#探索" class="headerlink" title="探索"></a>探索</h3><p>首先是日本アイキャスエンタープライズ iCAS Enterprise给出的两个套件解决方案：</p><img src="/2024/11/16/tx136-5/basic.jpg" class="" title="basic"><p><a href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a> 利用NE5534放大、然后SA612混频输入声卡。频率使用8MHz的有源振荡器和计数器芯片。</p><img src="/2024/11/16/tx136-5/isdr-136-kit-03.jpg" class="" title="isdr-136-kit-03"><p><a href="https://icas.to/lineup/isdr-136-kit.htm">136kHz帯　SDR受信機キット</a> 这个SDR方案频率和上面的一样，不过混频用的FST3253。而且元件又多又杂。</p><img src="/2024/11/16/tx136-5/5970B425.BMP" class="" title="5970B425"><p>目前我的TX136带通和10&#x2F;20db前置放大器工作正常，我希望能混频到100KHz，并能有192khz采样率，最好是双adc输入的声卡，以便接收图中100-190kHz的带通通带。</p><p>不过翻看德州仪器的选型表时：</p><img src="/2024/11/16/tx136-5/image-20241117000059085.png" class="" title="image-20241117000059085"><p>如今的音频adc已经超出我的想象，TLV320ADC5120几乎完美符合我的需求，<strong>32位、768kHz采样率的双输入adc</strong>，前面构思的混频、放大没有意义，完全可以用这个芯片配合很少的外围电路直采100-190kHz的信号。</p><p>控制芯片，原生支持768kHz I2S的单片机或者别的控制芯片确实难找。不过 <a href="https://community.st.com/t5/stm32-mcus-products/i2s-at-384khz-can-it-be-done/td-p/510918/page/2">这篇帖子</a> 提到，似乎把stm32f4系的I2S 在头文件里简单修改值是可行的</p><img src="/2024/11/16/tx136-5/image-20241117015822250.png" class="" title="image-20241117015822250"><p>或者降低要求，选用384kHz的采样率，仍然能勉强满足190kHz以内的接收。</p><p>另一种方案是用国产的CH32V305&#x2F;7系列</p><img src="/2024/11/16/tx136-5/image-20241117130502580.png" class="" title="image-20241117130502580"><img src="/2024/11/16/tx136-5/image-20241117130656098.png" class="" title="image-20241117130656098"><p>文档介绍最高支持562.2kHz</p><h3 id="CH32V305FBP6引脚定义"><a href="#CH32V305FBP6引脚定义" class="headerlink" title="CH32V305FBP6引脚定义"></a>CH32V305FBP6引脚定义</h3><img src="/2024/11/16/tx136-5/image-20241117130816640.png" class="" title="image-20241117130816640"><img src="/2024/11/16/tx136-5/image-20241117130833311.png" class="" title="image-20241117130833311"> <img src="/2024/11/16/tx136-5/image-20241117130847750.png" class="" title="image-20241117130847750"> <img src="/2024/11/16/tx136-5/image-20241117130928149.png" class="" title="image-20241117130928149"> <img src="/2024/11/16/tx136-5/image-20241117130941910.png" class="" title="image-20241117130941910"> <img src="/2024/11/16/tx136-5/image-20241117131021301.png" class="" title="image-20241117131021301"> <img src="/2024/11/16/tx136-5/image-20241117131032889.png" class="" title="image-20241117131032889"> <img src="/2024/11/16/tx136-5/image-20241117131042598.png" class="" title="image-20241117131042598"> <img src="/2024/11/16/tx136-5/image-20241117131539184.png" class="" title="image-20241117131539184"> <img src="/2024/11/16/tx136-5/image-20241117131053755.png" class="" title="image-20241117131053755"> <img src="/2024/11/16/tx136-5/image-20241117131102816.png" class="" title="image-20241117131102816"> <img src="/2024/11/16/tx136-5/image-20241117131119756.png" class="" title="image-20241117131119756"> <img src="/2024/11/16/tx136-5/image-20241117131137443.png" class="" title="image-20241117131137443"> <img src="/2024/11/16/tx136-5/image-20241117131216859.png" class="" title="image-20241117131216859"> <img src="/2024/11/16/tx136-5/image-20241117131518827.png" class="" title="image-20241117131518827"> <img src="/2024/11/16/tx136-5/image-20241117131558550.png" class="" title="image-20241117131558550"> <img src="/2024/11/16/tx136-5/image-20241117131325893.png" class="" title="image-20241117131325893"> <img src="/2024/11/16/tx136-5/image-20241117165259187.png" class="" title="image-20241117165259187"><p>根据datasheet，先画出测试版的原理图。</p><img src="/2024/11/16/tx136-5/image-20241120022035357.png" class="" title="image-20241120022035357"><p>找到了CH32V30X的USB声卡例程，只有I2S没有I2C，USB也需要学学</p><p>等待施工，喵了个咪~meow</p>]]></content>
     
     
     <categories>
@@ -51,11 +51,11 @@
       
       <tag>DIY制作</tag>
       
+      <tag>长波</tag>
+      
       <tag>JumaTX136</tag>
       
       <tag>长波发射机</tag>
-      
-      <tag>长波</tag>
       
     </tags>
     
@@ -82,15 +82,15 @@
       
       <tag>Ham</tag>
       
+      <tag>CW</tag>
+      
       <tag>DIY制作</tag>
       
-      <tag>CW</tag>
+      <tag>长波</tag>
       
       <tag>JumaTX136</tag>
       
       <tag>长波发射机</tag>
-      
-      <tag>长波</tag>
       
       <tag>Python</tag>
       
@@ -132,15 +132,15 @@
       
       <tag>Ham</tag>
       
+      <tag>CW</tag>
+      
       <tag>DIY制作</tag>
       
-      <tag>CW</tag>
+      <tag>长波</tag>
       
       <tag>JumaTX136</tag>
       
       <tag>长波发射机</tag>
-      
-      <tag>长波</tag>
       
     </tags>
     
@@ -167,9 +167,9 @@
       
       <tag>Ham</tag>
       
-      <tag>uSDX</tag>
-      
       <tag>DIY制作</tag>
+      
+      <tag>uSDX</tag>
       
     </tags>
     
@@ -196,9 +196,9 @@
       
       <tag>Ham</tag>
       
-      <tag>uSDX</tag>
-      
       <tag>DIY制作</tag>
+      
+      <tag>uSDX</tag>
       
     </tags>
     
@@ -225,11 +225,11 @@
       
       <tag>Ham</tag>
       
+      <tag>DIY制作</tag>
+      
       <tag>uSDX</tag>
       
       <tag>BOX-6</tag>
-      
-      <tag>DIY制作</tag>
       
       <tag>自制验机</tag>
       
@@ -287,9 +287,9 @@
       
       <tag>Ham</tag>
       
-      <tag>DIY制作</tag>
-      
       <tag>CW</tag>
+      
+      <tag>DIY制作</tag>
       
     </tags>
     
@@ -316,15 +316,15 @@
       
       <tag>Ham</tag>
       
+      <tag>CW</tag>
+      
       <tag>DIY制作</tag>
       
-      <tag>CW</tag>
+      <tag>长波</tag>
       
       <tag>JumaTX136</tag>
       
       <tag>长波发射机</tag>
-      
-      <tag>长波</tag>
       
     </tags>
     
@@ -337,7 +337,7 @@
     <link href="/2023/11/14/tx136-1/"/>
     <url>/2023/11/14/tx136-1/</url>
     
-    <content type="html"><![CDATA[<p><em>日期：2023-11-14</em></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2023年的10月，我开始对长波波段感兴趣。从网上四处搜集资料。国内关于这方面的资料并不多，国外的成品设备也不多。这个机器几乎是当时唯一能找到的成品机器。</p><p>原本的套件事实上已经停产，juma官方公开了全部制作资料、源代码，并允许个人或者俱乐部使用这些资料。感谢juma的设计者 <strong>OH2NLT</strong> 和 <strong>OH7SV</strong> </p><p>JumaTX136官网：<a href="http://www.jumaradio.com/juma-tx136/">http://www.jumaradio.com/juma-tx136/</a></p><p>更加让我惊喜的是，这个机器有热心的法国ham F4GCB开发增加了各种功能的第三方固件，直到2023年还在更新。</p><p>于是开始计划着复刻。</p><h2 id="Juma-TX136官方宣传页"><a href="#Juma-TX136官方宣传页" class="headerlink" title="Juma TX136官方宣传页"></a>Juma TX136官方宣传页</h2><img src="/2023/11/14/tx136-1/juma-tx136-front-370.jpg" class="" title="juma-tx136-front-370"><p>Juma TX136 前视图</p><img src="/2023/11/14/tx136-1/juma-tx136-rear-370.jpg" class="" title="juma-tx136-rear-370"><p>后视图</p><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Juma TX136 是一款数字控制的 CW 发射器，适用于 136 kHz（2200 米）业余无线电频段。该发射器作为组件套件提供，包含所有电气和机械组件。</p><p>Juma TX136 采用超高效的 CMCD 放大器（电流模式 D 类放大器）拓扑结构作为最终 RF 放大器。最终的晶体管产生的热量几乎可以忽略不计。这意味着，您可以在仅使用 14 VDC 电源提供 5A 电流的情况下输出 60 瓦特的功率。TX136 是一款无限键控时间保护的发射器。参见输出和效率测量图。Juma TX136 的频率稳定性和信号纯度非常优秀。</p><img src="/2023/11/14/tx136-1/juma-tx136-out-versus-frequency.gif" class="" title="juma-tx136-out-versus-frequency"><p>Juma TX136 是 136 kHz 频段的多功能构建模块，内置天线切换功能，支持连接任意 136 kHz 接收机。TX136 通过内置的窄带前端滤波器以及可选择的 10dB&#x2F;20dB 前置放大器，可以增强您的接收性能。如果没有 136 kHz 接收机，您可以开启内置的高动态范围 RX 上变频器，并使用 10.1 MHz 接收机监听 136 kHz 频段。</p><p>此外，Juma TX136 可以配置为独立的信标模式。您可以输入所需的 CW 消息并启动连续的信标传输。</p><p>您可以下载 Juma TX136&#x2F;TX500 Windows 控制软件，尤其在慢速 QRSS CW 中非常有用，支持最低 0.1 wpm 的速度。查看这里的示例截图。</p><p>该套件包含已编程的 CPU。新的固件版本可以通过 Juma 网站轻松下载并通过 PC 上传。</p><img src="/2023/11/14/tx136-1/tx136-buttons-370.jpg" class="" title="tx136-buttons-370"><style>.soejtqyozgwc{zoom:50%;}</style><img src="/2023/11/14/tx136-1/tx136-lcd.jpg" class="soejtqyozgwc" alt="tx136-lcd"><p>Juma TX136 用户界面</p><h3 id="一般特性"><a href="#一般特性" class="headerlink" title="一般特性"></a>一般特性</h3><ul><li>RF 输出功率 60 W，支持无限键控时间</li><li>四个功率级别（MIN 4W，LOW 15W，HI 35W，MAX 60W）</li><li>供电电压标称 14 VDC（范围 12 ~15 VDC）</li><li>典型最大电流 5 A（带过流保护）</li><li>频率范围 130 kHz…150 kHz（步进 10 Hz）</li><li>使用 Windows 控制软件时，频率步进为 1 Hz</li><li>高品质CW keyer，速度范围为 1 wpm~50 wpm</li><li>通过串行控制，速度范围为 0.1 wpm~50 wpm</li><li>优良的无“Click”按键声 CW 键控波形</li><li>T&#x2F;R 切换器，带 CW 速度自适应释放延迟</li><li>RX 前置放大器</li><li>RX 上变频器，从 136 kHz 转换到 10.136 MHz</li><li>信标模式</li><li>Windows 软件支持 PC 控制</li><li>小尺寸，宽度 180 mm，高度 60 mm，深度 124 mm</li></ul><h3 id="多功能-LCD-显示"><a href="#多功能-LCD-显示" class="headerlink" title="多功能 LCD 显示"></a>多功能 LCD 显示</h3><ul><li>输出功率</li><li>SWR 显示</li><li>供电电压指示</li><li>漏电流指示</li><li>CW 速度指示（WPM）</li><li>状态指示（STBY，OPER，TX）</li><li>频率显示（5 位数，例如 136.00 kHz）</li></ul><h3 id="可配置特性"><a href="#可配置特性" class="headerlink" title="可配置特性"></a>可配置特性</h3><ul><li>RX 前置放大器（关闭，10 dB，20 dB）</li><li>RX 转换器开&#x2F;关</li><li>CW侧音开&#x2F;关</li><li>可调驻波保护，每个功率级别有单独的保护电平</li><li>键控类型（点优先，Iambic A&#x2F;B，直键，信标模式）</li><li>LCD 亮度和对比度调节</li><li>串行通信设置</li></ul><h3 id="连接性"><a href="#连接性" class="headerlink" title="连接性"></a>连接性</h3><ul><li>电源供电，标称 14 VDC &#x2F; 5A（标准 DC 插座）</li><li>天线 50 欧姆（BNC 连接器）</li><li>RX 136 kHz 或 10.136 MHz，50 欧姆（BNC 连接器）</li><li>自动桨键&#x2F;手键（3.5 mm 插孔）</li><li>RS232，用于固件&#x2F;信标编程（3.5 mm 插孔）</li><li>外部 PTT 输入&#x2F;输出（3.5 mm 插孔）</li></ul><h3 id="模块化构造"><a href="#模块化构造" class="headerlink" title="模块化构造"></a>模块化构造</h3><p>Juma TX136 的组装非常简单。需要组装的有两个组件模块，主模块包括 RF 电路，控制模块包括控制处理器和用户界面。这两个模块通过扁平电缆互连，构建图示。只有三只简单的环形线圈需要绕制。机械零件已准备好进行组装，并且电路板上没有可调节的部分。</p><img src="/2023/11/14/tx136-1/tx136-main.jpg" class="" title="tx136-main"><img src="/2023/11/14/tx136-1/tx136-control-module.jpg" class="" title="tx136-control-module"><img src="/2023/11/14/tx136-1/juma-tx136-construction-1731495327657-8.jpg" class="" title="juma-tx136-construction"><h2 id="JumaTX136设计理解"><a href="#JumaTX136设计理解" class="headerlink" title="JumaTX136设计理解"></a>JumaTX136设计理解</h2><p>JumaTX136使用dspic30F6014A 30I-PF作为主控MCU，ControlBroad是作者另一个作品PA100的主控部分。MainBroad是重新设计的。电源首先经过7.5A的保险，然后经过用于给MAX4373TESA测量电流、设置保护电流（8A）用的R010采样电阻，然后经过作为键控开关的FQB27P06T MOS管进入功放。发射频率使用AD9833BRMZ DDS频率合成芯片，直接合成2倍发射频率，经过DDS低通、单片机控制的NC7S04整形后，使用74HC74的Q和反Q分成一倍发射频率的相反的两个电压，再进入2N7002转换电压到Vcc，进入MIC4423YM MOS管驱动芯片，最后进入一对IRFI540组成D类功放。功放使用749196500 6绕组变压器，通过继电器变换次级绕组为1、2、3、4个绕组，实现功率挡位切换。</p><p>接收部分，采用FST3253实现了10MHz上变频和发射的保护衰减。</p><h2 id="相关资料链接"><a href="#相关资料链接" class="headerlink" title="相关资料链接"></a>相关资料链接</h2><p>收集了一些官方的资料，放在我的Github仓库里了。</p><p><a href="https://github.com/naturewind846/JumaTX136Controler/tree/main">naturewind846&#x2F;JumaTX136Controler</a></p>]]></content>
+    <content type="html"><![CDATA[<p><em>日期：2023-11-14</em></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2023年的10月，我开始对长波波段感兴趣。从网上四处搜集资料。国内关于这方面的资料并不多，国外的成品设备也不多。这个机器几乎是当时唯一能找到的成品机器。</p><p>原本的套件事实上已经停产，juma官方公开了全部制作资料、源代码，并允许个人或者俱乐部使用这些资料。感谢juma的设计者 <strong>OH2NLT</strong> 和 <strong>OH7SV</strong> </p><p>JumaTX136官网：<a href="http://www.jumaradio.com/juma-tx136/">http://www.jumaradio.com/juma-tx136/</a></p><p>更加让我惊喜的是，这个机器有热心的法国ham F4GCB开发增加了各种功能的第三方固件，直到2023年还在更新。</p><p>于是开始计划着复刻。</p><h2 id="Juma-TX136官方宣传页"><a href="#Juma-TX136官方宣传页" class="headerlink" title="Juma TX136官方宣传页"></a>Juma TX136官方宣传页</h2><img src="/2023/11/14/tx136-1/juma-tx136-front-370.jpg" class="" title="juma-tx136-front-370"><p>Juma TX136 前视图</p><img src="/2023/11/14/tx136-1/juma-tx136-rear-370.jpg" class="" title="juma-tx136-rear-370"><p>后视图</p><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Juma TX136 是一款数字控制的 CW 发射器，适用于 136 kHz（2200 米）业余无线电频段。该发射器作为组件套件提供，包含所有电气和机械组件。</p><p>Juma TX136 采用超高效的 CMCD 放大器（电流模式 D 类放大器）拓扑结构作为最终 RF 放大器。最终的晶体管产生的热量几乎可以忽略不计。这意味着，您可以在仅使用 14 VDC 电源提供 5A 电流的情况下输出 60 瓦特的功率。TX136 是一款无限键控时间保护的发射器。参见输出和效率测量图。Juma TX136 的频率稳定性和信号纯度非常优秀。</p><img src="/2023/11/14/tx136-1/juma-tx136-out-versus-frequency.gif" class="" title="juma-tx136-out-versus-frequency"><p>Juma TX136 是 136 kHz 频段的多功能构建模块，内置天线切换功能，支持连接任意 136 kHz 接收机。TX136 通过内置的窄带前端滤波器以及可选择的 10dB&#x2F;20dB 前置放大器，可以增强您的接收性能。如果没有 136 kHz 接收机，您可以开启内置的高动态范围 RX 上变频器，并使用 10.1 MHz 接收机监听 136 kHz 频段。</p><p>此外，Juma TX136 可以配置为独立的信标模式。您可以输入所需的 CW 消息并启动连续的信标传输。</p><p>您可以下载 Juma TX136&#x2F;TX500 Windows 控制软件，尤其在慢速 QRSS CW 中非常有用，支持最低 0.1 wpm 的速度。查看这里的示例截图。</p><p>该套件包含已编程的 CPU。新的固件版本可以通过 Juma 网站轻松下载并通过 PC 上传。</p><img src="/2023/11/14/tx136-1/tx136-buttons-370.jpg" class="" title="tx136-buttons-370"><style>.tdqmmibmzwld{zoom:50%;}</style><img src="/2023/11/14/tx136-1/tx136-lcd.jpg" class="tdqmmibmzwld" alt="tx136-lcd"><p>Juma TX136 用户界面</p><h3 id="一般特性"><a href="#一般特性" class="headerlink" title="一般特性"></a>一般特性</h3><ul><li>RF 输出功率 60 W，支持无限键控时间</li><li>四个功率级别（MIN 4W，LOW 15W，HI 35W，MAX 60W）</li><li>供电电压标称 14 VDC（范围 12 ~15 VDC）</li><li>典型最大电流 5 A（带过流保护）</li><li>频率范围 130 kHz…150 kHz（步进 10 Hz）</li><li>使用 Windows 控制软件时，频率步进为 1 Hz</li><li>高品质CW keyer，速度范围为 1 wpm~50 wpm</li><li>通过串行控制，速度范围为 0.1 wpm~50 wpm</li><li>优良的无“Click”按键声 CW 键控波形</li><li>T&#x2F;R 切换器，带 CW 速度自适应释放延迟</li><li>RX 前置放大器</li><li>RX 上变频器，从 136 kHz 转换到 10.136 MHz</li><li>信标模式</li><li>Windows 软件支持 PC 控制</li><li>小尺寸，宽度 180 mm，高度 60 mm，深度 124 mm</li></ul><h3 id="多功能-LCD-显示"><a href="#多功能-LCD-显示" class="headerlink" title="多功能 LCD 显示"></a>多功能 LCD 显示</h3><ul><li>输出功率</li><li>SWR 显示</li><li>供电电压指示</li><li>漏电流指示</li><li>CW 速度指示（WPM）</li><li>状态指示（STBY，OPER，TX）</li><li>频率显示（5 位数，例如 136.00 kHz）</li></ul><h3 id="可配置特性"><a href="#可配置特性" class="headerlink" title="可配置特性"></a>可配置特性</h3><ul><li>RX 前置放大器（关闭，10 dB，20 dB）</li><li>RX 转换器开&#x2F;关</li><li>CW侧音开&#x2F;关</li><li>可调驻波保护，每个功率级别有单独的保护电平</li><li>键控类型（点优先，Iambic A&#x2F;B，直键，信标模式）</li><li>LCD 亮度和对比度调节</li><li>串行通信设置</li></ul><h3 id="连接性"><a href="#连接性" class="headerlink" title="连接性"></a>连接性</h3><ul><li>电源供电，标称 14 VDC &#x2F; 5A（标准 DC 插座）</li><li>天线 50 欧姆（BNC 连接器）</li><li>RX 136 kHz 或 10.136 MHz，50 欧姆（BNC 连接器）</li><li>自动桨键&#x2F;手键（3.5 mm 插孔）</li><li>RS232，用于固件&#x2F;信标编程（3.5 mm 插孔）</li><li>外部 PTT 输入&#x2F;输出（3.5 mm 插孔）</li></ul><h3 id="模块化构造"><a href="#模块化构造" class="headerlink" title="模块化构造"></a>模块化构造</h3><p>Juma TX136 的组装非常简单。需要组装的有两个组件模块，主模块包括 RF 电路，控制模块包括控制处理器和用户界面。这两个模块通过扁平电缆互连，构建图示。只有三只简单的环形线圈需要绕制。机械零件已准备好进行组装，并且电路板上没有可调节的部分。</p><img src="/2023/11/14/tx136-1/tx136-main.jpg" class="" title="tx136-main"><img src="/2023/11/14/tx136-1/tx136-control-module.jpg" class="" title="tx136-control-module"><img src="/2023/11/14/tx136-1/juma-tx136-construction-1731495327657-8.jpg" class="" title="juma-tx136-construction"><h2 id="JumaTX136设计理解"><a href="#JumaTX136设计理解" class="headerlink" title="JumaTX136设计理解"></a>JumaTX136设计理解</h2><p>JumaTX136使用dspic30F6014A 30I-PF作为主控MCU，ControlBroad是作者另一个作品PA100的主控部分。MainBroad是重新设计的。电源首先经过7.5A的保险，然后经过用于给MAX4373TESA测量电流、设置保护电流（8A）用的R010采样电阻，然后经过作为键控开关的FQB27P06T MOS管进入功放。发射频率使用AD9833BRMZ DDS频率合成芯片，直接合成2倍发射频率，经过DDS低通、单片机控制的NC7S04整形后，使用74HC74的Q和反Q分成一倍发射频率的相反的两个电压，再进入2N7002转换电压到Vcc，进入MIC4423YM MOS管驱动芯片，最后进入一对IRFI540组成D类功放。功放使用749196500 6绕组变压器，通过继电器变换次级绕组为1、2、3、4个绕组，实现功率挡位切换。</p><p>接收部分，采用FST3253实现了10MHz上变频和发射的保护衰减。</p><h2 id="相关资料链接"><a href="#相关资料链接" class="headerlink" title="相关资料链接"></a>相关资料链接</h2><p>收集了一些官方的资料，放在我的Github仓库里了。</p><p><a href="https://github.com/naturewind846/JumaTX136Controler/tree/main">naturewind846&#x2F;JumaTX136Controler</a></p>]]></content>
     
     
     <categories>
@@ -351,15 +351,15 @@
       
       <tag>Ham</tag>
       
+      <tag>CW</tag>
+      
       <tag>DIY制作</tag>
       
-      <tag>CW</tag>
+      <tag>长波</tag>
       
       <tag>JumaTX136</tag>
       
       <tag>长波发射机</tag>
-      
-      <tag>长波</tag>
       
     </tags>
     
