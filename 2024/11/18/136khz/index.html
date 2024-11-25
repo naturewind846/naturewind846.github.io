@@ -41,9 +41,9 @@
 <meta property="og:image" content="http://naturewind846.github.io/2024/11/18/136khz/Bpsk31bits.png">
 <meta property="og:image" content="http://naturewind846.github.io/2024/11/18/136khz/jasrx.gif">
 <meta property="og:image" content="http://naturewind846.github.io/2024/11/18/136khz/wolf_dos.gif">
-<meta property="og:image" content="http://naturewind846.github.io/2024/11/18/136khz/wolf_gui.gif">
+<meta property="og:image" content="http://naturewind846.github.io/2024/11/18/136khz/image-20241125125905670.png">
 <meta property="article:published_time" content="2024-11-17T16:08:23.000Z">
-<meta property="article:modified_time" content="2024-11-24T11:40:19.288Z">
+<meta property="article:modified_time" content="2024-11-25T05:41:50.761Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
 <meta property="article:tag" content="长波">
@@ -252,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          9.6k 字
+          9.7k 字
         
       </span>
     
@@ -263,7 +263,7 @@
         
         
         
-          80 分钟
+          81 分钟
         
       </span>
     
@@ -421,56 +421,47 @@
 <p>从表中可以看出，通过降低CW速度，可以显著提高信噪比。在136kHz上，一般采用3 dot time的QRSS发射速度。由于此时人耳解码信号变得困难，通常借助计算机频谱解码。</p>
 <p>结论3的原理是类似QRSS这样的窄带信号，其频率、幅度和相位是稳定的，而大气噪声或电子热噪声通常表现为宽带随机信号，其幅度、频率和相位随机分布。当我们延长单次FFT的采样时间时，随着样本的增加，信号的幅度会在其固定频率点上累积，而宽带随机噪声会均匀分布在整个频率范围内，其正负波动会在平均过程中逐渐相互抵消，无法在频域形成明显的集中。信号就会从底噪中逐渐凸显出来。信噪比的提升与采样时间的平方根成正比。</p>
 <p><strong>下面是DK8KW的实验结果</strong></p>
-<p><em>早上，我做了一些实验室测试，以评估在噪声水平以下用QRSS通信的能力。这是测试的具体过程和结果：</em></p>
-<p><em>我使用了一台经过校准的频率合成器（Adret 2230）、一个0-120 dB可调的1 dB步进衰减器（Schlumberger BMD500）以及一台Praecitronic MV61选择性电平计。通过一个BNC T型连接器，我将137.500 kHz（±50 Hz）频段内的正常带宽噪声（包括LORAN信号）输入连接器的一端，同时将频率合成器的输出信号连接到另一端。利用衰减器，我确保合成器输出的0 dBm（50欧姆）信号对应于MV62接收端的-80 dBu（0 dBu &#x3D; 0.775V，75欧姆等效于+9 dBm，-80 dBu等于-71 dBm）信号强度，误差范围为±1 dB。</em></p>
-<p><em>测试期间，频段环境相对安静，背景噪声约为-110 dBu（S4，对应-101 dBm），LORAN信号清晰可见。我使用MV62的100 Hz带宽和IC-746的250 Hz&#x2F;500 Hz串联CW滤波器，通过人耳分辨和“Spectrogram”软件进行了信号分析。Spectrogram软件参数设置如下：</em></p>
-<ul>
-<li><em>采样率：5.5 kHz</em></li>
-<li><em>采样深度：16位单声道</em></li>
-<li><em>FFT点数：16384（频率分辨率为0.3 Hz）</em></li>
-<li><em>动态范围：60 dB</em></li>
-<li><em>FFT时间尺度：300 ms</em></li>
-<li><em>FFT平均次数：10次</em></li>
-</ul>
-<p><em>以下是我记录的结果：</em></p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs subunit">早上，我做了一些实验室测试，以评估在噪声水平以下用QRSS通信的能力。这是测试的具体过程和结果：<br><br>我使用了一台经过校准的频率合成器（Adret 2230）、一个0<span class="hljs-string">-120</span> dB可调的1 dB步进衰减器（Schlumberger BMD500）以及一台Praecitronic MV61选择性电平计。通过一个BNC T型连接器，我将137.500 kHz（±50 Hz）频段内的正常带宽噪声（包括LORAN信号）输入连接器的一端，同时将频率合成器的输出信号连接到另一端。利用衰减器，我确保合成器输出的0 dBm（50欧姆）信号对应于MV62接收端的<span class="hljs-string">-80</span> dBu（0 dBu = 0.775V，75欧姆等效于<span class="hljs-string">+9</span> dBm，<span class="hljs-string">-80</span> dBu等于<span class="hljs-string">-71</span> dBm）信号强度，误差范围为±1 dB。<br><br>测试期间，频段环境相对安静，背景噪声约为<span class="hljs-string">-101</span> dBm（S4），LORAN信号清晰可见。我使用MV62的100 Hz带宽和IC<span class="hljs-string">-746</span>的250 Hz/500 Hz串联CW滤波器，通过人耳分辨和“Spectrogram”软件进行了信号分析。Spectrogram软件参数设置如下：<br>- 采样率：5.5 kHz<br>- 采样深度：16位单声道<br>- FFT点数：16384（频率分辨率为0.3 Hz）<br>- 动态范围：60 dB<br>- FFT时间尺度：300 ms<br>- FFT平均次数：10次<br></code></pre></td></tr></table></figure>
+
+<p>以下是DK8KW记录的结果：</p>
 <table>
 <thead>
 <tr>
-<th><em><strong>接收端信号强度</strong></em></th>
-<th><em><strong>备注</strong></em></th>
+<th><strong>接收端信号强度</strong></th>
+<th><strong>备注</strong></th>
 </tr>
 </thead>
 <tbody><tr>
-<td><em>-100 dBu &#x2F; -91 dBm</em></td>
-<td><em>CW信号清晰可听（S6）</em></td>
+<td>-100 dBu &#x2F; -91 dBm</td>
+<td>CW信号清晰可辨（S6）</td>
 </tr>
 <tr>
-<td><em>-110 dBu &#x2F; -101 dBm</em></td>
-<td><em>CW信号与噪声水平相当（S4），可刚好辨识</em></td>
+<td>-110 dBu &#x2F; -101 dBm</td>
+<td>CW信号与噪声水平相当（S4），可刚好辨识</td>
 </tr>
 <tr>
-<td><em>-115 dBu &#x2F; -106 dBm</em></td>
-<td><em>耳听CW信号的边界，信号刚刚可被检测到</em></td>
+<td>-115 dBu &#x2F; -106 dBm</td>
+<td>人耳分辨CW信号的边界，信号刚刚可被检测到</td>
 </tr>
 <tr>
-<td><em>-125 dBu &#x2F; -116 dBm</em></td>
-<td><em>QRSS信号完美可读（“O”报告）</em></td>
+<td>-125 dBu &#x2F; -116 dBm</td>
+<td>QRSS信号完美可读（“O”报告）</td>
 </tr>
 <tr>
-<td><em>-130 dBu &#x2F; -121 dBm</em></td>
-<td><em>QRSS信号良好可读（“M”报告）</em></td>
+<td>-130 dBu &#x2F; -121 dBm</td>
+<td>QRSS信号良好可读（“M”报告）</td>
 </tr>
 <tr>
-<td><em>-135 dBu &#x2F; -126 dBm</em></td>
-<td><em>QRSS信号刚好可检测到（“T”报告）</em></td>
+<td>-135 dBu &#x2F; -126 dBm</td>
+<td>QRSS信号刚好可分辨（“T”报告）</td>
 </tr>
 <tr>
-<td><em>-140 dBu &#x2F; -131 dBm</em></td>
-<td><em>信号无法检测</em></td>
+<td>-140 dBu &#x2F; -131 dBm</td>
+<td>信号无法检测</td>
 </tr>
 </tbody></table>
 <p><strong>结论：</strong></p>
-<p>QRSS比正常听觉CW通信具有<strong>20 dB的信号强度优势</strong>。也就是说，最低可检测或可读的QRSS信号，比训练有素的CW操作员能够检测或解码的最弱信号低约20 dB。如果假设“CW操作员的耳朵&#x2F;大脑的解码带宽”为30 Hz，那么这一结果与测试中使用的带宽（0.3 Hz与30 Hz）大致对应。</p>
+<p>可分辨的最弱的QRSS信号，比训练有素的CW操作员能够解码的最弱信号场强低约<strong>20 dB</strong>。如果假设“CW操作员的耳朵&#x2F;大脑的解码带宽”为30 Hz，那么这一结果与测试中使用的带宽（0.3 Hz与30 Hz）大致对应。</p>
 <p>在超窄带宽和长时间发射要求下，发射器和接收器的频率稳定性尤为重要。然而，136 kHz频段的频率稳定性容易通过晶振分频实现，典型设计可达到0.1 Hz的精度，满足QRSS的需求。</p>
 <p><strong>DFCW</strong>与QRSS相似，不同的地方是DFCW使用微小的频率偏移（甚至可以只偏移0.1Hz）来表示点和划而不是长度。这样的优点是可以减少发送时间，可将平均速度提高 2.5 到 3 倍。为了使其更易于辨别，尤其是类似H….或者O—这样的连续点或划字母，在点和短划线之间添加一个短空格（通常为点时间的 1&#x2F;3）。这稍微降低了平均速度，但提高了可读性，也减少了占空比（这对 PA 更好）。由于使用两个频率，相比QRSS需要更宽的带宽，并且每点频率都会受到噪声和干扰的影响。</p>
 <img src="/2024/11/18/136khz/dfcw.gif" srcset="/img/loading.gif" lazyload class="" title="img">
@@ -538,7 +529,7 @@
 <img src="/2024/11/18/136khz/wolf_dos.gif" srcset="/img/loading.gif" lazyload class="" title="img">
 
 <p>至于解码信噪比，KK7KA 表示：<em>WOLF 的可解码阈值似乎与 QRSS-60 相似。在这种情况下，WOLF 通常需要大约 15 分钟能成功解码。根据消息内容，QRSS 会慢 6 到 10 倍。</em></p>
-<img src="/2024/11/18/136khz/wolf_gui.gif" srcset="/img/loading.gif" lazyload class="" title="img">
+<img src="/2024/11/18/136khz/image-20241125125905670.png" srcset="/img/loading.gif" lazyload class="" title="image-20241125125905670">
 
 <p><a target="_blank" rel="noopener" href="https://www.qsl.net/dl4yhf/wolf/">WOLF GUI 下载</a> </p>
 <h3 id="WSPR"><a href="#WSPR" class="headerlink" title="WSPR"></a>WSPR</h3><p><strong>WSPR</strong>（发音为“whisper”）是 <em>Weak Signal Propagation Reporter</em> 的首字母缩写。它是一种计算机程序实现的协议，专门用于在业余无线电操作员之间进行弱信号无线电通信。该协议由 <em>Joe Taylor</em>（K1JT）设计并在 2008 年编写了一个程序，用于在中频（MF）和高频（HF）频段上进行低功率传输实验，测试无线电波传播路径的性能。由于其高灵敏度，WSPR 很快在 <strong>136 kHz</strong> 等较低频段的弱信号通信中得到了广泛应用。</p>
@@ -548,7 +539,7 @@
 
 <p><strong>简介</strong><br>WSQ是一种为LF（低频）和MF（中频）波段设计的弱信号QSO模式，旨在提供与WSPR类似的灵敏度，同时比JASON等模式更快，适用于在极弱信号下进行实时通信。WSQ由Con ZL2AFP和Murray ZL1BPU在2013年共同开发，使用了全新的增量频率调制（IFK）设计，并结合文本压缩技术，使其能够在低于-27dB信噪比（SNR）下进行有效通讯。ZL2AFP 希望有一种模式能够达到WSPR的灵敏度，同时比当时流行的JASON更快的发射速度以适应QSO的双向通信。于2013年底编写了 WSQ2 的原始版本。WSQ相比于当时常见的数字模式，提供了更高的信号接收灵敏度和较快的通讯速度。特别是与JASON（-25db）和DominoEX（-16db）相比，WSQ在符号传输效率上有显著优势，可以在极弱的信号条件下实现较快的信息交换。</p>
 <p>不像WSPR那样需要复杂的错误纠正，WSQ通过使用<strong>IFK 增量频率键控</strong>避免了电台接收器的失谐和频率漂移导致的误码，更能抵抗多径传播引起的多径干扰和码间干扰。通过<strong>长时间积分</strong>，WSQ能够有效抑制冲击噪声，并在-27dB SNR下可靠接收信号。采用<strong>变长编码（Varicode）</strong>，频繁使用的字符通过更少的符号发送，大大提高了发射速度。</p>
-<p>WSQ使用33个频率，频率间隔为1.953125Hz，采用相位一致的MFSK调制方式，每个符号持续2.048秒。每个符号承载更多信息，因此尽管符号速率较低（0.512波特），但发射速度可达到每分钟5至7个字母，显著高于JASON等其他模式。WSQ的设计使其在噪声较大的环境中能够高效工作，尤其适合在LF&#x2F;MF波段中进行弱信号通讯。 <strong>WSQ主要设计用于实时QSO（交流通信），并不适合用作信号探测或信标。</strong>它适合在160米、630米、2200米等长中波段进行弱信号通信，尤其适用于较深的衰退和较慢的信号衰落环境。</p>
+<p>WSQ使用33个频率，频率间隔为1.953125Hz，采用相位一致的MFSK调制方式，每个符号持续2.048秒。每个符号承载更多信息，因此尽管符号速率较低（0.512波特），但发射速度可达到每分钟5至7个字母，显著高于JASON等其他模式。WSQ的设计使其在噪声较大的环境中能够高效工作，尤其适合在LF&#x2F;MF波段中进行弱信号通讯。 <strong>WSQ主要设计用于实时QSO（交流通信），并不适合用作信号探测或信标。</strong>它适合在160米、630米、2200米等长中波段进行弱信号通信，尤其适用于极低的信噪比和较慢的信号衰落环境。</p>
 <p>WSQ2 的原始版本<a target="_blank" rel="noopener" href="https://www.qsl.net/zl1bpu/SOFT/WSQ.htm">ZL2AFP WSQ</a></p>
 <p>DL4YHF的改进版本<a target="_blank" rel="noopener" href="https://www.qsl.net/dl4yhf/WSQ/index.html">DL4YHF’s extended variant of WSQ &#x2F; WSQCall</a></p>
 <h3 id="JT9"><a href="#JT9" class="headerlink" title="JT9"></a>JT9</h3><p>JT65虽然很适合用于长波段上极弱但变化缓慢的传播特性，但由于它最开始设计用于EME和对流层散射，它占用的频率非常宽，不适合在狭窄的136kHz段发射。于是Joe K1JT使用与 JT65 相同的逻辑编码，针对 MF 和 HF 频段进行了优化设计了9-FSK编码的JT9，当然也可以用在136kHz。JT9 比 JT65A 灵敏度高大约2dB，最低可以在-27dB（2500Hz带宽）下解码，同时占用小于16Hz的带宽。</p>
@@ -656,181 +647,227 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">地球是一个球体。<br><br>地球表面光滑而均匀。<br><br>地球的电学性质（至少在某些地区）是均匀和恒定的。<br><br>电离层由距离地球表面不同高度的小层组成，这些层具有恒定的反射率（至少在一天、季节、太阳周期的部分时间内）。<br></code></pre></td></tr></table></figure>
 
 <h3 id="地波传播"><a href="#地波传播" class="headerlink" title="地波传播"></a>地波传播</h3><p>与我们熟悉的短波段不同，由于该频段的波长极长，地波的发射效率很高，可以沿着地球表面传播很远。</p>
-<p>地面波传播涉及电磁场沿地球表面传播，同时感应和被感应于地球表面及其稍微下方的电流。有时这些场被称为<strong>表面波</strong>。 如果地球土壤的电气性质是理想的，即具有无限的导电性、单位介电常数和单位磁导率，那么地面波的场强将严格遵循“反距离法则”。</p>
-<p>具体来说，如果在1公里的距离下，场强为1mV&#x2F;m，那么在10公里时场强为100μV&#x2F;m，在1000公里时为1μV&#x2F;m。 然而，实际情况并非如此，因为地球作为导体并不完美。地面中的射频电流会将射频场的能量转化为热量。</p>
-<h4 id="理想地面的理论场强"><a href="#理想地面的理论场强" class="headerlink" title="理想地面的理论场强"></a>理想地面的理论场强</h4><p>为了实地预测地面波的场强，国际无线电咨询委员会（CCIR）发布了368-6号推荐，提供了一组适用于典型地面性质的图表。   每个图表显示了25个频率（从10kHz到30MHz）在不同距离下的场强分布。   该方法基于数学模型编制，并通过实际测量验证，提供了准确的数据。</p>
+<p>地面波传播涉及电磁场沿地球表面传播，同时感应和被感应于地球表面及其稍微下方的电流。这些场被称为<strong>表面波</strong>。 如果地球土壤的电气性质是理想的，即具有无限的导电性、单位介电常数和单位磁导率，那么地面波的场强将严格遵循“反距离法则”。具体来说，如果在1公里的距离下，场强为1mV&#x2F;m，那么在10公里时场强为100μV&#x2F;m，在1000公里时为1μV&#x2F;m。 </p>
+<p>然而，实际情况并非如此，因为地球作为导体并不完美。地面中的射频电流会将射频场的能量转化为热量。</p>
+<h4 id="理想地面的理论场强"><a href="#理想地面的理论场强" class="headerlink" title="理想地面的理论场强"></a>理想地面的理论场强</h4><p>为了实地预测地面波的场强，国际无线电咨询委员会（CCIR）发布了368-6号推荐，提供了一组适用于典型地面性质的图表。每个图表显示了25个频率（从10kHz到30MHz）在不同距离下的场强分布。   该方法基于数学模型编制，并通过实际测量验证，提供了准确的数据。</p>
 <p>为了在我们的136kHz <code>（CEPT/ERC Rec. 62-01 E）</code>中使用，我选择了“平均地面”下的150 kHz图表（σ &#x3D; 3 mS&#x2F;m，ε &#x3D; 22），并为标准化的ERP &#x3D; 1 W编制了相关数值。<br>要适应其他ERP值，可以使用以下公式：<br><strong>E(ERP) &#x3D; E(1W) + 10 * log(ERP &#x2F; 1W)</strong></p>
-<p><strong>150 kHz图表（适用于“理想地面”）</strong></p>
+<p><strong>150 kHz图表（适用于“理想地面”）（接收天线增益视为0dBi）</strong></p>
 <table>
 <thead>
 <tr>
 <th>距离 (km)</th>
-<th>场强 (dBuV&#x2F;m)</th>
+<th>接收场强 (dBuV&#x2F;m)</th>
+<th>接收场强 (dBm)</th>
+<th>各模式覆盖极限</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>100</td>
 <td>37</td>
+<td>-70</td>
+<td></td>
 </tr>
 <tr>
 <td>200</td>
 <td>28</td>
+<td>-79</td>
+<td></td>
 </tr>
 <tr>
 <td>300</td>
 <td>23</td>
+<td>-84</td>
+<td></td>
 </tr>
 <tr>
 <td>400</td>
 <td>18</td>
+<td>-89</td>
+<td></td>
 </tr>
 <tr>
 <td>500</td>
 <td>13</td>
+<td>-94</td>
+<td></td>
 </tr>
 <tr>
 <td>600</td>
 <td>9</td>
+<td>-98</td>
+<td></td>
 </tr>
 <tr>
 <td>700</td>
 <td>5</td>
+<td>-102</td>
+<td></td>
 </tr>
 <tr>
 <td>800</td>
 <td>1</td>
+<td>-106</td>
+<td></td>
 </tr>
 <tr>
 <td>900</td>
 <td>-2</td>
+<td>-109</td>
+<td></td>
 </tr>
 <tr>
 <td>1000</td>
 <td>-6</td>
+<td>-113</td>
+<td>假设环境噪声场强</td>
 </tr>
 <tr>
 <td>1100</td>
 <td>-9</td>
+<td>-116</td>
+<td>CW覆盖极限</td>
 </tr>
 <tr>
 <td>1200</td>
 <td>-13</td>
+<td>-120</td>
+<td></td>
 </tr>
 <tr>
 <td>1300</td>
 <td>-17</td>
+<td>-124</td>
+<td></td>
 </tr>
 <tr>
 <td>1400</td>
 <td>-20</td>
+<td>-127</td>
+<td></td>
 </tr>
 <tr>
 <td>1500</td>
 <td>-23</td>
+<td>-130</td>
+<td></td>
 </tr>
 <tr>
 <td>1600</td>
 <td>-27</td>
+<td>-134</td>
+<td>QRSS-3覆盖极限</td>
 </tr>
 <tr>
 <td>1700</td>
 <td>-30</td>
+<td>-137</td>
+<td>Jason、WSQ2覆盖极限</td>
 </tr>
 <tr>
 <td>1800</td>
 <td>-34</td>
+<td>-141</td>
+<td>WSPR覆盖极限</td>
 </tr>
 <tr>
 <td>1900</td>
 <td>-37</td>
+<td>-144</td>
+<td></td>
 </tr>
 <tr>
 <td>2000</td>
 <td>-40</td>
+<td>-147</td>
+<td>FST4-300覆盖极限</td>
 </tr>
 <tr>
 <td>2100</td>
 <td>-43</td>
+<td>-150</td>
+<td></td>
 </tr>
 <tr>
 <td>2200</td>
 <td>-47</td>
+<td>-154</td>
+<td>FST4W-900覆盖极限</td>
 </tr>
 </tbody></table>
 <p>这个表格展示了在150 kHz频率下，标准化ERP &#x3D; 1 W的地面波在不同距离（100 km 到 2200 km）处的场强值。</p>
-<h4 id="137-kHz-实际地面波覆盖范围"><a href="#137-kHz-实际地面波覆盖范围" class="headerlink" title="137 kHz 实际地面波覆盖范围"></a>137 kHz 实际地面波覆盖范围</h4><p>实际的地面波覆盖范围将取决于接收机中可从外部噪声中区分的最低场强（信号等于噪声）。假设中频带宽（IF-BW）为500 Hz，等效的外部噪声水平为-9 dBuV&#x2F;m，这被视为一个“非常安静的站点”<code>（ITU-R Rec. Pl.372-6）</code>，适用于自然大气噪声和人为噪声。</p>
-<p>假设辐射功率为1 W，则地面波的有效覆盖范围（目标信号等于外部噪声），在所选的地面路径上，不受地面性质（假定为均匀）的影响，如下表所示：</p>
+<h4 id="137-kHz-实际地面波覆盖范围"><a href="#137-kHz-实际地面波覆盖范围" class="headerlink" title="137 kHz 实际地面波覆盖范围"></a>137 kHz 实际地面波覆盖范围</h4><p>实际的地面波覆盖范围将取决于接收机中可从外部噪声中区分的最低场强（信号场强等于噪声场强）。假设中频带宽（IF-BW）为500 Hz，等效的外部噪声水平为-9 dBuV&#x2F;m（-116dBm），这被视为一个“非常安静的站点”<code>（ITU-R Rec. Pl.372-6）</code>，适用于自然大气噪声和人为噪声。</p>
+<p>假设辐射功率为1 W，则地面波的有效覆盖范围，在所选的地面路径上，不受地面性质（假定为均匀）的影响，如下表所示：</p>
 <table>
 <thead>
 <tr>
 <th>地面类型</th>
-<th>电导率</th>
+<th>电导率(mS&#x2F;m)</th>
 <th>介电常数</th>
-<th>范围 (km)</th>
+<th>0dB覆盖范围 (km)</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>海水</td>
-<td>5 S&#x2F;m</td>
+<td>5000</td>
 <td>70</td>
 <td>1600</td>
 </tr>
 <tr>
 <td>沼泽地</td>
-<td>30 mS&#x2F;m</td>
+<td>30</td>
 <td>40</td>
 <td>1600</td>
 </tr>
 <tr>
 <td>湿地</td>
-<td>10 mS&#x2F;m</td>
+<td>10</td>
 <td>30</td>
 <td>1450</td>
 </tr>
 <tr>
 <td>淡水</td>
-<td>3 mS&#x2F;m</td>
+<td>3</td>
 <td>80</td>
 <td>1080</td>
 </tr>
 <tr>
 <td>平均地面</td>
-<td>3 mS&#x2F;m</td>
+<td>3</td>
 <td>22</td>
 <td>1100</td>
 </tr>
 <tr>
 <td>中干地面</td>
-<td>1 mS&#x2F;m</td>
+<td>1</td>
 <td>15</td>
 <td>700</td>
 </tr>
 <tr>
 <td>干地</td>
-<td>300 μS&#x2F;m</td>
+<td>0.3</td>
 <td>7</td>
 <td>430</td>
 </tr>
 <tr>
 <td>极干地面</td>
-<td>100 μS&#x2F;m</td>
+<td>0.1</td>
 <td>3</td>
 <td>290</td>
 </tr>
 <tr>
 <td>冰水（1°C）</td>
-<td>30 μS&#x2F;m</td>
+<td>0.03</td>
 <td>3</td>
 <td>200</td>
 </tr>
 <tr>
 <td>冰水（-10°C）</td>
-<td>10 μS&#x2F;m</td>
+<td>0.01</td>
 <td>3</td>
 <td>180</td>
 </tr>
 </tbody></table>
-<p>此表格展示了不同地面类型和电导率下，假设全向辐射功率为1 W时，地面波信号的有效覆盖范围。</p>
+<p>此表格展示了不同地面类型和电导率下，假设全向辐射功率为1 W时，地面波信号有效覆盖范围。默认接收方的天线接收增益为0dBi，0dB可以认为是人耳可清晰解码CW信号的场强。如果使用现代</p>
 <h3 id="天波传播"><a href="#天波传播" class="headerlink" title="天波传播"></a>天波传播</h3><p>天波传播涉及两种方式的电磁场离开天线。其一是沿着一个正角度（起始角 &#x3D; 10A）与地面水平形成的直线路径，另一种则是沿着一个负角度与地面形成的直线路径。后一条路径在某个距离上与地面发生反射，并最终与前一条路径平行传播（带有相位延迟）。有些人将第一部分天波称为直射波，第二部分天波称为地面反射波。</p>
 <p>根据发射天线站点的地面属性、天线的极化（在此情况下为垂直极化）以及起始角（TOA）的值，向上传播到电离层的综合天波具有不同的能量，即使在相同的ERP条件下。</p>
 <h4 id="天波的电离层折射"><a href="#天波的电离层折射" class="headerlink" title="天波的电离层折射"></a>天波的电离层折射</h4><p>向上传播的天波在一定的地面距离上到达电离层的边界。其传播方向与垂直于电离层边界的线形成一个角度（电离层入射角 AOI）。天波进入电离层区域后，与电离层中的分子和离子发生能量交换，同时不断被折射。折射现象的发生是由于在导电的电离层区域，传播速度随着电离化程度的提高而增加。传播波的上层部分在进入电离层区域后，速度比下层部分更快。这类似于光束通过玻璃棱镜时所观察到的现象。</p>
