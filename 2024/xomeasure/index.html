@@ -22,7 +22,7 @@
     <meta name="description" content="日期：2024-09-24 前言前几日从 BD6CR 进货一些晶振，用的时候却犯了难：如何测量晶振的参数呢？想到好像在 NanoVNA 里看到过 SERIES XTAL (S21) 的选项，拿来一看果然有，随笔一写。 测量过程： 把晶振的两端接到 NanoVNA 两 SMA 口的内芯里   我们需要查看 NanoVNA 的 S21 相角，依照晶振标定频率调节 NanoVNA 的频率上下限能看到相角">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NanoVNA 测量晶振参数随笔">
-<meta property="og:url" content="http://naturewind846.github.io/xomeasure/index.html">
+<meta property="og:url" content="http://naturewind846.github.io/2024/xomeasure/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
 <meta property="og:description" content="日期：2024-09-24 前言前几日从 BD6CR 进货一些晶振，用的时候却犯了难：如何测量晶振的参数呢？想到好像在 NanoVNA 里看到过 SERIES XTAL (S21) 的选项，拿来一看果然有，随笔一写。 测量过程： 把晶振的两端接到 NanoVNA 两 SMA 口的内芯里   我们需要查看 NanoVNA 的 S21 相角，依照晶振标定频率调节 NanoVNA 的频率上下限能看到相角">
 <meta property="og:locale" content="zh_CN">
@@ -295,25 +295,25 @@
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前几日从 BD6CR 进货一些晶振，用的时候却犯了难：如何测量晶振的参数呢？想到好像在 NanoVNA 里看到过 SERIES XTAL (S21) 的选项，拿来一看果然有，随笔一写。</p>
 <h3 id="测量过程："><a href="#测量过程：" class="headerlink" title="测量过程："></a>测量过程：</h3><ol>
 <li><p>把晶振的两端接到 NanoVNA 两 SMA 口的内芯里</p>
-<img src="/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE%E7%A4%BA.webp" srcset="/img/loading.gif" lazyload class="" title="测量图示">
+<img src="/2024/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE%E7%A4%BA.webp" srcset="/img/loading.gif" lazyload class="" title="测量图示">
 </li>
 <li><p>我们需要查看 NanoVNA 的 S21 相角，依照晶振标定频率调节 NanoVNA 的频率上下限能看到相角从 90° 到 - 90° 和 - 90° 到 90° 的过程，或者查看 S21 串联电抗，能看到电抗从 -∞到＋∞，再变回 -∞的过程。如图黄色为相角，绿色为串联电抗。</p>
-<img src="/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE1.webp" srcset="/img/loading.gif" lazyload class="" title="测量图1">
+<img src="/2024/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE1.webp" srcset="/img/loading.gif" lazyload class="" title="测量图1">
 
 <p>此处特别注意：这里的S21 phase是波形从S11出发回到S21测量得到的两端口相位差，与我们平常说的相角——电压与电流相位差，不是一个东西。</p>
 </li>
 <li><p>打开测量 - SERIES XTAL，查看晶振参数</p>
-<img src="/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE2.webp" srcset="/img/loading.gif" lazyload class="" title="测量图2">
+<img src="/2024/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE2.webp" srcset="/img/loading.gif" lazyload class="" title="测量图2">
 </li>
 <li><p>由于 NanoVNA 测量点较少（我手头的NanoVNA 2.4寸版只有100点），误差肯定不小，可以缩小频率范围来减小误差。</p>
 <p>顺带一提：测量带宽需要设置小一点，100Hz 即可，扫描太快 NanoVNA 的扫描点频率不干净，结果差距比较大，尤其是测量频率上下限差较大的时候。</p>
-<img src="/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE3.webp" srcset="/img/loading.gif" lazyload class="" title="测量图3"></li>
+<img src="/2024/xomeasure/%E6%B5%8B%E9%87%8F%E5%9B%BE3.webp" srcset="/img/loading.gif" lazyload class="" title="测量图3"></li>
 </ol>
 <h3 id="知识：晶振等效电路"><a href="#知识：晶振等效电路" class="headerlink" title="知识：晶振等效电路"></a>知识：晶振等效电路</h3><p>一颗无源晶振可以等效为如图所示的电路。</p>
-<img src="/xomeasure/%E6%99%B6%E6%8C%AF%E7%AD%89%E6%95%88%E7%94%B5%E8%B7%AF.webp" srcset="/img/loading.gif" lazyload class="" title="晶振等效电路">
+<img src="/2024/xomeasure/%E6%99%B6%E6%8C%AF%E7%AD%89%E6%95%88%E7%94%B5%E8%B7%AF.webp" srcset="/img/loading.gif" lazyload class="" title="晶振等效电路">
 
 <p>C0（NanoVNA 里为 Cg）并联电容：两个电极间形成的电容；<br>Lm 动态等效电感：代表机械振动的惯性；<br>Cm 动态等效电容：代表晶振的弹性；<br>Rm 动态等效电阻：代表电路的损耗。<br>常见的电路仿真软件仿真晶振，都是用到这四个参数。</p>
-<h3 id="知识：晶振的阻抗特性曲线与相频特性曲线"><a href="#知识：晶振的阻抗特性曲线与相频特性曲线" class="headerlink" title="知识：晶振的阻抗特性曲线与相频特性曲线"></a>知识：晶振的阻抗特性曲线与相频特性曲线</h3><img src="/xomeasure/%E6%99%B6%E6%8C%AF%E7%9A%84%E9%98%BB%E6%8A%97%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF%E4%B8%8E%E7%9B%B8%E9%A2%91%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF.webp" srcset="/img/loading.gif" lazyload class="" title="晶振的阻抗特性曲线与相频特性曲线">
+<h3 id="知识：晶振的阻抗特性曲线与相频特性曲线"><a href="#知识：晶振的阻抗特性曲线与相频特性曲线" class="headerlink" title="知识：晶振的阻抗特性曲线与相频特性曲线"></a>知识：晶振的阻抗特性曲线与相频特性曲线</h3><img src="/2024/xomeasure/%E6%99%B6%E6%8C%AF%E7%9A%84%E9%98%BB%E6%8A%97%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF%E4%B8%8E%E7%9B%B8%E9%A2%91%E7%89%B9%E6%80%A7%E6%9B%B2%E7%BA%BF.webp" srcset="/img/loading.gif" lazyload class="" title="晶振的阻抗特性曲线与相频特性曲线">
 
 <p>上图 Fs 和 Fa（NanoVNA 里为 Fp）之间区域，晶振呈感性，为并联谐振工作状态。<br> 其中 Fs 是当电抗 X＝0 时的串联谐振频率：<br>$$<br>{F_s&#x3D;\frac1{2\pi\sqrt{L_mC_m}}}<br>$$<br> Fa 是当电抗 X 趋于无穷大时的并联谐振频率：<br>$$<br>{F_a&#x3D;F_s\sqrt{1+\frac{C_m}{C_0}}}<br>$$<br> 晶振根据负载电容 CL 不同，具有不同的工作频率。<br> 具体工作频率 F 公式为：<br>$$<br>{F&#x3D;F_s\left(1+\frac{C_m}{2(C_0+C_L)}\right)}<br>$$</p>
 
@@ -366,7 +366,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>NanoVNA 测量晶振参数随笔</div>
-      <div>http://naturewind846.github.io/xomeasure/</div>
+      <div>http://naturewind846.github.io/2024/xomeasure/</div>
     </div>
     <div class="license-meta">
       
@@ -410,7 +410,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/langfangyanji/" title="廊坊验机记——廊坊第一部合法的自制电台">
+                      <a href="/2024/langfangyanji/" title="廊坊验机记——廊坊第一部合法的自制电台">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">廊坊验机记——廊坊第一部合法的自制电台</span>
                         <span class="visible-mobile">上一篇</span>
@@ -420,7 +420,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/pcbpaddlekey/" title="经济适用 PCB 磁回弹双桨自动电键制作">
+                      <a href="/2024/pcbpaddlekey/" title="经济适用 PCB 磁回弹双桨自动电键制作">
                         <span class="hidden-mobile">经济适用 PCB 磁回弹双桨自动电键制作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

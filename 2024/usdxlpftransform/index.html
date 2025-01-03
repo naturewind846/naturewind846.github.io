@@ -19,23 +19,26 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日期：2024-11-13 Blog 前言这是我第一次建个人站，第一篇blog，姑且是看着教程搭起来了。 未来的内容，先把我以前玩无线电的过程写下来吧。所以可能会有时间倒流的现象出现不写下来感觉白玩了 柏林以东偷听ing~~~~   （图片的测试）">
+    <meta name="description" content="uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。   如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World! BH3PTS Blog的第一篇文章">
-<meta property="og:url" content="http://naturewind846.github.io/helloworld/index.html">
+<meta property="og:title" content="uSDX的功放改造">
+<meta property="og:url" content="http://naturewind846.github.io/2024/usdxlpftransform/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="日期：2024-11-13 Blog 前言这是我第一次建个人站，第一篇blog，姑且是看着教程搭起来了。 未来的内容，先把我以前玩无线电的过程写下来吧。所以可能会有时间倒流的现象出现不写下来感觉白玩了 柏林以东偷听ing~~~~   （图片的测试）">
+<meta property="og:description" content="uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。   如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://naturewind846.github.io/helloworld/helloworld-1.jpg">
-<meta property="article:published_time" content="2024-11-13T05:59:13.863Z">
-<meta property="article:modified_time" content="2024-11-16T12:58:49.111Z">
+<meta property="og:image" content="http://naturewind846.github.io/img/c6dcb484f3c0d514164355d7a1a7fc22.jpg">
+<meta property="article:published_time" content="2024-10-29T04:56:41.000Z">
+<meta property="article:modified_time" content="2024-11-16T13:10:09.290Z">
 <meta property="article:author" content="naturewind846">
+<meta property="article:tag" content="Ham">
+<meta property="article:tag" content="uSDX">
+<meta property="article:tag" content="DIY制作">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://naturewind846.github.io/helloworld/helloworld-1.jpg">
+<meta name="twitter:image" content="http://naturewind846.github.io/img/c6dcb484f3c0d514164355d7a1a7fc22.jpg">
   
   
   
-  <title>Hello World! BH3PTS Blog的第一篇文章 - NatureWind Blog</title>
+  <title>uSDX的功放改造 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hello World! BH3PTS Blog的第一篇文章</span>
+            <span id="subtitle">uSDX的功放改造</span>
           
         </div>
 
@@ -223,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-13 13:59" pubdate>
-          2024年11月13日 下午
+        <time datetime="2024-10-29 12:56" pubdate>
+          2024年10月29日 下午
         </time>
       </span>
     
@@ -235,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          89 字
+          532 字
         
       </span>
     
@@ -246,7 +249,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -283,18 +286,105 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World! BH3PTS Blog的第一篇文章</h1>
+            <h1 id="seo-header">uSDX的功放改造</h1>
             
             
               <div class="markdown-body">
                 
-                <p><em>日期：2024-11-13</em></p>
-<h3 id="Blog-前言"><a href="#Blog-前言" class="headerlink" title="Blog 前言"></a>Blog 前言</h3><p>这是我第一次建个人站，第一篇blog，姑且是看着教程搭起来了。</p>
-<p>未来的内容，先把我以前玩无线电的过程写下来吧。所以可能会有时间倒流的现象出现<del>不写下来感觉白玩了</del></p>
-<p><u>柏林以东偷听ing~~~~</u></p>
-<img src="/helloworld/helloworld-1.jpg" srcset="/img/loading.gif" lazyload class="" title="helloworld-1">
+                <p>uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。</p>
+<img src="/2024/usdxlpftransform/image-20241116210036546.png" srcset="/img/loading.gif" lazyload class="" title="image-20241116210036546">
 
-<p>（图片的测试）</p>
+<p>如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx为了提供电抗，消除电压和电流之间的相位差，使功率因数为1。RFC为射频扼流圈，防止高频信号流入电源。RFC没有确定值，一般选用铁氧体磁环绕制，设计时计算出最小值，比它大即可。</p>
+<p>偶然的机会，BI4KSR发给我一份uSDX88s的设计，这个设计用的是T30-2和T30-6，因此匝数和王老师设计的uSDX使用T37大小磁环并不一样。</p>
+<img src="/2024/usdxlpftransform/dcd50b7113c74ffc720523a7b3f0f5d.png" srcset="/img/loading.gif" lazyload class="" title="dcd50b7113c74ffc720523a7b3f0f5d">
+
+<p>同样的电容配置，但是uSDX88s可以出六七瓦的功率。王老师的解答也发过来了。</p>
+<img src="/2024/usdxlpftransform/22f5169862526531854865ea4603ff6.jpg" srcset="/img/loading.gif" lazyload class="" title="22f5169862526531854865ea4603ff6">
+
+<p>开始拆焊改绕磁环。</p>
+<p>参数的话，就计算uSDX88S的磁环感值，换算到T37磁环上吧。</p>
+<table>
+<thead>
+<tr>
+<th>频段</th>
+<th>原始设计L1</th>
+<th>原始设计L2</th>
+<th>计算结果L1</th>
+<th>计算结果L2</th>
+<th>88S L1</th>
+<th>88S L2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>28MHz</td>
+<td>8</td>
+<td>5</td>
+<td><strong>7</strong></td>
+<td><strong>5</strong></td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr>
+<td>21MHz</td>
+<td>9</td>
+<td>6</td>
+<td><strong>8</strong></td>
+<td><strong>6</strong></td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr>
+<td>14MHz</td>
+<td>12</td>
+<td>8</td>
+<td><strong>10</strong></td>
+<td><strong>8</strong></td>
+<td>9</td>
+<td>7</td>
+</tr>
+<tr>
+<td>10MHz</td>
+<td>12</td>
+<td>8</td>
+<td><strong>11</strong></td>
+<td><strong>8</strong></td>
+<td>11</td>
+<td>8</td>
+</tr>
+<tr>
+<td>7MHz</td>
+<td>15</td>
+<td>9</td>
+<td><strong>14</strong></td>
+<td><strong>9</strong></td>
+<td>13</td>
+<td>9</td>
+</tr>
+</tbody></table>
+<p>计算结果，第二个低通的磁环都一样，只有第一个E类功放的磁环数据不一样，按照计算结果重绕14MHz的磁环。</p>
+<img src="/2024/usdxlpftransform/a2185549-b447-4446-8ba8-019e69c615e0.png" srcset="/img/loading.gif" lazyload class="" title="a2185549-b447-4446-8ba8-019e69c615e0">
+
+<p>上电，测试，功率5.5W，杂散也完美。</p>
+<img src="/2024/usdxlpftransform/105878b1cb145c63d5824853d54b219e.jpg" srcset="/img/loading.gif" lazyload class="" title="105878b1cb145c63d5824853d54b219e">
+
+<p>非常的惊喜，赶紧试试改21MHz和28MHz。</p>
+<img src="/2024/usdxlpftransform/f83762da6976ce0a0cac2a999ce7ddd8.jpg" srcset="/img/loading.gif" lazyload class="" title="f83762da6976ce0a0cac2a999ce7ddd8">
+
+<img src="/2024/usdxlpftransform/c6dcb484f3c0d514164355d7a1a7fc22.jpg" srcset="/img/loading.gif" lazyload class="" title="c6dcb484f3c0d514164355d7a1a7fc22">
+
+<p>21MHz更是来到6W，杂散也有-52dbc。</p>
+<img src="/2024/usdxlpftransform/d05d97b7550d36ad99ce7457aa7d6818.jpg" srcset="/img/loading.gif" lazyload class="" title="d05d97b7550d36ad99ce7457aa7d6818">
+
+<p>28MHz改后虽然只有4.3W，但是杂散合格了，也不错。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>uSDX某些波段觉得功率不够完美的，就是第一个磁环的阻抗匹配没做好。</p>
+<p> 20米段12匝黄磁环改绕10匝</p>
+<p>15米段9匝磁环改绕8匝</p>
+<p>10米段8匝磁环改绕7匝</p>
+<p>实测（13.8V PA bias均为180）：</p>
+<p>20米改后功率3.7w提升至5.5w</p>
+<p>15米改后4.0W提升6.1w</p>
+<p>10米改后2.8w提升4.3w</p>
+<p><strong>足足有1.8dB的提升</strong></p>
 
                 
               </div>
@@ -303,6 +393,38 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="category-chain-item">无线电</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
+      
+        <a href="/tags/uSDX/" class="print-no-link">#uSDX</a>
+      
+        <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
+      
+    </div>
   
 </div>
 
@@ -312,8 +434,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World! BH3PTS Blog的第一篇文章</div>
-      <div>http://naturewind846.github.io/helloworld/</div>
+      <div>uSDX的功放改造</div>
+      <div>http://naturewind846.github.io/2024/usdxlpftransform/</div>
     </div>
     <div class="license-meta">
       
@@ -325,7 +447,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月13日</div>
+          <div>2024年10月29日</div>
         </div>
       
       
@@ -357,9 +479,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/tx136-4/" title="Juma TX136 4 控制软件神通广大，ChatGPT大显神威">
+                      <a href="/2024/tx136-3/" title="Juma TX136 3 终于成功发射了，但是还没完">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Juma TX136 4 控制软件神通广大，ChatGPT大显神威</span>
+                        <span class="hidden-mobile">Juma TX136 3 终于成功发射了，但是还没完</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -367,8 +489,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tx136-3/" title="Juma TX136 3 终于成功发射了，但是还没完">
-                        <span class="hidden-mobile">Juma TX136 3 终于成功发射了，但是还没完</span>
+                      <a href="/2024/usdxtxtest/" title="uSDX的SSB发射质量如何？测试比较">
+                        <span class="hidden-mobile">uSDX的SSB发射质量如何？测试比较</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

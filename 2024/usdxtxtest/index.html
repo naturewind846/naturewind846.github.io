@@ -19,26 +19,26 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="设计分享日期：2024-08-31   成品自动电键太贵了，用立创 PCB 免费打印面板，螺丝和磁铁拧起来就是一个像模像样的自动键   制作的外形其实参考了淘宝上的“盔甲增强版 双桨自动键”。这个电键用的是CNC加工，可以直接开孔攻丝，不需要额外的螺母固定。不过相对的，pcb的好处是不用费心做绝缘，一个板子足以全部制作好，至于桨柱上的走线更多是为了过嘉立创的防拼版审核（）。 日期：2024-09-">
+    <meta name="description" content="前言uSDX 的 SSB 发射利用数字直接频率合成技术，对输入音频采样后，通过控制 SI5351 进行每秒 4800 次频率控制和 PWM 键控或 PWM PA 偏置电压调节来调制幅度最终再现。换句话说，uSDX 的发射音频采样率 4800Hz，有效带宽只有 2400Hz，超过 2400Hz 的频率会发生奈奎斯特混叠（最好严格控制输入音频不超过 2400Hz） 下面是简单测试的图像：完整测试视频在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="经济适用 PCB 磁回弹双桨自动电键制作">
-<meta property="og:url" content="http://naturewind846.github.io/pcbpaddlekey/index.html">
+<meta property="og:title" content="uSDX的SSB发射质量如何？测试比较">
+<meta property="og:url" content="http://naturewind846.github.io/2024/usdxtxtest/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="设计分享日期：2024-08-31   成品自动电键太贵了，用立创 PCB 免费打印面板，螺丝和磁铁拧起来就是一个像模像样的自动键   制作的外形其实参考了淘宝上的“盔甲增强版 双桨自动键”。这个电键用的是CNC加工，可以直接开孔攻丝，不需要额外的螺母固定。不过相对的，pcb的好处是不用费心做绝缘，一个板子足以全部制作好，至于桨柱上的走线更多是为了过嘉立创的防拼版审核（）。 日期：2024-09-">
+<meta property="og:description" content="前言uSDX 的 SSB 发射利用数字直接频率合成技术，对输入音频采样后，通过控制 SI5351 进行每秒 4800 次频率控制和 PWM 键控或 PWM PA 偏置电压调节来调制幅度最终再现。换句话说，uSDX 的发射音频采样率 4800Hz，有效带宽只有 2400Hz，超过 2400Hz 的频率会发生奈奎斯特混叠（最好严格控制输入音频不超过 2400Hz） 下面是简单测试的图像：完整测试视频在">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://naturewind846.github.io/img/%E6%88%90%E5%93%81%E5%9B%BE.webp">
-<meta property="article:published_time" content="2024-08-31T12:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-13T16:10:42.072Z">
+<meta property="og:image" content="http://naturewind846.github.io/img/sct1-1731504130874-7.webp">
+<meta property="article:published_time" content="2024-10-16T13:18:02.000Z">
+<meta property="article:modified_time" content="2024-11-13T16:11:02.856Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
+<meta property="article:tag" content="uSDX">
 <meta property="article:tag" content="DIY制作">
-<meta property="article:tag" content="CW">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://naturewind846.github.io/img/%E6%88%90%E5%93%81%E5%9B%BE.webp">
+<meta name="twitter:image" content="http://naturewind846.github.io/img/sct1-1731504130874-7.webp">
   
   
   
-  <title>经济适用 PCB 磁回弹双桨自动电键制作 - NatureWind Blog</title>
+  <title>uSDX的SSB发射质量如何？测试比较 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +215,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">经济适用 PCB 磁回弹双桨自动电键制作</span>
+            <span id="subtitle">uSDX的SSB发射质量如何？测试比较</span>
           
         </div>
 
@@ -226,8 +226,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-31 20:00" pubdate>
-          2024年8月31日 晚上
+        <time datetime="2024-10-16 21:18" pubdate>
+          2024年10月16日 晚上
         </time>
       </span>
     
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          319 字
+          253 字
         
       </span>
     
@@ -286,30 +286,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">经济适用 PCB 磁回弹双桨自动电键制作</h1>
+            <h1 id="seo-header">uSDX的SSB发射质量如何？测试比较</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="设计分享"><a href="#设计分享" class="headerlink" title="设计分享"></a>设计分享</h3><p><em>日期：2024-08-31</em></p>
-<img src="/pcbpaddlekey/%E6%88%90%E5%93%81%E5%9B%BE.webp" srcset="/img/loading.gif" lazyload class="" title="成品图">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>uSDX 的 SSB 发射利用数字直接频率合成技术，对输入音频采样后，通过控制 SI5351 进行每秒 4800 次频率控制和 PWM 键控或 PWM PA 偏置电压调节来调制幅度最终再现。<br>换句话说，uSDX 的发射音频采样率 4800Hz，有效带宽只有 2400Hz，超过 2400Hz 的频率会发生奈奎斯特混叠（最好严格控制输入音频不超过 2400Hz）</p>
+<p>下面是简单测试的图像：<br>完整测试视频在：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1iomwYbEQn/">https://www.bilibili.com/video/BV1iomwYbEQn/</a></p>
+<h3 id="FSK-测试："><a href="#FSK-测试：" class="headerlink" title="FSK 测试："></a>FSK 测试：</h3><img src="/2024/usdxtxtest/ft8.webp" srcset="/img/loading.gif" lazyload class="" title="ft8">
 
-<p>成品自动电键太贵了，用立创 PCB 免费打印面板，螺丝和磁铁拧起来就是一个像模像样的自动键</p>
-<img src="/pcbpaddlekey/pcblayout%E5%9B%BE.webp" srcset="/img/loading.gif" lazyload class="" title="pcb layout图">
+<img src="/2024/usdxtxtest/q65.webp" srcset="/img/loading.gif" lazyload class="" title="q65">
 
-<p>制作的外形其实参考了淘宝上的“盔甲增强版 双桨自动键”。这个电键用的是CNC加工，可以直接开孔攻丝，不需要额外的螺母固定。不过相对的，pcb的好处是不用费心做绝缘，一个板子足以全部制作好，至于桨柱上的走线更多是为了过嘉立创的防拼版审核（）。</p>
-<p>日期：2024-09-09</p>
-<p>电键做出来，很多ham响应，许多我做的时候没出现的问题接踵而至。</p>
-<img src="/pcbpaddlekey/%E9%98%B2%E6%AD%A2%E9%98%BB%E7%84%8A%E7%A3%A8%E5%9D%8F%E7%9A%84%E5%B0%8F%E6%94%B9%E8%BF%9B.webp" srcset="/img/loading.gif" lazyload class="" title="防止阻焊磨坏的小改进">
+<p>FT8 和 Q65 的发射质量相当好，频谱很干净。</p>
+<h3 id="SSTV-测试："><a href="#SSTV-测试：" class="headerlink" title="SSTV 测试："></a>SSTV 测试：</h3><img src="/2024/usdxtxtest/sct1-1731504130874-7.webp" srcset="/img/loading.gif" lazyload class="" title="sct1">
 
-<p>没想到还会有螺丝刮断阻焊层导致的短路👿把铺铜抠掉了几块，罪魁祸首过孔也删掉了。如果还有短路可以在磁铁底座上加簧片。</p>
-<img src="/pcbpaddlekey/%E9%98%B2%E6%AD%A2%E7%9F%AD%E8%B7%AF%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95.webp" srcset="/img/loading.gif" lazyload class="" title="防止短路终极解决办法">
+<p><strong>Scottie 1 测试图像</strong></p>
+<img src="/2024/usdxtxtest/bw12.webp" srcset="/img/loading.gif" lazyload class="" title="bw12">
 
+<p><strong>B&#x2F;W 12 测试图像</strong></p>
+<img src="/2024/usdxtxtest/origin.webp" srcset="/img/loading.gif" lazyload class="" title="origin">
 
+<p><strong>原始图像</strong></p>
+<h3 id="人声和音乐测试："><a href="#人声和音乐测试：" class="headerlink" title="人声和音乐测试："></a>人声和音乐测试：</h3><img src="/2024/usdxtxtest/sound.webp" srcset="/img/loading.gif" lazyload class="" title="sound">
 
-<h3 id="关于手感问题"><a href="#关于手感问题" class="headerlink" title="关于手感问题"></a>关于手感问题</h3><p>实话实说手感并不咋地，行程太大了，而且不好找到能配合调行程的螺丝，考虑到成本那么低（17元）那就这样吧，希望调节的可以用一坨锡糊上去。</p>
-<h3 id="制作教程指路："><a href="#制作教程指路：" class="headerlink" title="制作教程指路："></a>制作教程指路：</h3><p>github： <a target="_blank" rel="noopener" href="https://github.com/naturewind846/CheapPcbPaddleKey/">https://github.com/naturewind846/CheapPcbPaddleKey/</a></p>
-<p>gitee： <a target="_blank" rel="noopener" href="https://gitee.com/naturewind/CheapPcbPaddleKey">https://gitee.com/naturewind/CheapPcbPaddleKey</a></p>
+<p>（参照视频）频谱开始变脏，发射质量变差，混叠现象开始出现。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>uSDX 是一部实验性质的电台，适合 FSK 和其他频率变化小低采样率也能满足的调制格式。它主要用途应该是学习，而非与商品机比较。</p>
 
                 
               </div>
@@ -345,9 +346,9 @@
       
         <a href="/tags/Ham/" class="print-no-link">#Ham</a>
       
-        <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
+        <a href="/tags/uSDX/" class="print-no-link">#uSDX</a>
       
-        <a href="/tags/CW/" class="print-no-link">#CW</a>
+        <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
       
     </div>
   
@@ -359,8 +360,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>经济适用 PCB 磁回弹双桨自动电键制作</div>
-      <div>http://naturewind846.github.io/pcbpaddlekey/</div>
+      <div>uSDX的SSB发射质量如何？测试比较</div>
+      <div>http://naturewind846.github.io/2024/usdxtxtest/</div>
     </div>
     <div class="license-meta">
       
@@ -372,7 +373,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月31日</div>
+          <div>2024年10月16日</div>
         </div>
       
       
@@ -404,9 +405,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/xomeasure/" title="NanoVNA 测量晶振参数随笔">
+                      <a href="/2024/usdxlpftransform/" title="uSDX的功放改造">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">NanoVNA 测量晶振参数随笔</span>
+                        <span class="hidden-mobile">uSDX的功放改造</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -414,8 +415,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/tx136-2/" title="Juma TX136 2 准备、制作与调试">
-                        <span class="hidden-mobile">Juma TX136 2 准备、制作与调试</span>
+                      <a href="/2024/langfangyanji/" title="廊坊验机记——廊坊第一部合法的自制电台">
+                        <span class="hidden-mobile">廊坊验机记——廊坊第一部合法的自制电台</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

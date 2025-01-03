@@ -19,23 +19,30 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="原文链接：Developments in high power longwave radio: A brief history | IEEE Conference Publication | IEEE Xplore 本文为该论文的翻译 摘要The early history of radio is really about longwave (VLF&#x2F;LF). This paper pr">
+    <meta name="description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 下文提到的所有程序都附在我的github库里： JumaTX136Controler 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   看图就明白了，寥寥无几的功能。     再看看">
 <meta property="og:type" content="article">
-<meta property="og:title" content="无线电史话：高功率长波无线电发射系统发展简史（翻译文章）">
-<meta property="og:url" content="http://naturewind846.github.io/Developments-in-high-power-longwave-radio-A-brief-history/index.html">
+<meta property="og:title" content="Juma TX136 4 控制软件神通广大，ChatGPT大显神威">
+<meta property="og:url" content="http://naturewind846.github.io/2024/tx136-4/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="原文链接：Developments in high power longwave radio: A brief history | IEEE Conference Publication | IEEE Xplore 本文为该论文的翻译 摘要The early history of radio is really about longwave (VLF&#x2F;LF). This paper pr">
+<meta property="og:description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 下文提到的所有程序都附在我的github库里： JumaTX136Controler 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   看图就明白了，寥寥无几的功能。     再看看">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-12-27T02:09:00.000Z">
-<meta property="article:modified_time" content="2024-12-27T15:13:09.958Z">
+<meta property="og:image" content="http://naturewind846.github.io/img/1730529724-248708-image.webp">
+<meta property="article:published_time" content="2024-11-13T18:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-16T13:17:20.270Z">
 <meta property="article:author" content="naturewind846">
+<meta property="article:tag" content="Ham">
+<meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="长波">
-<meta property="article:tag" content="无线电史">
+<meta property="article:tag" content="CW">
+<meta property="article:tag" content="JumaTX136">
+<meta property="article:tag" content="长波发射机">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://naturewind846.github.io/img/1730529724-248708-image.webp">
   
   
   
-  <title>无线电史话：高功率长波无线电发射系统发展简史（翻译文章） - NatureWind Blog</title>
+  <title>Juma TX136 4 控制软件神通广大，ChatGPT大显神威 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">无线电史话：高功率长波无线电发射系统发展简史（翻译文章）</span>
+            <span id="subtitle">Juma TX136 4 控制软件神通广大，ChatGPT大显神威</span>
           
         </div>
 
@@ -223,8 +230,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-27 10:09" pubdate>
-          2024年12月27日 上午
+        <time datetime="2024-11-14 02:00" pubdate>
+          2024年11月14日 凌晨
         </time>
       </span>
     
@@ -235,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k 字
+          1.2k 字
         
       </span>
     
@@ -246,7 +253,7 @@
         
         
         
-          26 分钟
+          10 分钟
         
       </span>
     
@@ -283,43 +290,55 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">无线电史话：高功率长波无线电发射系统发展简史（翻译文章）</h1>
+            <h1 id="seo-header">Juma TX136 4 控制软件神通广大，ChatGPT大显神威</h1>
             
             
               <div class="markdown-body">
                 
-                <p>原文链接：<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/7696214">Developments in high power longwave radio: A brief history | IEEE Conference Publication | IEEE Xplore</a></p>
-<p>本文为该论文的翻译</p>
-<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>The early history of radio is really about longwave (VLF&#x2F;LF). This paper presents a brief summary of the development of high-power longwave radio transmission from the beginning of radio to the present. The early experimenters discovered that reliable long-range communications was better at lower frequencies. By the mid 1920’s all transoceanic radio communication was high-power VLF. High-power VLF&#x2F;LF is still used for navigation, timing and submarine communications. There are five overlapping generations of high-power longwave radio transmitting systems involving changes in transmitter types, antennas and modulation formats. Each is discussed and examples of transmitting sites for each generation are given.</p>
-<p>无线电的早期历史实际上是关于长波（VLF&#x2F;LF）的发展。本文简要概述了从无线电诞生到现在高功率长波无线电传输的发展历程。早期的实验者发现，低频段（如VLF）在进行远程通信时具有更好的可靠性。到1920年代中期，所有的跨洋无线电通信都采用高功率VLF信号。高功率VLF&#x2F;LF至今仍被广泛用于导航、定时和潜艇通信。高功率长波无线电发射系统经历了五代发展阶段，每一代都涉及发射机类型、天线和调制方式的变化。本文对每一代的系统进行了讨论，并为每一代发射站举例。</p>
-<p><strong>Published in:</strong> <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/xpl/conhome/7588778/proceeding">2016 IEEE International Symposium on Antennas and Propagation (APSURSI)</a></p>
-<p><strong>Date of Conference:</strong> 26 June 2016 - 01 July 2016</p>
-<p><strong>Date Added to IEEE <em>Xplore</em>:</strong> 27 October 2016</p>
-<p><strong>ISBN Information:</strong></p>
-<p>**Electronic ISBN:**978-1-5090-2886-3</p>
-<p>**USB ISBN:**978-1-5090-2885-6</p>
-<p>**Print on Demand(PoD) ISBN:**978-1-5090-2887-0</p>
-<p><strong>Electronic ISSN:</strong> 1947-1491</p>
-<p><strong>DOI:</strong> <a target="_blank" rel="noopener" href="https://doi.org/10.1109/APS.2016.7696214">10.1109&#x2F;APS.2016.7696214</a></p>
-<p><strong>Publisher:</strong> IEEE</p>
-<p><strong>Conference Location:</strong> Fajardo, PR, USA</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>无线通信的历史包含了许多有趣的方面[1]–[5]。美国海军一直有着远程通信的需求，并且从无线电发展的初期就参与其中。较少为人所知的是，美国海军中尉Bradly A. Fisk在1890年代初期就展示了无线通信，且据称是在马可尼著名实验之前。他通过绕在“亚特兰大号”上的线圈制作了一个大型电磁铁，并利用断续电流生成信号，实现在两艘舰船之间的短距离无线通信[1]。</p>
-<p>马可尼最初使用的是火花间隙发射机。到1901年，Poldhu电台已经能够向200英里外的舰船发送信号。Poldhu电台的原始天线是一个倒置的圆锥形天线，后来在一次风暴中受损，便用50根导线的风扇形天线取而代之，并用于1901年12月12日的著名跨大西洋实验。此后，许多商业和军事无线电台开始建设。</p>
-<p>马可尼实验了多种天线设计，其中包括伞形顶部加载天线，这种设计降低了工作频率，最终他选择了大型平顶三角天线<code>flat-top triatic antennas</code>。首个商业化的跨大西洋通信服务是在纽芬兰格雷斯湾与爱尔兰克里夫登之间进行的，工作频率为82kHz。1912年，美国海军率先将其电台的名称从“wireless”改为“radio”，这一术语后来被整个通信行业采纳。到1914年，美国海军已拥有超过50个陆地电台和250个舰载电台。到1920年，全球已有超过20个高功率VLF电台投入使用。</p>
-<p>VLF频段由于其较低的衰减和较为稳定的传播特性，特别是在12至30kHz的频带内，成为优选频段。马可尼在20世纪30年代尝试了更高频率的传播，并且随着时间的推移，大多数无线通信已经迁移到更高的频率。然而，许多高功率长波电台仍在运行，主要用于潜艇通信，也有一些用于导航和定时。VLF频段被用于潜艇通信，因为它能够一定程度地穿透海水，使潜艇能够接收信号，而且在电离层条件受到扰动时（如太阳耀斑和核爆炸）信号仍能稳定传播。</p>
-<p>长波通信的发展可以被视为经历了五个重叠的阶段，每个阶段都与不同类型的发射机相关联。最早的发射机是火花间隙发射机，随后是电弧发射机，再到旋转机械发射机。20世纪30年代初期，真空管开始应用于高功率发射机，而在90年代，高功率固态发射机开始出现。这些技术代际是重叠的，目前仍有电子管和固态高功率发射机在服役。瑞典Grimton仍有一台旋转机械发射机SAQ偶尔在使用。</p>
-<p>这些无线电传输所使用的天线相对于波长来说是相对较短的。在早期，工作频率是由天线的共振频率决定的。随着时间的推移，天线理论逐步成熟，天线的类型也随之变化，尽管这种变化没有发射机类型的变化那么显著。同时，接收机技术和探测理论得到了改进，减少了在特定通信距离内所需的辐射功率。接下来将简要讨论每一代发射机、天线和调制格式的特点。</p>
-<h2 id="火花隙发射机-Spark-Gap-Transmitters"><a href="#火花隙发射机-Spark-Gap-Transmitters" class="headerlink" title="火花隙发射机 Spark Gap Transmitters"></a>火花隙发射机 Spark Gap Transmitters</h2><p>马可尼的发射机是旋转火花间隙发射机，这种发射机的优点是成本低且可靠。它们在不进行发射时是安静的，因此操作员可以在同一部电台上既进行接收又进行发送。火花间隙发射机产生的阻尼波会导致宽带干扰，并降低发射机的效率。其发射频率由天线电路的LC谐振频率决定。</p>
-<h2 id="电弧发射机-ARC-Transmitter"><a href="#电弧发射机-ARC-Transmitter" class="headerlink" title="电弧发射机 ARC Transmitter"></a>电弧发射机 ARC Transmitter</h2><p>电弧发射机，或称为普尔森电弧<code>Poulsen Arc</code>，以丹麦工程师瓦尔德马尔·普尔森<code>Valdemar Poulsen</code>的名字命名，能够产生高达200千赫的频率，并于1903年获得专利。它利用电弧将直流电转换为射频交流电，并自1903年至1920年代作为无线电发射机使用。该发射机由一个充氢的腔体和包含电弧的磁场组成。共振天线电路连接到电弧两端。电弧发射机产生的是无衰减或连续波（CW）。为了生成摩尔斯电码的开关间隔，必须中断CW信号的传输。为此，采用了两种方法，这两种方法都涉及到开关操作。第一种方法是通过开关调谐线圈的匝数，调整天线频率到一个不同的频率，以此来在CW空隙期间改变频率。第二种方法是通过切换入虚拟负载，在CW空隙期间吸收发射机的功率。这使得操作员在两次传输之间无法接收信号。</p>
-<p>联邦电报公司（Federal Telegraph Company）制造了功率从30千瓦到1兆瓦不等的电弧发射机。美国海军采用普尔森电弧系统，部分原因是电弧转换器适合便携和海上使用。美国海军最初在弗吉尼亚州阿灵顿（NAA）测试了一台30千瓦的普尔森电弧发射机，并将其性能与当地的100千瓦火花发射机进行了比较。电弧发射机表现更好，于是从1914年到1915年，普尔森电弧发射机被安装在多个海军站点，包括巴拿马运河区（100千瓦）、圣地亚哥（200千瓦）、珍珠港（350千瓦）、美属萨摩亚（30千瓦）、关岛（30千瓦）和菲律宾（500千瓦）。1918年，一台500千瓦的电弧发射机在安纳波利斯安装，并使用了平顶天线。在圣地亚哥、珍珠港和菲律宾的天线都采用了600英尺高的塔，并架设类似阿灵顿的三角形顶端负载。</p>
-<h2 id="交流发电机-Alternatiors"><a href="#交流发电机-Alternatiors" class="headerlink" title="交流发电机 Alternatiors"></a>交流发电机 Alternatiors</h2><p>亚历山德森交流发电机（Alexanderson alternator）由通用电气公司的恩斯特·亚历山德森（Ernst Alexanderson）于1904年设计。1906年，第一批50千瓦的交流发电机交付使用。该发电机的工作原理类似于交流发电机，但工作频率为射频频率。发电机的转子具有多个极，并以高速旋转产生射频（RF）信号。典型的交流发电机在输出频率为100kHz时具有300个极，旋转速度为20,000转&#x2F;分钟。由于生成的是连续波（CW），这些发射机也面临与电弧发射机相同的键控问题。虽然交流发电机体积庞大、成本高昂且维护困难，但它们比电弧发射器产生的谐波要少，因此更偏向在远距离电报通信中使用。</p>
-<p>自1918年以来，全球安装了超过22台亚历山德森交流发电机，包括4个美国海军站点。美国海军在1941年建造了一个位于海库谷（Haiku Valley）的跨山谷天线，并在第二次世界大战期间使用了亚历山德森交流发电机。德尔福肯公司（Telefunken）也生产了交流发电机，并于1929年在日本的横须贺安装了一台发电机，用于发送攻击珍珠港的命令。该德国机器并未在VLF频段工作，而是使用非线性磁性电路将生成频率三倍化。它还使用非线性电路改变天线的调谐，从而影响摩尔斯电码的键控。</p>
-<h2 id="电子管放大器-Tube-Amplifiers"><a href="#电子管放大器-Tube-Amplifiers" class="headerlink" title="电子管放大器 Tube Amplifiers"></a>电子管放大器 Tube Amplifiers</h2><p>在20世纪30年代初，大功率真空管开始问世。二战后，美国海军将原先的电弧发射机替换为电子管放大器，并将其安装在夏威夷、安纳波利斯（马里兰州）、巴拿马运河区和菲律宾等地。这些发射机使用了原有的天线。到了1960年代，美国海军在缅因州和西澳大利亚各建造了两个大型站点，每个站点配备了2兆瓦的电子管发射机，用于为全球潜艇提供VLF覆盖通信服务。阿灵顿的呼号NAA被转移到缅因州的站点。这些天线是大型多塔星形阵列，名为Tri-Deco天线，是马可尼使用的Triatic天线的发展。天线配备了大直径绞线（Litz线）绕制的大型调谐线圈，并具有庞大的辐射地线系统。其辐射效率为50%，在14.7 kHz的频率下，辐射功率上限为1MW。</p>
-<p>这些发射机使用多个空气冷却的四极管，设计为推挽C类发射。对于窄带信号（如ICW），这些发射机的效率接近70%。然而，海军在1960年代末开始转向50波特的频移键控（FSK），并在1970年代末过渡到200波特的最小频移键控（MSK）。窄带天线与宽带宽的信号，导致发射机的效率降至大约50%。缅因州的站点配备了一个饱和磁芯电抗器<code>saturable core reactor</code>，用于动态调谐以增加带宽。当反应堆工作时，放大器效率接近70%，并且辐射波形的失真度得到了改善。美国海军的大型VLF站点仍在使用中。</p>
-<p>在1970年代，美国海军对一些VLF站点进行了升级。夏威夷和安纳波利斯的平顶天线被新天线替换。在夏威夷，安装了两根1500英尺高的伞顶加载单极天线（UTLM）。在安纳波利斯，建造了1200英尺高的UTLM，其中顶端加载部分延伸了原平顶天线的一部分。</p>
-<h2 id="固态放大器-Solid-State-Amplifiers"><a href="#固态放大器-Solid-State-Amplifiers" class="headerlink" title="固态放大器 Solid State Amplifiers"></a>固态放大器 Solid State Amplifiers</h2><p>固态放大器从1980年代末开始投入使用。这些放大器具有显著优势，因为它们使用D类开关技术，使得从交流输入到射频输出的效率高达90%。此外，它们具有低输出阻抗，并可以通过使用额外的kVA来增加带宽*。海军的第一台高功率固态VLF发射机是一个500千瓦的装置，安装在北达科他州LaMoure，这曾是一个Omega VLF导航系统，直到1997年9月停用。该站点的天线是一个1200英尺高的基座绝缘UTLM。</p>
-<p>大约在同一时期，信号编码和噪声处理技术得到了发展，使得所需的信噪比降低了10 dB以上。信噪比的降低、带宽增强以及高压绝缘体的发展共同推动了低功率发射机和小型天线的使用。最近在其他国家安装的VLF站点使用了大约500千瓦的固态发射机和双接地塔UTLM天线，天线的顶端负载径向天线被绝缘，并且馈线为一种笼型结构，替代了一个顶端负载径向天线。</p>
-<p>*: 原文为 they ……can provide bandwidth enhancement by using excess kVA in the transmitter</p>
+                <p><em>日期：2024-11-14</em></p>
+<p>硬件基本折腾完了，现在准备动手写软件。</p>
+<p>下文提到的所有程序都附在我的github库里： <a target="_blank" rel="noopener" href="https://github.com/naturewind846/JumaTX136Controler">JumaTX136Controler</a></p>
+<h3 id="串口控制上位软件"><a href="#串口控制上位软件" class="headerlink" title="串口控制上位软件"></a>串口控制上位软件</h3><p>事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。</p>
+<img src="/2024/tx136-4/1730530050-118615-image.webp" srcset="/img/loading.gif" lazyload class="" title="1730530050-118615-image">
+
+<p>看图就明白了，寥寥无几的功能。</p>
+<img src="/2024/tx136-4/0ca873d7-13f0-4aa1-a69e-c0fbd3b6b0c5.png" srcset="/img/loading.gif" lazyload class="" title="0ca873d7-13f0-4aa1-a69e-c0fbd3b6b0c5">
+
+
+
+<p>再看看v115作者写的文档，足足三大页的串口指令，真心佩服开发第三方固件的F4GCB。</p>
+<p>话虽如此，虽然是想写一个GUI的程序。但是一来我没有接触过GUI，二来的话，电脑编程已经是很久以前上大计基的事情，我还是学的C语言编写各种程序上机考试。如今差不多也忘光了。<br>好在，还有ChatGPT，赶紧来试试。</p>
+<img src="/2024/tx136-4/1730529724-248708-image.webp" srcset="/img/loading.gif" lazyload class="" title="1730529724-248708-image">
+
+<p>ChatGPT果然神通广大，把需求描述给他，提交原文档的描述，噌噌噌，只消一会功夫就写好了一段代码，再添油加醋催他写，只一个晚上就写好了足足四五百行的串口控制GUI。功能一切正常。</p>
+<p>隔两天，我再把其他什么的乱七八糟串口功能也一股脑的灌进Chatgpt，这次比较费劲了，因为代码已经来到了八九百行的规模，chatgpt4o到上限了。我只能一个一个功能的往里填，在人力复制粘贴出来。最终，还是完成了成品。</p>
+<img src="/2024/tx136-4/102bddc6-ffa0-4540-b433-e5c516a4b672.png" srcset="/img/loading.gif" lazyload class="" title="102bddc6-ffa0-4540-b433-e5c516a4b672">
+
+<p>这个代码已经完美包括了所有的串口功能。唯一的缺点是tk到上限了，开始变卡了。Python终究不是个高效的语言，不仅运行速度慢，编译出来的exe程序足足有30MB的夸张大小。未来有机会还是用VB或者别的语言来写吧。</p>
+<p>顺带一提，V115的作者还在代码里留了个Bug，导致External REMOTE不能正常控制。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;R&#x27;</span>: <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;r&#x27;</span>:<br><span class="hljs-keyword">switch</span>(cmd_buf[<span class="hljs-number">2</span>])<br>&#123;<br><span class="hljs-keyword">default</span>:<br>set_cw_shift(get_number(<span class="hljs-number">2</span>), <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br><span class="hljs-keyword">break</span>;<br><br><span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;S&#x27;</span>: <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;s&#x27;</span>:<br>set_rem_soft(get_number(<span class="hljs-number">2</span>), <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br><span class="hljs-keyword">break</span>;<br>&#125;<br><span class="hljs-keyword">break</span>;<br></code></pre></td></tr></table></figure>
+
+<p>实际上External的指令是“&#x3D;RSx\r”，get_number(2)只会得到第三个字符也就是“S”，S在ascii码里远远大于数字，最后输出结果落入case只能是最大的“3”</p>
+<p>到我写稿时，刚好F4GCB反馈修好了这个bug并发布了v1.16</p>
+<img src="/2024/tx136-4/7056fafa-501c-4863-8b57-fd279c229f74.png" srcset="/img/loading.gif" lazyload class="" title="7056fafa-501c-4863-8b57-fd279c229f74">
+
+<img src="/2024/tx136-4/068385c2-0e67-467e-a733-381b0d3158a4.png" srcset="/img/loading.gif" lazyload class="" title="068385c2-0e67-467e-a733-381b0d3158a4">
+
+<h3 id="AFP控制软件"><a href="#AFP控制软件" class="headerlink" title="AFP控制软件"></a>AFP控制软件</h3><p>F4GCB另一个卓越的工作是编写了用于AFP-FSK控制的功能，就像VOX那样，发射音频、处理音频、发送串口指令，然后发射。这个功能可以实现用WSJT等程序控制发射，让Juma TX136从简单的CW机进化为全能FSK机！</p>
+<img src="/2024/tx136-4/f422e662-e367-430e-b490-a32616c8ca0c.png" srcset="/img/loading.gif" lazyload class="" title="f422e662-e367-430e-b490-a32616c8ca0c">
+
+<p>不过，既然最终是用串口来发射的，那么直接用python程序效果应该也是一样的。</p>
+<p>音频处理我同样也不了解，好在我有<u><strong>CHATGPT，启动！！！</strong></u></p>
+<p>这次编写的飞快。我向chatgpt说明我的需求，它飞快的写出来一个程序。程序的功能很让我满意，但是它的频率精度却不尽如人意。</p>
+<p>看来是书到用时方恨少。FFT size是个什么东西？凭着经验，我感觉这个东西调大可以让运算精度变得更细致。但是调大之后，这个程序就会变得非常非常的卡。原本我的设想是每20毫秒输出一次频率串口命令，调大之后100毫秒输出一次都难。到底是为什么呢？</p>
+<p>于是上网四处搜查资料，学习音频处理，看FFT相关的学习视频。最后终于搞明白了，事实上我可以在fft计算出的峰值附近采用抛物线三点插值法，用FFT计算出的幅度最大值点和它附近的两个点来计算抛物线的极大值。这样可以把原本的5Hz精度提升到0.01Hz级。</p>
+<p>关于触发的幅度，我再对阈值计算平均值，这样可以过滤突然的幅值抖动。</p>
+<p>至于FFT size，是每次执行计算的样本数量，这个数量与采样时间和采样率配合。FFT size当然不是越大越好啦。我设置的48000波特率，每20毫秒采样进行一次FFT计算，计算同时带上前100毫秒的数据，这样可以平衡精度和时域响应。</p>
+<p>至于其他的窗函数、短时FFT计算和小波变换，由于现在的程序已经很满意了，就没有再深入。</p>
+<img src="/2024/tx136-4/421ac1d5-3b9d-4a89-be97-5f0e93409315.png" srcset="/img/loading.gif" lazyload class="" title="421ac1d5-3b9d-4a89-be97-5f0e93409315">
+
+<p>上文提到的所有程序都附在我的github库里： <a target="_blank" rel="noopener" href="https://github.com/naturewind846/JumaTX136Controler">JumaTX136Controler</a></p>
+<p>未完待续……</p>
 
                 
               </div>
@@ -353,9 +372,19 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
+      
+        <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
+      
         <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
       
-        <a href="/tags/%E6%97%A0%E7%BA%BF%E7%94%B5%E5%8F%B2/" class="print-no-link">#无线电史</a>
+        <a href="/tags/CW/" class="print-no-link">#CW</a>
+      
+        <a href="/tags/JumaTX136/" class="print-no-link">#JumaTX136</a>
+      
+        <a href="/tags/%E9%95%BF%E6%B3%A2%E5%8F%91%E5%B0%84%E6%9C%BA/" class="print-no-link">#长波发射机</a>
+      
+        <a href="/tags/Python/" class="print-no-link">#Python</a>
       
     </div>
   
@@ -367,8 +396,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>无线电史话：高功率长波无线电发射系统发展简史（翻译文章）</div>
-      <div>http://naturewind846.github.io/Developments-in-high-power-longwave-radio-A-brief-history/</div>
+      <div>Juma TX136 4 控制软件神通广大，ChatGPT大显神威</div>
+      <div>http://naturewind846.github.io/2024/tx136-4/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +409,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月27日</div>
+          <div>2024年11月14日</div>
         </div>
       
       
@@ -412,12 +441,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/tx136-5/" title="Juma TX136 5 接收电路的制作">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Juma TX136 5 接收电路的制作</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/automatic-control-konwledge/" title="《自动控制理论》 1-7章概念">
-                        <span class="hidden-mobile">《自动控制理论》 1-7章概念</span>
+                      <a href="/2024/helloworld/" title="Hello World! BH3PTS Blog的第一篇文章">
+                        <span class="hidden-mobile">Hello World! BH3PTS Blog的第一篇文章</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
