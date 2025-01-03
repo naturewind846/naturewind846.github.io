@@ -1,0 +1,901 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="naturewind846">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="第一章 自动控制的一般概念什么是自动控制：在无人直接参与情况下，通过控制器使被控对象（机器、设备、生产过程）按照预定要求进行工作。 开环控制：控制装置与被控对象之间只有顺向作用，系统输出量不影响控制量。 优点：结构简单，成本低，系统稳定。 缺点：精度差（主要取决于所建立的控制量——输出量之间的映射关系），抗干扰性差。 反馈（闭环）控制：采用负反馈并利用偏差进行控制的过程，也称为闭环控制。 反馈：将">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《自动控制理论》 1-7章概念">
+<meta property="og:url" content="http://naturewind846.github.io/automatic-control-konwledge/index.html">
+<meta property="og:site_name" content="NatureWind Blog">
+<meta property="og:description" content="第一章 自动控制的一般概念什么是自动控制：在无人直接参与情况下，通过控制器使被控对象（机器、设备、生产过程）按照预定要求进行工作。 开环控制：控制装置与被控对象之间只有顺向作用，系统输出量不影响控制量。 优点：结构简单，成本低，系统稳定。 缺点：精度差（主要取决于所建立的控制量——输出量之间的映射关系），抗干扰性差。 反馈（闭环）控制：采用负反馈并利用偏差进行控制的过程，也称为闭环控制。 反馈：将">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215164209515.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215164424545.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215164515540.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215164557522.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215164612557.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215170009023.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215170419411.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215172824873.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215172855361.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215172905251.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215173653454.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215173739354.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215173838940.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215173921967.png">
+<meta property="og:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215175124603.png">
+<meta property="article:published_time" content="2024-12-15T08:30:53.000Z">
+<meta property="article:modified_time" content="2024-12-15T09:54:00.171Z">
+<meta property="article:author" content="naturewind846">
+<meta property="article:tag" content="自动控制理论">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://naturewind846.github.io/automatic-control-konwledge/image-20241215164209515.png">
+  
+  
+  
+  <title>《自动控制理论》 1-7章概念 - NatureWind Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"naturewind846.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":"faule","follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>NatureWind846 Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/T.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">《自动控制理论》 1-7章概念</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-15 16:30" pubdate>
+          2024年12月15日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">《自动控制理论》 1-7章概念</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="第一章-自动控制的一般概念"><a href="#第一章-自动控制的一般概念" class="headerlink" title="第一章 自动控制的一般概念"></a>第一章 自动控制的一般概念</h2><p><strong>什么是自动控制</strong>：在无人直接参与情况下，通过控制器使被控对象（机器、设备、生产过程）按照预定要求进行工作。</p>
+<p><strong>开环控制</strong>：控制装置与被控对象之间只有顺向作用，系统输出量不影响控制量。</p>
+<p>优点：结构简单，成本低，系统稳定。</p>
+<p>缺点：精度差（主要取决于所建立的控制量——输出量之间的映射关系），抗干扰性差。</p>
+<p><strong>反馈（闭环）控制</strong>：采用负反馈并利用偏差进行控制的过程，也称为闭环控制。</p>
+<p><strong>反馈</strong>：将输出量送回输入端，与输入量相比较产生偏差的过程。</p>
+<p><strong>反馈是自动控制技术的核心。</strong></p>
+<p><strong>为什么要采用闭环控制？有什么优点？</strong>提高精度，抑止扰动量。</p>
+<p><strong>顺馈(前馈)控制</strong>：根据可测量的扰动量,产生补偿作用,以减小扰动的影响。</p>
+<p>前提:扰动可以测量；已知扰动到输出的映射关系。</p>
+<p>优点:对于特定扰动可以实现完全补偿，而且补偿速度快。</p>
+<p>缺点：需要测量元件，针对特定干扰。</p>
+<p><strong>复合控制</strong>：前馈+反馈。</p>
+<p><strong>控制方式：</strong>开环控制、闭环控制(反馈控制)、前馈控制、复合控制。</p>
+<p><strong>输入量变化规律：</strong></p>
+<p>恒值系统：常值</p>
+<p>随动系统：未知的时间函数</p>
+<p>程序控制系统：预定规律时间函数</p>
+<p><strong>按系统特性分：</strong></p>
+<p>线性系统：齐次性，叠加性</p>
+<p>非线性系统：非线性元件</p>
+<p><strong>传输数据类型：</strong></p>
+<p>连续系统：连续的模拟信号</p>
+<p>离散系统：具有脉冲序列或数码信号</p>
+<p><strong>控制系统的基本要求：</strong></p>
+<p>稳定性：研究当t→∞时，系统能否趋于一个平衡状态：偏差逐渐减小或者不变？</p>
+<p>准确性：稳态值是否控制精度期望值？有无稳态误差，反映控制精度</p>
+<p>快速性：反映跟踪速度，扰动作用下系统回复的快慢</p>
+<h2 id="第二章-控制系统的数学模型"><a href="#第二章-控制系统的数学模型" class="headerlink" title="第二章 控制系统的数学模型"></a>第二章 控制系统的数学模型</h2><p>数学模型：系统内部各变量之间的数学表达式</p>
+<p>静态模型：静态条件下的代数方程</p>
+<p>动态模型：描述动态关系的微分方程</p>
+<p>分析建模法：利用数学物理方程或者化学规律来得到表达式</p>
+<p>实验建模法：采集输入-输出数据，然后进行曲线拟合（系统辨识）</p>
+<p><strong>系统微分方程的建立步骤:</strong></p>
+<p>①确定系统的输入、输出变量；</p>
+<p>②输入端开始，按照信号的传递顺序，根据各变量所遵循的物理定理写出各微分方程；</p>
+<p>③消去中间变量，写出输入、输出变量的微分方程；</p>
+<p>④变换成标准形式。</p>
+<p><strong>传递函数定义：</strong>一个系统或环节在零初始条件下，输出量的拉氏变换与输入量的拉氏变换之比，称为该系统或环节的传递函数：</p>
+<p><strong>传递函数的性质：</strong></p>
+<p>传递函数是对系统输入输出特性的描述。不同物理系统可用同类型的传函表示；</p>
+<p>传递函数只反映系统自身特性，它决定于系统的结构与参数，而与输入量无关；</p>
+<p>传递函数是线性系统的特性。对于非线性系统，通常不定义传递函数。</p>
+<p><strong>非线性系统不满足叠加原理</strong>，因此对于不同的输入信号，其比值不一样。</p>
+<p>传递函数是在<strong>零初始条件</strong>下定义的，如果计算非零初始条件响应，必须还原出微分方程来进行计算。</p>
+<p><strong>传递函数的零极点对输出的影响:</strong></p>
+<p>传递函数的极点是微分方程的特征根，它们决定所描述系统自由运动的模态。</p>
+<p>传递函数的零点不形成自由运动的模态，但它们影响各模态响应中所占的比重，因而也影响响应曲线的形状。</p>
+<p>距离原点较近，且离极点较远的零点对系统相应影响大（超调增大，响应加快）。</p>
+<p><strong>结构图：</strong>描述系统内信号传递的数学图形。</p>
+<img src="/automatic-control-konwledge/image-20241215164209515.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215164209515">
+
+<p>结构图的基本组成：信号线、引出点（测量点）、比较点（综合点）、方框（环节）</p>
+<p><strong>信号流图：</strong></p>
+<p>信号流图的组成：由节点和支路组成</p>
+<img src="/automatic-control-konwledge/image-20241215164424545.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215164424545">
+
+<p>输入节点(源点)</p>
+<p>输出节点(阱点)</p>
+<p>混合节点：既有输入支路又有输出支路的节点</p>
+<p>前向通路：从输入到输出，每个节点至多经过一次的通路。</p>
+<p>回路：起点和终点在同一节点，而且信号通过每一节点至多一次的闭合通路。</p>
+<p>回路增益：所有支路增益之乘积</p>
+<p>不接触回路：回路之间没有公共节点</p>
+<p><strong>Mason增益公式：</strong></p>
+<img src="/automatic-control-konwledge/image-20241215164515540.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215164515540">
+
+<p>Δ：特征式</p>
+<img src="/automatic-control-konwledge/image-20241215164557522.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215164557522">
+
+<img src="/automatic-control-konwledge/image-20241215164612557.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215164612557">
+
+<p>Pk：第k条从输入端到输出端前向通道传函</p>
+<p>Δk：在Δ中，把与第k条前向通道相接触的回路所在项去掉后余下部分，称为余子式。</p>
+<p>注意：<strong>梅森公式只能求系统的总增益，即输出对输入的增益</strong>。而输出对混合节点（中间变量）的增益就不能直接应用梅森公式。</p>
+<p>对此问题有两种方法求其传递函数：</p>
+<p>一、把该混合节点的所有输入支路去掉，然后再用梅森公式</p>
+<p>二、分别用梅森公式求取输出节点及该节点对输入节点的传递函数，然后把它们的结果相比，即可得到输出对该混合节点的传递函数</p>
+<p><strong>系统的传递函数：</strong></p>
+<p><strong>开环传递函数：</strong>把主反馈断开后，从输入信号到反馈信号之 间的传递函数。 </p>
+<p><strong>闭环传递函数：</strong>输出信号与输入信号的拉氏变换之比。</p>
+<p><strong>注意：开环系统传递函数和闭环系统的开环传递函数是两个概念。</strong></p>
+<h2 id="第三章-控制系统的时域分析"><a href="#第三章-控制系统的时域分析" class="headerlink" title="第三章 控制系统的时域分析"></a>第三章 控制系统的时域分析</h2><p>为了评价线性系统时间响应的性能,需要研究系统在典型输入信号下的响应。</p>
+<p>输入信号的选择：</p>
+<p>一般系统：选择（与工作信号比）“最不利”的信号作为系统的典型输入信号；</p>
+<p>线性系统；选择阶跃信号作为典型输入。</p>
+<p><strong>时间响应</strong>包括两部分：动态过程和稳态过程。</p>
+<p><strong>动态过程</strong>：输出量从初始状态到最终状态的响应过程。</p>
+<p><strong>稳态过程</strong>：当t→∞时，系统输出的表现形式，表征系统输出复现输入的程度。</p>
+<p><strong>⭐动态性能指标⭐：</strong></p>
+<p><strong>延迟时间td</strong>：响应曲线第一次达到其终值一半所需时间。</p>
+<p><strong>上升时间tr</strong>：输出量从10%到90%终值所需要的时间（表明变化的快慢）。</p>
+<p><strong>峰值时间tp</strong>：达到第一个最大值对应的时间。</p>
+<p>**超调量σ%**：(峰值-终值)&#x2F;终值×100%</p>
+<p><strong>调整时间ts</strong>：到达并保持在终值误差带内（2%或5%）所需要的时间。</p>
+<p><strong>稳态误差</strong>：当t→∞时，若系统输出量不等于输入量或者输入量的确定函数，则系统存在稳态误差。</p>
+<p><strong>线性定常系统的性质：</strong>对于线性定常系统，系统在输入导数信号作用下的响应，就等于系统在该输入信号下的响应的导数。同样，系统对输入信号积分的响应，就等于系统在该输入信号作用下的响应的积分，而积分常数由零输出初始条件来确定。</p>
+<p><strong>二阶系统的阻尼系数、特征根、极点分布和单位阶跃响应关系：</strong></p>
+<img src="/automatic-control-konwledge/image-20241215170009023.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215170009023">
+
+
+
+<p>ζ&#x3D;0.4~0.8之间，调节时间和超调量都较小。工程上<strong>ζ&#x3D;0.707</strong>，称为<strong>最佳阻尼常数</strong>。</p>
+<p>在低增益、大惯性的（温度）控制系统中常采用过阻尼系统。</p>
+<p>阻尼系数ζ是二阶系统的一个重要参数，用它可以间接地判断一个二阶系统的瞬态品质。在ζ＞1的情况下瞬态特性为单调变化曲线，无超调和振荡，但调节时间长。当ζ＜0时，输出量作等幅振荡或发散振荡，系统不能稳定工作。</p>
+<p><strong>阻尼系数、阻尼角与最大超调量关系。</strong></p>
+<img src="/automatic-control-konwledge/image-20241215170419411.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215170419411">
+
+<p>为了改善系统性能而改变系统的结构、参数或附加具有一定功能的环节的方法称为对系统进行校正。附加环节称为<strong>校正环节</strong>。</p>
+<p><strong>线性系统稳定的定义</strong>：当系统受到扰动作用后，其输出量会产生偏差，在t从0到∞时，系统的状态能够达到一个新的稳定状态，或恢复到原来状态，此时称系统<strong>渐进稳定</strong>，简称<strong>稳定</strong>。</p>
+<p><strong>充要条件：</strong>系统特征方程式的根均在根平面左半面，即系统闭环传递函数的极点严格分布在平面左半面。</p>
+<p><strong>必要条件：</strong>闭环传递函数特征多项式的系数全部为正或者全部为负。</p>
+<p><strong>最小相位系统：</strong>系统闭环传递函数的所有零、极点都分布在平面的左半面</p>
+<p>否则，称为非最小相位系统。</p>
+<p><strong>减小稳态误差的办法</strong>：</p>
+<ol>
+<li>增加开环放大系数；（容易使系统不稳定—减小增益裕度）</li>
+<li>增加积分环节；（容易使系统不稳定—减小了相位裕度）</li>
+<li>采用串级控制抑制内回路扰动；</li>
+<li>加前馈补偿，系统变为复合控制系统。</li>
+</ol>
+<h2 id="第四章-根轨迹分析法"><a href="#第四章-根轨迹分析法" class="headerlink" title="第四章 根轨迹分析法"></a>第四章 根轨迹分析法</h2><p><strong>根轨迹的概念：</strong>系统的参数发生变化，其特征方程式的根的值改变。当系统参数连续变化时（如从0→∞），其特征方程的根在根平面上留下的轨迹，叫根轨迹。</p>
+<p><strong>研究根轨迹的目的：</strong>分析系统的各种性能（稳定性、稳态性能、动态性能）</p>
+<p>研究根轨迹需要改写根轨迹方程。</p>
+<p><strong>零度根轨迹：</strong>相角遵循2kΠ条件的系统，主要有非最小相位系统，正反馈系统。</p>
+<h2 id="第五章-线性系统频域分析"><a href="#第五章-线性系统频域分析" class="headerlink" title="第五章 线性系统频域分析"></a>第五章 线性系统频域分析</h2><p>没什么知识点</p>
+<h2 id="第六章-线性系统的校正方法"><a href="#第六章-线性系统的校正方法" class="headerlink" title="第六章 线性系统的校正方法"></a>第六章 线性系统的校正方法</h2><p><strong>校正的概念：</strong>在系统中加入一些参数可调的装置，改变原系统特性，使之满足给定的性能指标。</p>
+<p><strong>校正的目标：</strong>减少稳态误差改善系统动态品质</p>
+<p><strong>校正方式：</strong>按照校正装置在系统中的连接方式，可以分为串联校正，反馈校正，前馈校正和复合校正。</p>
+<p><strong>串联校正</strong></p>
+<p>形式：将校正装置接在误差测量点之后和放大器之前，串接于系统前向通道之中。分为无源和有源校正装置。比如PID控制器。</p>
+<p>特点：设计比较简单，比较常用。</p>
+<p><strong>反馈校正</strong></p>
+<p>形式：校正装置接在局部反馈通道中。</p>
+<p>特点：实现比较简单，可以消除系统固定部分参数波动对系统性能的影响，比较常用。</p>
+<p><strong>前馈校正（顺馈校正）</strong></p>
+<p>形式：在主反馈之外采用的校正方式。有两种形式：滤波和补偿。</p>
+<img src="/automatic-control-konwledge/image-20241215172824873.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215172824873">
+
+<p><strong>复合校正</strong></p>
+<p>形式：在反馈控制回路中，加入前馈校正通路，组成一个有机整体。可以分为按扰动补偿的复合控制和按输入补偿的复合控制两种。</p>
+<img src="/automatic-control-konwledge/image-20241215172855361.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215172855361">
+
+<img src="/automatic-control-konwledge/image-20241215172905251.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215172905251">
+
+<p><strong>基本控制规律：</strong>根据被控对象的控制要求，校正装置所提供的控制规律。比如：比例控制律、微分控制律、积分控制律等。</p>
+<p><strong>比例（P）控制律</strong></p>
+<p>比例控制律是一个具有可调增益的放大器。可以提高开环增益，减小稳态误差，也会造成系统闭环不稳定。</p>
+<p><strong>比例－微分（PD）控制律</strong></p>
+<p>具有比例－微分规律的控制器，称为PD控制器.</p>
+<p>输出m(t)与输入e(t)的关系如下：</p>
+<img src="/automatic-control-konwledge/image-20241215173653454.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215173653454">
+
+<p>微分控制律反映输入信号的变化趋势，对动态过程起作用，能增加系统的阻尼。在串联校正时可以增加一个开环零点，提高相角裕度，但对系统噪声比较敏感。</p>
+<p><strong>积分（I）控制律</strong></p>
+<p>积分控制器输出m(t)与输入e(t)的关系如下：</p>
+<img src="/automatic-control-konwledge/image-20241215173739354.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215173739354">
+
+<p>在串联校正时，采用积分控制器可以提高系统的型别，有利于提高系统稳态性能，但积分控制使系统增加一个位于原点的开环极点，产生相角滞后，不利于系统的稳定。</p>
+<p><strong>比例－积分（PI）控制律</strong></p>
+<p>具有比例－积分控制规律的控制器，称为PI控制器<br>控制器输出m(t)与输入e(t)的关系如下：</p>
+<img src="/automatic-control-konwledge/image-20241215173838940.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215173838940">
+
+<p>在控制系统中，PI控制器主要用来改善系统的稳态性能。</p>
+<p><strong>比例－积分－微分（PID）控制律</strong> （自动控制最实用的东西，没有传递函数也能用）</p>
+<p>具有比例－积分－微分控制规律的控制器，称PID控制器。</p>
+<p>控制器输出m(t)与输入e(t)的关系如下：</p>
+<img src="/automatic-control-konwledge/image-20241215173921967.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215173921967">
+
+<p><strong>串联滞后校正原理：</strong>利用网络的高频幅值衰减特性，使已校正系统截止频率下降，从而使其获得足够的相角裕度。</p>
+<p><strong>反馈校正的特点：</strong></p>
+<p>削弱非线性特性的影响</p>
+<p>减小系统的时间常数</p>
+<p>降低系统对参数变化的敏感性</p>
+<p>抑止系统噪声</p>
+<h2 id="第七章-线性离散系统的分析与校正"><a href="#第七章-线性离散系统的分析与校正" class="headerlink" title="第七章 线性离散系统的分析与校正"></a>第七章 线性离散系统的分析与校正</h2><p>离散系统：系统中某些信号仅定义在离散时间上。</p>
+<p>采样（脉冲）控制系统：离散信号是脉冲序列形式</p>
+<p><strong>信号采样：</strong>对连续信号在某些规定的时刻进行取值，并变为脉冲序列的过程。</p>
+<p><strong>信号复现：</strong>把脉冲序列转变为连续信号的过程。</p>
+<p>实现的装置：保持器。用采样保持器解决各采样点之间的插值问题</p>
+<p><strong>离散控制系统的特点</strong></p>
+<ol>
+<li>校正装置效果比连续式校正装置好，且由软件实现的控制规律易于改变，控制灵活。</li>
+<li>采样信号，特别是数字信号的传递能有效地抑制噪声，从而提高系统抗干扰能力。</li>
+<li>可用一台计算机分时控制若干个系统，提高设备利用率。</li>
+<li>可实现复杂控制规律，且可以在运行中实时改变控制参数。</li>
+</ol>
+<p><strong>什么是采样器：</strong>把连续信号变换为脉冲序列的装置称为采样器，又叫采样开关。</p>
+<p><strong>香农采样定理：</strong>如果采样器的输入信号具有有限带宽，且有最小周期分量Th，则使信号e*(t)完满地从采样信号e(t)恢复的采样周期满足：T≤Th&#x2F;2</p>
+<p><strong>零阶保持器特性：</strong></p>
+<ol>
+<li>具有低通特性；</li>
+<li>增加滞后相角，系统稳定性变差；</li>
+<li>平均输出响应为e(t-T&#x2F;2)，即在时间上输出信号滞后输入T&#x2F;2，相当于给系统增加了一个延迟环节。</li>
+</ol>
+<p><strong>一阶保持器特性：</strong></p>
+<ol>
+<li>一阶保持器复现信号的准确性较高；</li>
+<li>保持器幅频特性较大，带宽较大，通过的高频信号较多，易造成干扰和纹波；</li>
+<li>相角滞后较大，一般较少采用。</li>
+</ol>
+<p><strong>保持器阶数的关系：</strong>保持器阶数越多，复现信号的能力越强，但时间延迟越大，带来的滞后相角越大，闭环系统越不易稳定。</p>
+<p><strong>脉冲传递函数的定义：</strong>零初始条件下，系统输出的：z变换与输入的z变换之比，称为脉冲传递函数：</p>
+<img src="/automatic-control-konwledge/image-20241215175124603.png" srcset="/img/loading.gif" lazyload class="" title="image-20241215175124603">
+
+<p>采样器在闭环系统中的位置可以有多种配置，因此闭环离散系统没有唯一的结构图形式，其闭环脉冲传递函数也有不同形式。</p>
+<p>当误差信号之后没有采样开关时，无法求出闭环离散系统对于输入量的脉冲传递函数！</p>
+<p><strong>离散系统稳定定义：</strong>若离散系统在有界输入序列作用下，其输出序列也是有界的，则称该离散系统是稳定的。</p>
+<p><strong>稳定的充分必要条件：</strong>当且仅当离散系统的全部特征根位于单位圆内，即所有特征根的模均小于1时，该线性定常离散系统是稳定的。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E6%B5%B7%E6%97%A0%E6%B6%AF/" class="category-chain-item">学海无涯</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" class="print-no-link">#自动控制理论</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>《自动控制理论》 1-7章概念</div>
+      <div>http://naturewind846.github.io/automatic-control-konwledge/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>naturewind846</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年12月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Developments-in-high-power-longwave-radio-A-brief-history/" title="无线电史话：高功率长波无线电发射系统发展简史（翻译文章）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">无线电史话：高功率长波无线电发射系统发展简史（翻译文章）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/136khz/" title="136khz（2200m）业余频段入门介绍：迈向长波世界">
+                        <span class="hidden-mobile">136khz（2200m）业余频段入门介绍：迈向长波世界</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'naturewind846/blog-commit-utterance');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

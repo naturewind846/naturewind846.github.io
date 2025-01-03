@@ -1,0 +1,1616 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="naturewind846">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言这篇文章目的是对136kHz频段，即2200m波段业余段做综述，介绍其历史法规、常见的天馈、发射机和功放、常见模式、传播特性和主要干扰等，以便给从未了解这一频段的ham朋友抛砖引玉，希望更多的人活跃于这个频段。 最新修改日期：2024-12-27 历史与来源136kHz可能是业余无线电爱好者最早操作使用的频段。在无线电发展的蛮荒时代，在法律还没有对空中的电波做出任何限制时，早期的无线电爱好者就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="136khz（2200m）业余频段入门介绍：迈向长波世界">
+<meta property="og:url" content="http://naturewind846.github.io/136khz/index.html">
+<meta property="og:site_name" content="NatureWind Blog">
+<meta property="og:description" content="前言这篇文章目的是对136kHz频段，即2200m波段业余段做综述，介绍其历史法规、常见的天馈、发射机和功放、常见模式、传播特性和主要干扰等，以便给从未了解这一频段的ham朋友抛砖引玉，希望更多的人活跃于这个频段。 最新修改日期：2024-12-27 历史与来源136kHz可能是业余无线电爱好者最早操作使用的频段。在无线电发展的蛮荒时代，在法律还没有对空中的电波做出任何限制时，早期的无线电爱好者就">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/image-20241120133233655.png">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/XNStxantenna.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/loadingcoil1.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/variometer.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/wiredbucket.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/qq_pic_merged_1732794467840.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/vert2.gif">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/xfmr2.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/loop1.gif">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/e98742fc5f7b8cad21688db35603d5ef.png">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/jumatx136.jpeg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/TX2200Ahp1.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/a72e47a5-71a4-452a-8e0f-834e198e6aea.png">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/dfcw.gif">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/321b749e-1748-4499-8cd6-6974fd3d4d89.png">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/Bpsk31bits.png">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/jasrx.gif">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/wolf_dos.gif">
+<meta property="og:image" content="http://naturewind846.github.io/136khz/image-20241125125905670.png">
+<meta property="article:published_time" content="2024-11-17T16:08:23.000Z">
+<meta property="article:modified_time" content="2024-12-27T15:15:00.729Z">
+<meta property="article:author" content="naturewind846">
+<meta property="article:tag" content="Ham">
+<meta property="article:tag" content="长波">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://naturewind846.github.io/136khz/image-20241120133233655.png">
+  
+  
+  
+  <title>136khz（2200m）业余频段入门介绍：迈向长波世界 - NatureWind Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"naturewind846.github.io","root":"/","version":"1.9.8","typing":{"enable":false,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":"faule","follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>NatureWind846 Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/T.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">136khz（2200m）业余频段入门介绍：迈向长波世界</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-11-18 00:08" pubdate>
+          2024年11月18日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          10k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          86 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">136khz（2200m）业余频段入门介绍：迈向长波世界</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇文章目的是对136kHz频段，即2200m波段业余段做综述，介绍其历史法规、常见的天馈、发射机和功放、常见模式、传播特性和主要干扰等，以便给从未了解这一频段的ham朋友抛砖引玉，希望更多的人活跃于这个频段。</p>
+<p>最新修改日期：2024-12-27</p>
+<h2 id="历史与来源"><a href="#历史与来源" class="headerlink" title="历史与来源"></a>历史与来源</h2><p>136kHz可能是业余无线电爱好者最早操作使用的频段。在无线电发展的蛮荒时代，在法律还没有对空中的电波做出任何限制时，早期的无线电爱好者就已经用线圈、莱顿瓶和类似今天白金机那样的变压器，在小屋里滋滋的操作电火花，其中少部分能量进入耦合的天线里，进入无垠的天空中。</p>
+<p>但是实际上，136kHz是一个相当年轻的业余频段。<strong>法律真正许可136kHz给业余频段始于2007年11月9日</strong>。当天，在日内瓦举行的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/International_Telecommunication_Union">国际电信联盟</a> 2007 年世界无线电通信大会 （WRC-07） 同意将 135.7–137.8 kHz 以次要业务划分给业余业务。虽然早在ITU分配前，一些国家就已经基于<code>CEPT / ERC Recommendation 62-01 E (&quot;Use of the band 135.7–137.8 kHz by the Amateur Service&quot;, Mainz 1997)</code>将这一频段许可给业余业务。该建议书建议将135.7-137.8kHz以次要业务划分给业余频段，最大功率为E.I.R.P. 1W。在这之前，130–148.5 kHz的频段的主要业务是水上移动业务和固定业务。主要用户是海军潜艇的单向传输和无线电定位系统。</p>
+<p>此外，ITU 2区的一些国家还许可了LowFER频段，比如美国和加拿大允许任何人（不需要无线电操作证明，只需要提交申请）在160-190kHz之间进行无线电通讯实验。但是<strong>要求</strong>：</p>
+<ol>
+<li><p><em>最终射频阶段的总输入功率（不包括灯丝或加热器功率）不得超过1瓦。</em></p>
+</li>
+<li><p><em>传输线、天线和接地线（如使用）总长度不得超过15米。</em></p>
+</li>
+<li><p><em>所有160 kHz以下或190 kHz以上的杂散发射应至少低于未调制载波-20dB。是否符合20dB衰减要求的判定可以基于对电台天线输出端的测量。如果电台使用永久性附加的天线，此时应通过测量辐射电磁场来验证合规性。</em></p>
+</li>
+</ol>
+<h2 id="我国的法规现状"><a href="#我国的法规现状" class="headerlink" title="我国的法规现状"></a>我国的法规现状</h2><p><strong>我国的135.7-137.8kHz业余频段起源于2010年12月1日</strong>起施行的 《中华人民共和国无线电频率划分规定》（工业和信息化部令 第16号）</p>
+<p><em>为适应无线电业务和无线电技术的发展，满足我国各行业、各部门对无线电频率资源的需求，并与《无线电规则》中国际频率划分保持一致，根据《中华人民共和国无线电管理条例》的相关规定，工业和信息化部于2008年决定对2006年颁布实施的《中华人民共和国无线电频率划分规定》进行修订。</em></p>
+<p>目前该频段业余业务频率划分状况为：<strong>次要业务</strong></p>
+<table>
+<thead>
+<tr>
+<th><u>135.7—137.8</u></th>
+<th>固定 水上移动 无线电导航 [业余]</th>
+</tr>
+</thead>
+</table>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">5</span>.<span class="hljs-number">64</span> 固定业务电台在划分给该业务的<span class="hljs-number">90</span> kHz与<span class="hljs-number">160</span> kHz（在第一区为<span class="hljs-number">148</span>.<span class="hljs-number">5</span> kHz）之间频带内和水上移动业务电台在划分给该业务的<span class="hljs-number">110</span> kHz与<span class="hljs-number">160</span> kHz（在第一区为<span class="hljs-number">148</span>.<span class="hljs-number">5</span> kHz）之间频带内，只准使用A1A或F1B、A2C、A3C、F1C或F3C类发射。水上移动业务电台在<span class="hljs-number">110</span> kHz与<span class="hljs-number">160</span> kHz（第一区为<span class="hljs-number">148</span>.<span class="hljs-number">5</span> kHz）之间频带内，例外地也可准予使用J2B或J7B类发射。<br><br><span class="hljs-attribute">5</span>.<span class="hljs-number">67</span> 附加划分：在蒙古国、吉尔吉斯斯坦和土库曼斯坦，<span class="hljs-number">130</span>-<span class="hljs-number">148</span>.<span class="hljs-number">5</span>kHz频段亦划分给作为次要业务的无线电导航业务。在这些国家内和国家间，此项业务具有平等运行权。（WRC-<span class="hljs-number">07</span>）<br><br><span class="hljs-attribute">5</span>.<span class="hljs-number">67</span>A 使用<span class="hljs-number">135</span>.<span class="hljs-number">7</span>-<span class="hljs-number">137</span>.<span class="hljs-number">8</span> kHz频段内频率的业余业务台站，其最大辐射功率不得超过<span class="hljs-number">1</span>瓦（e.i.r.p.），且不应对在第<span class="hljs-number">5</span>.<span class="hljs-number">67</span>款所列国家内运行的无线电导航业务台站造成有害干扰。（WRC-<span class="hljs-number">07</span>）<br><br><span class="hljs-attribute">5</span>.<span class="hljs-number">67</span>B 在阿尔及利亚、埃及、伊朗伊斯兰共和国、伊拉克、黎巴嫩、阿拉伯叙利亚共和国、苏丹、南苏丹和突尼斯，<span class="hljs-number">135</span>.<span class="hljs-number">7</span>-<span class="hljs-number">137</span>.<span class="hljs-number">8</span> kHz频段的使用限于固定和水上移动业务。在上述国家，业余业务不得使用<span class="hljs-number">135</span>.<span class="hljs-number">7</span>-<span class="hljs-number">137</span>.<span class="hljs-number">8</span> kHz频段，授权此类使用的国家应将此考虑在内。（WRC-<span class="hljs-number">12</span>）<br></code></pre></td></tr></table></figure>
+
+<h2 id="天馈系统"><a href="#天馈系统" class="headerlink" title="天馈系统"></a>天馈系统</h2><p><strong>请注意：136kHz几乎所有的天线都是缩短的天线，效率几乎都小于1％。意味着要满足法律规定的E.I.R.P. 1W 往往需要几百上千瓦的功率。</strong></p>
+<p>该波段常见的天线可以概括为：使用底部加载线圈和顶部电容帽的垂直辐射天线。</p>
+<h3 id="垂直辐射天线（马可尼天线）"><a href="#垂直辐射天线（马可尼天线）" class="headerlink" title="垂直辐射天线（马可尼天线）"></a>垂直辐射天线（马可尼天线）</h3><img src="/136khz/image-20241120133233655.png" srcset="/img/loading.gif" lazyload class="" title="image-20241120133233655">
+
+<p>图为典型的T型天线</p>
+<img src="/136khz/XNStxantenna.jpg" srcset="/img/loading.gif" lazyload class="" title="XNStxantenna">
+
+<p>图为WD2XNS的T型天线 <a target="_blank" rel="noopener" href="https://www.w1vd.com/XNStxantenna.html">WD2XNS的网站</a> </p>
+<p>此波段的天线设计一般要向实际架设情况妥协，结合环境来设计。</p>
+<p>首先，由于136khz的波段极长，即便水平架设高度几十米，地面效应依旧很严重，此时只有垂直部分有效辐射，设计上应该使垂直部分尽可能的高。顶部水平部分和地面形成电容，为了增加电容值，架设并排的水平导线。</p>
+<p>该天线阻抗应该是几欧姆的实部电阻和成千上万欧姆的负电抗。为了抵消大把的电抗，在底部用电感来抵消使天线谐振。电感为了高Q值，一般使用自行绕制的庞大的空心电感。该电感同时为了天线能在135.7-137.8khz上都能谐振，还需要留有可调电感的设计。</p>
+<img src="/136khz/loadingcoil1.jpg" srcset="/img/loading.gif" lazyload class="" title="WD2XNS 137 kHz 发射天线">
+
+<img src="/136khz/variometer.jpg" srcset="/img/loading.gif" lazyload class="" title="WD2XNS 137 kHz 发射天线">
+
+<p>WD2XNS的可变电感，使用内部反方向绕制的电感和减速电机来微调感值</p>
+<img src="/136khz/wiredbucket.jpg" srcset="/img/loading.gif" lazyload class="" title="{short description of image}">
+
+<p>W5JGV的电感，设计了一系列的抽头以便调节</p>
+<img src="/136khz/qq_pic_merged_1732794467840.jpg" srcset="/img/loading.gif" lazyload class="" title="qq_pic_merged_1732794467840">
+
+<p>笔者自己绕制的铁氧体电感，感值4mH，使用北京厂产MXO-2000铁氧体磁芯。铁氧体磁环同样是可用的，但是相比空气电感，Q值会降低很多。高Q值会为电小天线提供更高的天线增益。</p>
+<p>电感的位置对于发射也有关联。一般中部或顶部的加载电感效果会好于底部加载。由于电感体积相当庞大，中部或顶部加载电感并不常见，但还是有ham实践过</p>
+<img src="/136khz/vert2.gif" srcset="/img/loading.gif" lazyload class="" title="img">
+
+<p><a target="_blank" rel="noopener" href="https://www.qsl.net/on7yd/indtop.htm">ON7YD的垂直天线，带感应式顶部负载</a> 将原本的L1线圈分成 L1 &#x3D; 2.3mH 和 L2 &#x3D; 1.9mH 两部分，PA0SE 和 DK8KW 的测量显示天线场强增加了约 4dB。</p>
+<p>此时若完全抵消电抗，天线不一定在50Ω谐振，还需要配合变压器（也就是ham常说的巴伦）或者匹配电路来进一步变换阻抗。</p>
+<img src="/136khz/xfmr2.jpg" srcset="/img/loading.gif" lazyload class="" title="WD2XNS 137 kHz 发射天线">
+
+<p>图为WD2XNS的变压器，使用FT240-77材质的磁环。77材质是常见的用于1MHz以下的锰锌铁氧体材料，可以用国产的MXO-2000平替。</p>
+<p>下面是一些很有用的参考网站：</p>
+<p><a target="_blank" rel="noopener" href="https://www.strobbe.eu/on7yd/136ant/">ON7YD，长波136kHz天线</a> </p>
+<p><a target="_blank" rel="noopener" href="https://www.giangrandi.org/electronics/shortanttuner/shortanttuner.shtml">短天线调谐</a> </p>
+<h3 id="其他天线"><a href="#其他天线" class="headerlink" title="其他天线"></a>其他天线</h3><img src="/136khz/loop1.gif" srcset="/img/loading.gif" lazyload class="" title="G3YMC 循环">
+
+<p><a target="_blank" rel="noopener" href="https://www.davesergeant.com/loops.htm">G3YMC的环形天线</a> </p>
+<h2 id="发射机与功放"><a href="#发射机与功放" class="headerlink" title="发射机与功放"></a>发射机与功放</h2><p>这一频段目前成熟的机器有：</p>
+<h4 id="ICOM-7610（欧版）"><a href="#ICOM-7610（欧版）" class="headerlink" title="ICOM-7610（欧版）"></a>ICOM-7610（欧版）</h4><img src="/136khz/e98742fc5f7b8cad21688db35603d5ef.png" srcset="/img/loading.gif" lazyload class="" title="e98742fc5f7b8cad21688db35603d5ef">
+
+
+
+<h4 id="Juma-TX136"><a href="#Juma-TX136" class="headerlink" title="Juma TX136"></a>Juma TX136</h4><img src="/136khz/jumatx136.jpeg" srcset="/img/loading.gif" lazyload class="" width="136" title="khz transmitter 的图像结果">
+
+<p>由Juma团队（OH2NLT、OH7SV）设计 <a target="_blank" rel="noopener" href="http://www.jumaradio.com/juma-tx136/">JUMA TX136 136 kHz Transmitter</a><br>采用D类功放，4-60W四档可调节发射功率，可以发射CW和各种FSK模式，本身没有接收模块，但是有10MHz上变频和0-20db可调增益前置放大模块。</p>
+<p><strong>目前已停产，所有文档资料均已开源。</strong></p>
+<h4 id="TX-2200A"><a href="#TX-2200A" class="headerlink" title="TX 2200A"></a>TX 2200A</h4><img src="/136khz/TX2200Ahp1.jpg" srcset="/img/loading.gif" lazyload class="" title="img">
+
+<p>由日本株式会社 サムウエイ设计制造，目前已经停产。资料未完全公开。</p>
+<p><a target="_blank" rel="noopener" href="https://www.thamway.co.jp/ham/ham_02.html">135kHz送信機 TX2200A｜アマチュア無線機器｜株式会社サムウエイ</a></p>
+<h4 id="各种自制发射机"><a href="#各种自制发射机" class="headerlink" title="各种自制发射机"></a>各种自制发射机</h4><p>（等待施工，喵了个咪）</p>
+<h2 id="常用的模式"><a href="#常用的模式" class="headerlink" title="常用的模式"></a>常用的模式</h2><h3 id="CW"><a href="#CW" class="headerlink" title="CW"></a>CW</h3><p>最基本最普适的模式，但是在长波段并不常见，原因是CW需要的信噪比远比其他模式要高。</p>
+<h3 id="QRSS和DFCW"><a href="#QRSS和DFCW" class="headerlink" title="QRSS和DFCW"></a>QRSS和DFCW</h3><p><strong>QRSS</strong> 是一种极慢速的CW（连续波）模式，名称源于“QRS”（减速发送）。在这种模式下，接收器的带宽极大地缩小，发送速度通常低于2-3 WPM（每分钟字数）。由于速度过慢，通常以“点时间”（dot time，单位为秒&#x2F;点）来量化，例如“3秒点”（3s&#x2F;dot）表示每个“Di”需要3秒，对应约0.4 WPM。若按“60秒点”（60s&#x2F;dot）发送呼号“BH3PTS”，则需长达1小时3分钟。</p>
+<img src="/136khz/a72e47a5-71a4-452a-8e0f-834e198e6aea.png" srcset="/img/loading.gif" lazyload class="" title="a72e47a5-71a4-452a-8e0f-834e198e6aea">
+
+<p>在接收环境中，如果唯一噪声源是均匀高斯白噪声（如大气噪声），可以得出以下结论：</p>
+<ol>
+<li>接收噪声与接收器带宽成正比。</li>
+<li>CW速度越快，接收所需的带宽越宽。</li>
+<li>随着接收时间的增加，频谱上噪声幅度的平均值趋于零。</li>
+</ol>
+<p>最佳接收带宽由结论1和结论2决定，即在某一速度下，存在一个能平衡解码效果与噪声的带宽。下表展示了不同CW速度的最佳带宽和信噪比（SNR）提升情况（以12 WPM为参考）。</p>
+<table>
+<thead>
+<tr>
+<th><strong>速度</strong></th>
+<th><strong>最佳带宽</strong></th>
+<th><strong>SNR（相对12 WPM）</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>12 WPM</td>
+<td>10 Hz</td>
+<td>0 dB</td>
+</tr>
+<tr>
+<td>8 WPM</td>
+<td>6.67 Hz</td>
+<td>+1.8 dB</td>
+</tr>
+<tr>
+<td>4 WPM</td>
+<td>3.33 Hz</td>
+<td>+4.8 dB</td>
+</tr>
+<tr>
+<td>1秒点</td>
+<td>1 Hz</td>
+<td>+10 dB</td>
+</tr>
+<tr>
+<td>3秒点</td>
+<td>0.33 Hz</td>
+<td>+14.8 dB</td>
+</tr>
+<tr>
+<td>10秒点</td>
+<td>0.1 Hz</td>
+<td>+20 dB</td>
+</tr>
+</tbody></table>
+<p>从表中可以看出，通过降低CW速度，可以显著提高信噪比。在136kHz上，一般采用3 dot time的QRSS发射速度。由于此时人耳解码信号变得困难，通常借助计算机频谱解码。</p>
+<p>结论3的原理是类似QRSS这样的窄带信号，其频率、幅度和相位是稳定的，而大气噪声或电子热噪声通常表现为宽带随机信号，其幅度、频率和相位随机分布。当我们延长单次FFT的采样时间时，随着样本的增加，信号的幅度会在其固定频率点上累积，而宽带随机噪声会均匀分布在整个频率范围内，其正负波动会在平均过程中逐渐相互抵消，无法在频域形成明显的集中。信号就会从底噪中逐渐凸显出来。信噪比的提升与采样时间的平方根成正比。</p>
+<p><strong>下面是DK8KW的实验结果</strong></p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs subunit">早上，我做了一些实验室测试，以评估在噪声水平以下用QRSS通信的能力。这是测试的具体过程和结果：<br><br>我使用了一台经过校准的频率合成器（Adret 2230）、一个0<span class="hljs-string">-120</span> dB可调的1 dB步进衰减器（Schlumberger BMD500）以及一台Praecitronic MV61选择性电平计。通过一个BNC T型连接器，我将137.500 kHz（±50 Hz）频段内的正常带宽噪声（包括LORAN信号）输入连接器的一端，同时将频率合成器的输出信号连接到另一端。利用衰减器，我确保合成器输出的0 dBm（50欧姆）信号对应于MV62接收端的<span class="hljs-string">-80</span> dBu（0 dBu = 0.775V，75欧姆等效于<span class="hljs-string">+9</span> dBm，<span class="hljs-string">-80</span> dBu等于<span class="hljs-string">-71</span> dBm）信号强度，误差范围为±1 dB。<br><br>测试期间，频段环境相对安静，背景噪声约为<span class="hljs-string">-101</span> dBm（S4），LORAN信号清晰可见。我使用MV62的100 Hz带宽和IC<span class="hljs-string">-746</span>的250 Hz/500 Hz串联CW滤波器，通过人耳分辨和“Spectrogram”软件进行了信号分析。Spectrogram软件参数设置如下：<br>- 采样率：5.5 kHz<br>- 采样深度：16位单声道<br>- FFT点数：16384（频率分辨率为0.3 Hz）<br>- 动态范围：60 dB<br>- FFT时间尺度：300 ms<br>- FFT平均次数：10次<br></code></pre></td></tr></table></figure>
+
+<p>以下是DK8KW记录的结果：</p>
+<table>
+<thead>
+<tr>
+<th><strong>接收端信号强度</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-100 dBu &#x2F; -91 dBm</td>
+<td>CW信号清晰可辨（S6）</td>
+</tr>
+<tr>
+<td>-110 dBu &#x2F; -101 dBm</td>
+<td>CW信号与噪声水平相当（S4），可刚好辨识</td>
+</tr>
+<tr>
+<td>-115 dBu &#x2F; -106 dBm</td>
+<td>人耳分辨CW信号的边界，信号刚刚可被检测到</td>
+</tr>
+<tr>
+<td>-125 dBu &#x2F; -116 dBm</td>
+<td>QRSS信号完美可读（“O”报告）</td>
+</tr>
+<tr>
+<td>-130 dBu &#x2F; -121 dBm</td>
+<td>QRSS信号良好可读（“M”报告）</td>
+</tr>
+<tr>
+<td>-135 dBu &#x2F; -126 dBm</td>
+<td>QRSS信号刚好可分辨（“T”报告）</td>
+</tr>
+<tr>
+<td>-140 dBu &#x2F; -131 dBm</td>
+<td>信号无法检测</td>
+</tr>
+</tbody></table>
+<p><strong>结论：</strong></p>
+<p>可分辨的最弱的QRSS信号，比训练有素的CW操作员能够解码的最弱信号场强低约<strong>20 dB</strong>。如果假设“CW操作员的耳朵&#x2F;大脑的解码带宽”为30 Hz，那么这一结果与测试中使用的带宽（0.3 Hz与30 Hz）大致对应。</p>
+<p>在超窄带宽和长时间发射要求下，发射器和接收器的频率稳定性尤为重要。然而，136 kHz频段的频率稳定性容易通过晶振分频实现，典型设计可达到0.1 Hz的精度，满足QRSS的需求。</p>
+<p><strong>DFCW</strong>与QRSS相似，不同的地方是DFCW使用微小的频率偏移（甚至可以只偏移0.1Hz）来表示点和划而不是长度。这样的优点是可以减少发送时间，可将平均速度提高 2.5 到 3 倍。为了使其更易于辨别，尤其是类似H….或者O—这样的连续点或划字母，在点和短划线之间添加一个短空格（通常为点时间的 1&#x2F;3）。这稍微降低了平均速度，但提高了可读性，也减少了占空比（这对 PA 更好）。由于使用两个频率，相比QRSS需要更宽的带宽，并且每点频率都会受到噪声和干扰的影响。</p>
+<img src="/136khz/dfcw.gif" srcset="/img/loading.gif" lazyload class="" title="img">
+
+<img src="/136khz/321b749e-1748-4499-8cd6-6974fd3d4d89.png" srcset="/img/loading.gif" lazyload class="" title="321b749e-1748-4499-8cd6-6974fd3d4d89">
+
+<p>目前常用的QRSS接收软件<a target="_blank" rel="noopener" href="https://swharden.com/software/FSKview/">FSKview</a> ，<a target="_blank" rel="noopener" href="https://www.qsl.net/dl4yhf/spectra1.html">Spectrum Lab</a>、<a target="_blank" rel="noopener" href="https://digilander.libero.it/i2phd/argo/">Argo</a>、<a target="_blank" rel="noopener" href="https://www.qsl.net/pa2ohh/11lop.htm">LOPORA</a> 和 <a target="_blank" rel="noopener" href="https://gitlab.com/hb9fxx/qrsspig">QRSSpig</a></p>
+<h3 id="PSK31"><a href="#PSK31" class="headerlink" title="PSK31"></a>PSK31</h3><img src="/136khz/Bpsk31bits.png" srcset="/img/loading.gif" lazyload class="" title="Bpsk31bits">
+
+<p>PSK31 由英国业余无线电操作员 Peter Martinez G3PLX开发并命名，并于 1998 年 12 月被引入业余无线电。PSK31 在保留相位的传播路径上工作良好，并且抗衰落 （QSB） 性好。然而，它可能会受到传播模式（例如跨极路径）的不利影响，其中极光“颤振”或多路径会破坏信号相位的连续性。</p>
+<p>根据经验，psk31解码所需的信噪比往往比人耳能识别CW的最低信噪比要低6dB。但是psk31缺点也很明显，<strong>需要线性的发射设备和功放</strong>，因此不能由便宜、高效的D类发射机或功放发送。随着各种FSK模式兴起，PSK31逐渐沉寂。</p>
+<h3 id="JASON"><a href="#JASON" class="headerlink" title="JASON"></a>JASON</h3><img src="/136khz/jasrx.gif" srcset="/img/loading.gif" lazyload class="" title="jasrx">
+
+<p><strong>JASON</strong> 基于 <strong>IFK（增量频移键控）</strong> 技术。该技术可以有效避免由于电台接收器失谐和频率漂移引起的误码，同时增强对多径传播和码间干扰的抵抗力。<strong>具体而言，信息并非通过频率的绝对值编码，而是通过发送的两个频率之间的差值的绝对值进行编码。</strong>这种方法的优势在于，它不要求精确的初始调谐，几赫兹的调谐误差完全可以接受。保守估计，<strong>JASON 在 136 kHz 频率下只需要 ±31 ppm 的频率稳定性</strong>。这种编码相当古老，早在 1957 年就有一种叫做 Piccolo 的模式就基于这个原理，后来又出现了 <a target="_blank" rel="noopener" href="http://www.k3pgp.org/lflaser.htm">PGP-1</a> 和 PUA-43 等模式。另外，由于频率是逐一发送的，即采用了 FSK 模式，因此<strong>不需要线性放大器</strong>，一个 D 类 MOSFET 发射机即可满足需求。尽管 JASON 每分钟的传输字符数较低（大约 2.5 个字符），但相比 QRSS，它仍具有一定的优势。</p>
+<p>JASON 设计的频率差值共有 16 个不同的值。发送一个音调后，接下来的音调会根据需要向上或向下调整适当的频率差值，这取决于 USB&#x2F;LSB 开关的设置。由于有 16 种可能的频率差值，系统需要 17 个音调槽（即音符），任何溢出都会导致音调回绕。</p>
+<p>每个波特（波特是指信号中的变化，这里特指频率变化）编码 4 位（即一个半字节，或称为 nibble）。但由于 4 位无法满足完整字母表的需求，因此我们使用两个半字节来表示一个字符。</p>
+<p>JASON实现实现字符同步，即如何确定高位半字节和低位半字节，是通过每个半字节的最高位来编码此信息。高位半字节采用 ‘1xxx’（二进制）表示，低位半字节则采用 ‘0xxx’（二进制），其中 <code>xxx</code> 代表实际传输的数据。</p>
+<p>这样，6 位信息就足以表示一个字符，能编码最多 64 个符号。我选择了 ASCII 码中从 x’20’（空格）到 x’5f’（下划线）之间的字符集。这使得我们可以传输所有的大写字母、10 个数字和常用的标点符号。</p>
+<p> <strong>JASON标准速度（Normal）设置参数</strong>如下：</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gauss">默认的接收机（Rx）和发射机（Tx）中心频率为 <span class="hljs-number">800</span> Hz。<br>每组 <span class="hljs-number">17</span> 个音调之间的间隔为 <span class="hljs-number">3</span> 个 <span class="hljs-built_in">FFT</span> bin，以保证正交性。<br>对于标准速度设置，每个 <span class="hljs-built_in">FFT</span> bin 大约是 <span class="hljs-number">0.084</span> Hz，因此音调槽之间的距离大约为 <span class="hljs-number">0.252</span> Hz，总带宽占用约为 <span class="hljs-number">4.038</span> Hz。<br>每个波特（即每个发送的音调）大约持续 <span class="hljs-number">11.89</span> 秒（即 <span class="hljs-built_in">FFT</span> bin 宽度的倒数）。<br></code></pre></td></tr></table></figure>
+
+<p>因此，在标准速度设置下，JASON 的吞吐量约为每分钟 2.5 个字符，虽然速度较慢，但相比 QRSS，仍有一定优势。</p>
+<p>以下是 JASON 三种模式下的参数：</p>
+<table>
+<thead>
+<tr>
+<th>速度</th>
+<th>音调持续时间 (秒)</th>
+<th>音调间隔 (Hz)</th>
+<th>带宽 (Hz)</th>
+<th>每分钟字符数 (Turbo 关闭)</th>
+<th>每分钟字符数 (Turbo 打开)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Slow</td>
+<td>95.2</td>
+<td>0.03</td>
+<td>0.5</td>
+<td>0.3</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td>11.9</td>
+<td>0.25</td>
+<td>4</td>
+<td>2.5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Fast</td>
+<td>1.5</td>
+<td>2</td>
+<td>32</td>
+<td>20</td>
+<td>40</td>
+</tr>
+</tbody></table>
+<p>JASON 能在 <strong>-25 dB</strong> 的信噪比下进行有效通信。</p>
+<p>JASON的网站：<a target="_blank" rel="noopener" href="https://www.i2phd.org/jason/index.html">Jason官网</a> </p>
+<h3 id="WOLF"><a href="#WOLF" class="headerlink" title="WOLF"></a>WOLF</h3><p>WOLF是<em>长波弱信号操作</em>的缩写（<strong>W</strong>eak signal <strong>O</strong>peration on <strong>LF）</strong>，基于 <strong>BPSK（相移键控）</strong> 调制，速率为 10 位每秒。开发者Stewart Nelson，KK7KA 采取了不同的路线来对抗噪声。不是降低信号带宽，而是以相对较高的速度（因此带宽相对较大）传输。同一条消息的传输一遍又一遍地重复，接收端得到的是所有传输信号的综合结果。为了降低误码率，使用了大量的纠错和其他一些同时在GPS上大量使用的 “技巧”。</p>
+<p>具体来说，WOLF采用<strong>固定消息长度</strong>封包。每次传输包含 15 个字符，字符集限制为 40 个符号，包括大写字母（A-Z）、数字（0-9）、空格、标点符号和斜杠。超出范围的字符会被替换为 <code>*</code>。这15 个字符被拆分为 5 组，每组 3 个字符，每组通过 16 位编码表示，总共封装为 80 bit数据包。之后使用用<strong>前向纠错编码（FEC）</strong>使用 <strong>1&#x2F;6 速率卷积编码</strong>，将每个数据bit扩展为 6 个bit，总数据量从 80 bit扩展为 480 bit。冗余数据用于检测和修正接收错误。之后插入<strong>伪随机序列</strong>，在每个数据bit后插入一个参考bit，总帧长扩展至 960 bit。参考bit流为已知的伪随机序列，其作用包括：载波频率与相位恢复、比特与消息时间同步。参考比特流的总能量与数据流相等，但分布在所有比特上的能量是单个数据比特的 80 倍（+19dB）。因此，即便数据比特低于噪声水平，参考比特流仍能提供精确的频率、相位和时间信息。</p>
+<p>单帧传输需 <strong>96 秒</strong>（960 bit &#x2F; 10 bit per sec.）。若信号强度足够，消息可在一次传输后立即解码。如果信号较弱，接收端会利用参考流伪随机码的频率和相位信息解码数据流，并对多个数据流结果进行<strong>非相干积分叠加</strong>，直到信噪比高于阈值能正确解码信息。</p>
+<img src="/136khz/wolf_dos.gif" srcset="/img/loading.gif" lazyload class="" title="img">
+
+<p>至于解码信噪比，KK7KA 表示：<em>WOLF 的可解码阈值似乎与 QRSS-60 相似。在这种情况下，WOLF 通常需要大约 15 分钟能成功解码。根据消息内容，QRSS 会慢 6 到 10 倍。</em></p>
+<img src="/136khz/image-20241125125905670.png" srcset="/img/loading.gif" lazyload class="" title="image-20241125125905670">
+
+<p><a target="_blank" rel="noopener" href="https://www.qsl.net/dl4yhf/wolf/">WOLF GUI 下载</a> </p>
+<h3 id="WSPR"><a href="#WSPR" class="headerlink" title="WSPR"></a>WSPR</h3><p><strong>WSPR</strong>（发音为“whisper”）是 <em>Weak Signal Propagation Reporter</em> 的首字母缩写。它是一种计算机程序实现的协议，专门用于在业余无线电操作员之间进行弱信号无线电通信。该协议由 <em>Joe Taylor</em>（K1JT）设计并在 2008 年编写了一个程序，用于在中频（MF）和高频（HF）频段上进行低功率传输实验，测试无线电波传播路径的性能。由于其高灵敏度，WSPR 很快在 <strong>136 kHz</strong> 等较低频段的弱信号通信中得到了广泛应用。</p>
+<p>WSPR 的工作原理类似于信标（Beacon）发送模式，每次发射都会发送操作员的呼号、地理网格定位（Grid Locator）和发射功率（以 dBm 为单位）。</p>
+<p>WSPR 的一个关键特性是其能够使用非常低的发射功率进行长距离通信，这使得它成为测试无线电波传播、进行远程信号监测和收集大规模传播数据的理想工具。其灵敏度可达到 Bw 2500 Hz  -28 dB。</p>
+<h3 id="WSQ2"><a href="#WSQ2" class="headerlink" title="WSQ2"></a>WSQ2</h3>
+
+<p><strong>简介</strong><br>WSQ是一种为LF（低频）和MF（中频）波段设计的弱信号QSO模式，旨在提供与WSPR类似的灵敏度，同时比JASON等模式更快，适用于在极弱信号下进行实时通信。WSQ由Con ZL2AFP和Murray ZL1BPU在2013年共同开发，使用了全新的增量频率调制（IFK）设计，并结合文本压缩技术，使其能够在低于-27dB信噪比（SNR）下进行有效通讯。ZL2AFP 希望有一种模式能够达到WSPR的灵敏度，同时比当时流行的JASON更快的发射速度以适应QSO的双向通信。于2013年底编写了 WSQ2 的原始版本。WSQ相比于当时常见的数字模式，提供了更高的信号接收灵敏度和较快的通讯速度。特别是与JASON（-25db）和DominoEX（-16db）相比，WSQ在符号传输效率上有显著优势，可以在极弱的信号条件下实现较快的信息交换。</p>
+<p>不像WSPR那样需要复杂的错误纠正，WSQ通过使用<strong>IFK 增量频率键控</strong>避免了电台接收器的失谐和频率漂移导致的误码，更能抵抗多径传播引起的多径干扰和码间干扰。通过<strong>长时间积分</strong>，WSQ能够有效抑制冲击噪声，并在-27dB SNR下可靠接收信号。采用<strong>变长编码（Varicode）</strong>，频繁使用的字符通过更少的符号发送，大大提高了发射速度。</p>
+<p>WSQ使用33个频率，频率间隔为1.953125Hz，采用相位一致的MFSK调制方式，每个符号持续2.048秒。每个符号承载更多信息，因此尽管符号速率较低（0.512波特），但发射速度可达到每分钟5至7个字母，显著高于JASON等其他模式。WSQ的设计使其在噪声较大的环境中能够高效工作，尤其适合在LF&#x2F;MF波段中进行弱信号通讯。 <strong>WSQ主要设计用于实时QSO（交流通信），并不适合用作信号探测或信标。</strong>它适合在160米、630米、2200米等长中波段进行弱信号通信，尤其适用于极低的信噪比和较慢的信号衰落环境。</p>
+<p>WSQ2 的原始版本<a target="_blank" rel="noopener" href="https://www.qsl.net/zl1bpu/SOFT/WSQ.htm">ZL2AFP WSQ</a></p>
+<p>DL4YHF的改进版本<a target="_blank" rel="noopener" href="https://www.qsl.net/dl4yhf/WSQ/index.html">DL4YHF’s extended variant of WSQ &#x2F; WSQCall</a></p>
+<h3 id="JT9"><a href="#JT9" class="headerlink" title="JT9"></a>JT9</h3><p>JT65虽然很适合用于长波段上极弱但变化缓慢的传播特性，但由于它最开始设计用于EME和对流层散射，它占用的频率非常宽，不适合在狭窄的136kHz段发射。于是Joe K1JT使用与 JT65 相同的逻辑编码，针对 MF 和 HF 频段进行了优化设计了9-FSK编码的JT9，当然也可以用在136kHz。JT9 比 JT65A 灵敏度高大约2dB，最低可以在-27dB（2500Hz带宽）下解码，同时占用小于16Hz的带宽。</p>
+<h3 id="FST4和FST4W"><a href="#FST4和FST4W" class="headerlink" title="FST4和FST4W"></a>FST4和FST4W</h3><p>FST4 和 FST4W 是两种特别设计用于长波和中波的两种现代数字通信协议。在这些频段上，该协议的基础灵敏度比其他使用相同序列长度的 WSJT-X 模式更好，接近其信息吞吐率的理论极限。FST4 主要优化用于双向通讯（QSOs），而 FST4W 适用于类似 WSPR 的准信标消息传输。与像 EbNaut 这类模式需要严格独立的时间同步和相位锁定不同，FST4 和 FST4W 不要求这些条件。</p>
+<p>这两种新模式采用 4-GFSK 调制方式。FST4 提供 15、30、60、120、300、900 和 1800 秒的 T&#x2F;R 序列长度，而 FST4W 则省略了 120 秒以下的长度。各子模式的名称为 FST4-60、FST4W-300 等，数字表示序列长度（单位：秒）。消息有效载荷与 FT4、FT8 和 MSK144 相同，包含 77 位数据，FST4W 的 WSPR 风格消息则包含 50 位数据。与其他 77 位和 50 位模式类似，WSJT-X 显示的消息格式也相同。前向错误校正使用低密度奇偶校验（LDPC）码，包含 240 个信息和奇偶校验位。传输由 160 个符号组成：120 个承载信息的符号，每个符号包含两个bit，间隔着五组预定的 8 个同步符号。</p>
+<p>FST4 和 FST4W 各子模式的基本参数如表格所示。阈值灵敏度（即在 2500 Hz 带宽下，解码成功概率为 50% 时的信噪比）是通过在加性白高斯噪声（AWGN）通道中进行仿真测量的。</p>
+<table>
+<thead>
+<tr>
+<th>发射时间(s)</th>
+<th>Symbol Length (s)</th>
+<th>音调间隔 (Hz)</th>
+<th>占用带宽 (Hz)</th>
+<th>FST4 信噪比(dB)</th>
+<th>FST4W 信噪比 (dB)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>15</td>
+<td>0.060</td>
+<td>16.67</td>
+<td>67.7</td>
+<td>20.7</td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td>0.140</td>
+<td>7.14</td>
+<td>28.6</td>
+<td>24.2</td>
+<td></td>
+</tr>
+<tr>
+<td>60</td>
+<td>0.324</td>
+<td>3.09</td>
+<td>12.4</td>
+<td>28.1</td>
+<td></td>
+</tr>
+<tr>
+<td>120</td>
+<td>0.683</td>
+<td>1.46</td>
+<td>5.9</td>
+<td>31.3</td>
+<td>32.8</td>
+</tr>
+<tr>
+<td>300</td>
+<td>1.792</td>
+<td>0.56</td>
+<td>2.2</td>
+<td>35.3</td>
+<td>36.8</td>
+</tr>
+<tr>
+<td>900</td>
+<td>5.547</td>
+<td>0.180</td>
+<td>0.72</td>
+<td>40.2</td>
+<td>41.7</td>
+</tr>
+<tr>
+<td>1800</td>
+<td>11.200</td>
+<td>0.089</td>
+<td>0.36</td>
+<td>43.2</td>
+<td>44.8</td>
+</tr>
+</tbody></table>
+<p>FST4-60 比 JT9 灵敏度高约 1.7 dB，主要因为它在适当的情况下使用了多符号块检测。使用 FST4 的 AP 解码时，这个差异可以达到 4.7 dB。FST4-120 及更长序列长度的模式灵敏度相对更高。FST4W-120 比标准 WSPR 灵敏度高约 1.4 dB，而使用 30 分钟序列的 FST4W-1800，其阈值 SNR 可接近 -45 dB。我们强烈建议在 LF 和 MF 频段使用 JT9 和 WSPR 的用户转而使用 FST4 和 FST4W。</p>
+<p>你可能会想到这些新模式的其他应用，除了这里讨论的应用之外。请记住，这些模式带宽非常窄；要实现表中列出的灵敏度，需要振荡器漂移和路径引起的多普勒频移必须小于音调间隔，并且要保持在整个序列长度内。例如，短序列子模式 FST4-15 在 50 MHz 电离层散射路径上表现非常有效。在传输时长的极端应用上，VK7MO 和 VK7ZBX 使用 FST4W-1800 成功地进行非视距光学散射通信，跨越了长达 153 公里的阻挡路径，采用了 LED 阵列、菲涅耳透镜和光电探测器。</p>
+<h3 id="其他模式"><a href="#其他模式" class="headerlink" title="其他模式"></a>其他模式</h3><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>频移键控 (FSK)</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Radioteletype">RTTY</a> <a target="_blank" rel="noopener" href="https://www.sigidwiki.com/wiki/DominoEX">DominoEX</a> <a target="_blank" rel="noopener" href="https://www.sigidwiki.com/wiki/PI4">PI4</a></td>
+</tr>
+<tr>
+<td>多进制频移键控 (MFSK)</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Olivia_MFSK">Olivia MFSK</a></td>
+</tr>
+<tr>
+<td>相移键控 (PSK)</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/PSK63">PSK63</a> <a target="_blank" rel="noopener" href="https://www.sigidwiki.com/wiki/Coherent_BPSK">相干 BPSK</a></td>
+</tr>
+<tr>
+<td>非传统数字模式</td>
+<td><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/On%E2%80%93off_keying">开关键控 OOK</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Modulated_continuous_wave">调制连续波 MCW</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Hellschreiber">Hellschreiber</a> <a target="_blank" rel="noopener" href="https://www.sigidwiki.com/wiki/Coherent_CW">相干CW</a></td>
+</tr>
+</tbody></table>
+<h2 id="传播特性"><a href="#传播特性" class="headerlink" title="传播特性"></a>传播特性</h2><p><em><u>注意：以下是从数学模型和经验数据推导来的结论，只能<strong>大致描述</strong>该频段的传播特性，并不具有普适性</u></em></p>
+<p>在低频范围内有两种基本的传播模式：<strong>地波传播</strong>和<strong>天波传播。</strong></p>
+<p>为了描述自然效果，大量的简化是必要的。以下解释是基于简化的，但科学上可接受的模型，以简化对传播特性的假设和预测。</p>
+<p>我们做一些基本的假设：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">地球是一个球体。<br><br>地球表面光滑而均匀。<br><br>地球的电学性质（至少在某些地区）是均匀和恒定的。<br><br>电离层由距离地球表面不同高度的小层组成，这些层具有恒定的反射率（至少在一天、季节、太阳周期的部分时间内）。<br></code></pre></td></tr></table></figure>
+
+<h3 id="地波传播"><a href="#地波传播" class="headerlink" title="地波传播"></a>地波传播</h3><p>与我们熟悉的短波段不同，由于该频段的波长极长，地波的发射效率很高，可以沿着地球表面传播很远。</p>
+<p>地面波传播涉及电磁场沿地球表面传播，同时感应和被感应于地球表面及其稍微下方的电流。这些场被称为<strong>表面波</strong>。 如果地球土壤的电气性质是理想的，即具有无限的导电性、单位介电常数和单位磁导率，那么地面波的场强将严格遵循“反距离法则”。具体来说，如果在1公里的距离下，场强为1mV&#x2F;m，那么在10公里时场强为100μV&#x2F;m，在1000公里时为1μV&#x2F;m。 </p>
+<p>然而，实际情况并非如此，因为地球作为导体并不完美。地面中的射频电流会将射频场的能量转化为热量。</p>
+<h4 id="理想地面的理论场强"><a href="#理想地面的理论场强" class="headerlink" title="理想地面的理论场强"></a>理想地面的理论场强</h4><p>为了实地预测地面波的场强，国际无线电咨询委员会（CCIR）发布了368-6号推荐，提供了一组适用于典型地面性质的图表。每个图表显示了25个频率（从10kHz到30MHz）在不同距离下的场强分布。   该方法基于数学模型编制，并通过实际测量验证，提供了准确的数据。</p>
+<p>为了在我们的136kHz <code>（CEPT/ERC Rec. 62-01 E）</code>中使用，我选择了“平均地面”下的150 kHz图表（σ &#x3D; 3 mS&#x2F;m，ε &#x3D; 22），并为标准化的ERP &#x3D; 1 W编制了相关数值。<br>要适应其他ERP值，可以使用以下公式：<br><strong>E(ERP) &#x3D; E(1W) + 10 * log(ERP &#x2F; 1W)</strong></p>
+<p><strong>150 kHz图表（适用于“理想地面”）（接收天线增益视为0dBi）</strong></p>
+<table>
+<thead>
+<tr>
+<th>距离 (km)</th>
+<th>接收场强 (dBuV&#x2F;m)</th>
+<th>接收场强 (dBm)</th>
+<th>各模式覆盖极限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100</td>
+<td>37</td>
+<td>-70</td>
+<td></td>
+</tr>
+<tr>
+<td>200</td>
+<td>28</td>
+<td>-79</td>
+<td></td>
+</tr>
+<tr>
+<td>300</td>
+<td>23</td>
+<td>-84</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>18</td>
+<td>-89</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td>13</td>
+<td>-94</td>
+<td></td>
+</tr>
+<tr>
+<td>600</td>
+<td>9</td>
+<td>-98</td>
+<td></td>
+</tr>
+<tr>
+<td>700</td>
+<td>5</td>
+<td>-102</td>
+<td></td>
+</tr>
+<tr>
+<td>800</td>
+<td>1</td>
+<td>-106</td>
+<td></td>
+</tr>
+<tr>
+<td>900</td>
+<td>-2</td>
+<td>-109</td>
+<td></td>
+</tr>
+<tr>
+<td>1000</td>
+<td>-6</td>
+<td>-113</td>
+<td>假设环境噪声场强</td>
+</tr>
+<tr>
+<td>1100</td>
+<td>-9</td>
+<td>-116</td>
+<td>CW覆盖极限</td>
+</tr>
+<tr>
+<td>1200</td>
+<td>-13</td>
+<td>-120</td>
+<td></td>
+</tr>
+<tr>
+<td>1300</td>
+<td>-17</td>
+<td>-124</td>
+<td></td>
+</tr>
+<tr>
+<td>1400</td>
+<td>-20</td>
+<td>-127</td>
+<td></td>
+</tr>
+<tr>
+<td>1500</td>
+<td>-23</td>
+<td>-130</td>
+<td></td>
+</tr>
+<tr>
+<td>1600</td>
+<td>-27</td>
+<td>-134</td>
+<td>QRSS-3覆盖极限</td>
+</tr>
+<tr>
+<td>1700</td>
+<td>-30</td>
+<td>-137</td>
+<td>Jason、WSQ2覆盖极限</td>
+</tr>
+<tr>
+<td>1800</td>
+<td>-34</td>
+<td>-141</td>
+<td>WSPR覆盖极限</td>
+</tr>
+<tr>
+<td>1900</td>
+<td>-37</td>
+<td>-144</td>
+<td></td>
+</tr>
+<tr>
+<td>2000</td>
+<td>-40</td>
+<td>-147</td>
+<td>FST4-300覆盖极限</td>
+</tr>
+<tr>
+<td>2100</td>
+<td>-43</td>
+<td>-150</td>
+<td></td>
+</tr>
+<tr>
+<td>2200</td>
+<td>-47</td>
+<td>-154</td>
+<td>FST4W-900覆盖极限</td>
+</tr>
+</tbody></table>
+<p>这个表格展示了在150 kHz频率下，标准化ERP &#x3D; 1 W的地面波在不同距离（100 km 到 2200 km）处的场强值。</p>
+<h4 id="137-kHz-实际地面波覆盖范围"><a href="#137-kHz-实际地面波覆盖范围" class="headerlink" title="137 kHz 实际地面波覆盖范围"></a>137 kHz 实际地面波覆盖范围</h4><p>实际的地面波覆盖范围将取决于接收机中可从外部噪声中区分的最低场强（信号场强等于噪声场强）。假设中频带宽（IF-BW）为500 Hz，等效的外部噪声水平为-9 dBuV&#x2F;m（-116dBm），这被视为一个“非常安静的站点”<code>（ITU-R Rec. Pl.372-6）</code>，适用于自然大气噪声和人为噪声。</p>
+<p>假设辐射功率为1 W，则地面波的有效覆盖范围，在所选的地面路径上，不受地面性质（假定为均匀）的影响，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>地面类型</th>
+<th>电导率(mS&#x2F;m)</th>
+<th>介电常数</th>
+<th>0dB覆盖范围 (km)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>海水</td>
+<td>5000</td>
+<td>70</td>
+<td>1600</td>
+</tr>
+<tr>
+<td>沼泽地</td>
+<td>30</td>
+<td>40</td>
+<td>1600</td>
+</tr>
+<tr>
+<td>湿地</td>
+<td>10</td>
+<td>30</td>
+<td>1450</td>
+</tr>
+<tr>
+<td>淡水</td>
+<td>3</td>
+<td>80</td>
+<td>1080</td>
+</tr>
+<tr>
+<td>平均地面</td>
+<td>3</td>
+<td>22</td>
+<td>1100</td>
+</tr>
+<tr>
+<td>中干地面</td>
+<td>1</td>
+<td>15</td>
+<td>700</td>
+</tr>
+<tr>
+<td>干地</td>
+<td>0.3</td>
+<td>7</td>
+<td>430</td>
+</tr>
+<tr>
+<td>极干地面</td>
+<td>0.1</td>
+<td>3</td>
+<td>290</td>
+</tr>
+<tr>
+<td>冰水（1°C）</td>
+<td>0.03</td>
+<td>3</td>
+<td>200</td>
+</tr>
+<tr>
+<td>冰水（-10°C）</td>
+<td>0.01</td>
+<td>3</td>
+<td>180</td>
+</tr>
+</tbody></table>
+<p>此表格展示了不同地面类型和电导率下，假设全向辐射功率为1 W时，地面波信号有效覆盖范围。默认接收方的天线接收增益为0dBi，0dB可以认为是人耳可清晰解码CW信号的场强。如果使用现代通信模式，可以更远。</p>
+<h3 id="天波传播"><a href="#天波传播" class="headerlink" title="天波传播"></a>天波传播</h3><p>天波传播涉及两种方式的电磁场离开天线。其一是沿着一个正角度（起始角 &#x3D; 10A）与地面水平形成的直线路径，另一种则是沿着一个负角度与地面形成的直线路径。后一条路径在某个距离上与地面发生反射，并最终与前一条路径平行传播（带有相位延迟）。有些人将第一部分天波称为直射波，第二部分天波称为地面反射波。</p>
+<p>根据发射天线站点的地面属性、天线的极化（在此情况下为垂直极化）以及起始角（TOA）的值，向上传播到电离层的综合天波具有不同的能量，即使在相同的ERP条件下。</p>
+<h4 id="天波的电离层折射"><a href="#天波的电离层折射" class="headerlink" title="天波的电离层折射"></a>天波的电离层折射</h4><p>向上传播的天波在一定的地面距离上到达电离层的边界。其传播方向与垂直于电离层边界的线形成一个角度（电离层入射角 AOI）。天波进入电离层区域后，与电离层中的分子和离子发生能量交换，同时不断被折射。折射现象的发生是由于在导电的电离层区域，传播速度随着电离化程度的提高而增加。传播波的上层部分在进入电离层区域后，速度比下层部分更快。这类似于光束通过玻璃棱镜时所观察到的现象。</p>
+<p>假设电离层的折射系数足够高，能够将传播方向指向地面，则折射后的天波将在相同的电离层入射角（AOi）下离开电离层，并在地面上以原始的起始角（TOA）到达，且地面距离是先前地面距离的两倍。</p>
+<p>然而，如假设电离层的折射系数过低，进入的天波将完全穿越第一个电离层区域，沿着一个新的修改后的传播方向，进入下一个电离层区域。在通过第一个电离层区域时，天波的能量会减少（与频率的平方成反比）。</p>
+<h4 id="电离层的球面边界"><a href="#电离层的球面边界" class="headerlink" title="电离层的球面边界"></a>电离层的球面边界</h4><p>由于电离层的边界呈球面形状，它们倾向于聚焦到达的天波（类似于球面镜的效果）。假设到达的天波是平行的，则离开的天波将变得聚焦。</p>
+<hr>
+<p>下面的模型基于上面理论进行推导，推导计算过程略。</p>
+<p><strong>RC（电离层反射系数）</strong>：该值表示在不同的地面距离和时间段下，电离层对传输信号的反射能力。夏季白天、冬季白天和夜间的反射系数不同。</p>
+<p>**D (电离层聚焦因子)**：反映了不同地面距离的电离层聚焦效应。RC 和 D取决于发射机（TX）和接收机（RX）之间的地面距离、频率以及太阳活动周期。</p>
+<p>**Fr &amp; Ft (RX&#x2F;TX 天线模式因子)**：这些因子表示天线的地面模式效应，受到地面属性的影响。根据地面属性（σ &#x3D; 2 mS&#x2F;m, ε &#x3D; 15）以及第一个菲涅尔区的地面模式因素计算。</p>
+<p>下面的表格描述了模型计算结果</p>
+<table>
+<thead>
+<tr>
+<th><strong>TX-RX 地面距离 (km)</strong></th>
+<th><strong>RC (夏季白天 &#x2F; 冬季白天 &#x2F; 夜间)</strong></th>
+<th><strong>D (白天 &#x2F; 夜间)</strong></th>
+<th><strong>Fr &amp; Ft (RX &#x2F; TX)</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>100 km</strong></td>
+<td>0.00027 &#x2F; 0.012 &#x2F; 0.09</td>
+<td>1&#x2F;1</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td><strong>200 km</strong></td>
+<td>0.00045 &#x2F; 0.017 &#x2F; 0.10</td>
+<td>1.02 &#x2F; 1.02</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td><strong>300 km</strong></td>
+<td>0.0008 &#x2F; 0.025 &#x2F; 0.12</td>
+<td>1.05 &#x2F; 1.05</td>
+<td>0.79</td>
+</tr>
+<tr>
+<td><strong>400 km</strong></td>
+<td>0.0014 &#x2F; 0.035 &#x2F; 0.14</td>
+<td>1.07 &#x2F; 1.07</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td><strong>500 km</strong></td>
+<td>0.0024 &#x2F; 0.05 &#x2F; 0.16</td>
+<td>1.1 &#x2F; 1.08</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td><strong>600 km</strong></td>
+<td>0.0036 &#x2F; 0.07 &#x2F; 0.18</td>
+<td>1.15 &#x2F; 1.11</td>
+<td>0.76</td>
+</tr>
+<tr>
+<td><strong>700 km</strong></td>
+<td>0.005 &#x2F; 0.08 &#x2F; 0.19</td>
+<td>1.18 &#x2F; 1.14</td>
+<td>0.75</td>
+</tr>
+<tr>
+<td><strong>800 km</strong></td>
+<td>0.0075 &#x2F; 0.09 &#x2F; 0.21</td>
+<td>1.22 &#x2F; 1.18</td>
+<td>0.74</td>
+</tr>
+<tr>
+<td><strong>900 km</strong></td>
+<td>0.01 &#x2F; 0.1 &#x2F; 0.225</td>
+<td>1.3 &#x2F; 1.22</td>
+<td>0.73</td>
+</tr>
+<tr>
+<td><strong>1000 km</strong></td>
+<td>0.012 &#x2F; 0.11 &#x2F; 0.24</td>
+<td>1.35 &#x2F; 1.3</td>
+<td>0.71</td>
+</tr>
+<tr>
+<td><strong>1100 km</strong></td>
+<td>0.014 &#x2F; 0.12 &#x2F; 0.25</td>
+<td>1.45 &#x2F; 1.35</td>
+<td>0.69</td>
+</tr>
+<tr>
+<td><strong>1200 km</strong></td>
+<td>0.0155 &#x2F; 0.13 &#x2F; 0.26</td>
+<td>1.56 &#x2F; 1.4</td>
+<td>0.67</td>
+</tr>
+<tr>
+<td><strong>1300 km</strong></td>
+<td>0.017 &#x2F; 0.14 &#x2F; 0.27</td>
+<td>1.7 &#x2F; 1.5</td>
+<td>0.65</td>
+</tr>
+<tr>
+<td><strong>1400 km</strong></td>
+<td>0.019 &#x2F; 0.15 &#x2F; 0.28</td>
+<td>1.83 &#x2F; 1.6</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td><strong>1500 km</strong></td>
+<td>0.021 &#x2F; 0.165 &#x2F; 0.29</td>
+<td>1.97 &#x2F; 1.72</td>
+<td>0.55</td>
+</tr>
+<tr>
+<td><strong>1600 km</strong></td>
+<td>0.023 &#x2F; 0.18 &#x2F; 0.30</td>
+<td>2.1 &#x2F; 1.9</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td><strong>1700 km</strong></td>
+<td>0.0237 &#x2F; 0.19 &#x2F; 0.31</td>
+<td>2.2 &#x2F; 2.05</td>
+<td>0.44</td>
+</tr>
+<tr>
+<td><strong>1800 km</strong></td>
+<td>0.0242 &#x2F; 0.20 &#x2F; 0.318</td>
+<td>2.27 &#x2F; 2.22</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td><strong>1900 km</strong></td>
+<td>0.0245 &#x2F; 0.21 &#x2F; 0.323</td>
+<td>2.3 &#x2F; 2.3</td>
+<td>0.35</td>
+</tr>
+<tr>
+<td><strong>2000 km</strong></td>
+<td>0.0247 &#x2F; 0.215 &#x2F; 0.326</td>
+<td>2.35 &#x2F; 2.4</td>
+<td>0.33</td>
+</tr>
+<tr>
+<td><strong>2100 km</strong></td>
+<td>0.0249 &#x2F; 0.218 &#x2F; 0.328</td>
+<td>2.42 &#x2F; 2.42</td>
+<td>0.31</td>
+</tr>
+<tr>
+<td><strong>2200 km</strong></td>
+<td>0.025 &#x2F; 0.22 &#x2F; 0.33</td>
+<td>2.5 &#x2F; 2.5</td>
+<td>0.3</td>
+</tr>
+</tbody></table>
+<h4 id="137-kHz-天波传播计算结果"><a href="#137-kHz-天波传播计算结果" class="headerlink" title="137 kHz 天波传播计算结果"></a>137 kHz 天波传播计算结果</h4><p>为方便大家，下面列出计算结果。这些结果仅适用于太阳活动最小期，工作频率为 137 kHz，EIRP &#x3D; 1W，磁性接收天线。</p>
+<p><strong>距离与天波到达场强（dBuV&#x2F;m）</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>距离 (km)</strong></th>
+<th><strong>夏季白天</strong></th>
+<th><strong>冬季白天</strong></th>
+<th><strong>夜间</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>100 km</strong></td>
+<td>-39 dBuV&#x2F;m</td>
+<td>-6 dBuV&#x2F;m</td>
+<td>8 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>200 km</strong></td>
+<td>-35 dBuV&#x2F;m</td>
+<td>-3 dBuV&#x2F;m</td>
+<td>11 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>300 km</strong></td>
+<td>-31 dBuV&#x2F;m</td>
+<td>-1 dBuV&#x2F;m</td>
+<td>11 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>400 km</strong></td>
+<td>-28 dBuV&#x2F;m</td>
+<td>0 dBuV&#x2F;m</td>
+<td>11 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>500 km</strong></td>
+<td>-25 dBuV&#x2F;m</td>
+<td>1 dBuV&#x2F;m</td>
+<td>11 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>600 km</strong></td>
+<td>-23 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+<td>10 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>700 km</strong></td>
+<td>-21 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+<td>10 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>800 km</strong></td>
+<td>-19 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+<td>10 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>900 km</strong></td>
+<td>-17 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+<td>9 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1000 km</strong></td>
+<td>-16 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+<td>9 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1100 km</strong></td>
+<td>-16 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+<td>8 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1200 km</strong></td>
+<td>-15 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+<td>8 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1300 km</strong></td>
+<td>-15 dBuV&#x2F;m</td>
+<td>2 dBuV&#x2F;m</td>
+<td>7 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1400 km</strong></td>
+<td>-16 dBuV&#x2F;m</td>
+<td>2 dBuV&#x2F;m</td>
+<td>6 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1500 km</strong></td>
+<td>-16 dBuV&#x2F;m</td>
+<td>0 dBuV&#x2F;m</td>
+<td>4 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1600 km</strong></td>
+<td>-18 dBuV&#x2F;m</td>
+<td>-1 dBuV&#x2F;m</td>
+<td>3 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1700 km</strong></td>
+<td>-19 dBuV&#x2F;m</td>
+<td>-2 dBuV&#x2F;m</td>
+<td>1 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1800 km</strong></td>
+<td>-21 dBuV&#x2F;m</td>
+<td>-5 dBuV&#x2F;m</td>
+<td>-1 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>1900 km</strong></td>
+<td>-23 dBuV&#x2F;m</td>
+<td>-6 dBuV&#x2F;m</td>
+<td>-2 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>2000 km</strong></td>
+<td>-25 dBuV&#x2F;m</td>
+<td>-7 dBuV&#x2F;m</td>
+<td>-3 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>2100 km</strong></td>
+<td>-26 dBuV&#x2F;m</td>
+<td>-7 dBuV&#x2F;m</td>
+<td>-4 dBuV&#x2F;m</td>
+</tr>
+<tr>
+<td><strong>2200 km</strong></td>
+<td>-26 dBuV&#x2F;m</td>
+<td>-7 dBuV&#x2F;m</td>
+<td>-4 dBuV&#x2F;m</td>
+</tr>
+</tbody></table>
+<p>实际的天波覆盖范围取决于接收机的带外噪声和可辨别的最小场强。假设中频带宽为 500 Hz，外部噪声水平为 -9 dBuV&#x2F;m，这符合<code>（Rec. ITU-R P1.372-6）</code>的“非常安静的站点”标准，适用于自然、大气噪声以及人为噪声。</p>
+<p>假设辐射功率为 1W，那么在不同的季节和时间下，天波的有效覆盖范围（信号等于外部噪声）如下：</p>
+<table>
+<thead>
+<tr>
+<th><strong>季节&#x2F;时间段</strong></th>
+<th><strong>有效覆盖范围</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>夜间</strong></td>
+<td>超过 2200 km</td>
+</tr>
+<tr>
+<td><strong>冬季白天</strong></td>
+<td>超过 2200 km</td>
+</tr>
+<tr>
+<td><strong>夏季白天</strong></td>
+<td>明显无覆盖</td>
+</tr>
+</tbody></table>
+<h3 id="太阳活动"><a href="#太阳活动" class="headerlink" title="太阳活动"></a>太阳活动</h3><p>由于我们目前不再处于太阳活动周期的最小值期，也尚未到达最大值期，因此迄今为止推导的数值可作为一个粗略的尺度，而非精确的数字。原始的CCIR报告提供了一个图表（根据有效频率、白天时间、季节等因素），展示了太阳活动最小值期与最大值期之间的“偏移”差异。</p>
+<p>对于100 km到2200 km的距离，最大值期与最小值期的差异如下：</p>
+<ul>
+<li><strong>夜间</strong>：最大值期的场强比最小值期高 2-4 dB（可以用常数3 dB来近似所有这些距离）。</li>
+<li><strong>冬季白天</strong>：最大值期比最小值期高 2-11 dB。100 km为2 dB，300 km为11 dB，2200 km为5 dB（两者之间按对数插值）。</li>
+<li><strong>夏季白天</strong>：最大值期比最小值期高 3-9 dB。100 km为3 dB，300 km为9 dB（两者之间按对数插值），对于更大距离原始图表中没有数据。</li>
+</ul>
+<h4 id="天波与地波的比较"><a href="#天波与地波的比较" class="headerlink" title="天波与地波的比较"></a>天波与地波的比较</h4><p>通过比较天波和地波的值，我们可以看到，在以下距离范围内，两个波的强度相等（在地面特性等约束条件下）：</p>
+<ul>
+<li><strong>夜间</strong>：550 km</li>
+<li><strong>冬季白天</strong>：750 km</li>
+<li><strong>夏季白天</strong>：1250 km</li>
+</ul>
+<p>这些距离标志着地面波与空中波在合成总场强时的矢量总和范围中心。通过计算从发射端到接收端的传播时间（包括地面距离和电离层路径长度，以及光速），我们可以推导出两种波之间的相位滞后，将其与波长相关联，并假设干涉效应（构造性或破坏性）。</p>
+<p>每次传播模式的变化，导致传播波的方向（电离层区域的虚拟高度）、振幅（电离层区域的反射系数，即电离度）变化，都会影响接收到的总场强。这种现象被称为<strong>干涉衰落</strong>。</p>
+<h4 id="电离层和磁层扰动的影响"><a href="#电离层和磁层扰动的影响" class="headerlink" title="电离层和磁层扰动的影响"></a>电离层和磁层扰动的影响</h4><p>前述的CCIR报告265-7专门涉及在典型的平均太阳活动（无论是最小值期还是最大值期）下的空中波场强。但该报告未提供任何考虑到太阳活动偏离（如太阳耀斑、太阳风变化、地磁风暴等）情况下的值或估算。</p>
+<h2 id="主要干扰"><a href="#主要干扰" class="headerlink" title="主要干扰"></a>主要干扰</h2><p>长波段的干扰主要来源有自然干扰和人为干扰</p>
+<h3 id="自然干扰"><a href="#自然干扰" class="headerlink" title="自然干扰"></a>自然干扰</h3><p>长波波段的自然干扰主要是大气噪声干扰，它的来源主要是与雷电现象相关的大电流脉冲，特定地理位置上的噪声可看作所有雷暴区，特别是海洋雷暴区产生的噪声辐射经传播后的叠加。<br>大气噪声主要是由雷电的瞬时放电引起的，时域上表现为时间短、幅度大的脉冲，它主要存在低频段，对该频段的通信系统较大的影响。</p>
+<p>大气噪声一般可以看成是高斯背景噪声和脉冲噪声的和，高斯背景噪声是由分布于世界范围内的大量雷暴形成的脉冲的叠加构成，这部分脉冲成分幅度较小；脉冲噪声是由接收机附近的闪电电磁脉冲叠加形成，脉冲能量极强，持续时间短，噪声能量主要集中在这部分脉冲成分中。</p>
+<h3 id="人为干扰"><a href="#人为干扰" class="headerlink" title="人为干扰"></a>人为干扰</h3><p>目前城市环境中、开关电源干扰。诸如各类劣质充电器、LED的PWM调光干扰是最主要的干扰。它们的强度不大，但是分布广泛，在城市中无处不在。</p>
+<p>等待施工，喵了个咪~</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="category-chain-item">无线电</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
+      
+        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>136khz（2200m）业余频段入门介绍：迈向长波世界</div>
+      <div>http://naturewind846.github.io/136khz/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>naturewind846</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年11月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/automatic-control-konwledge/" title="《自动控制理论》 1-7章概念">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">《自动控制理论》 1-7章概念</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/tx136-5/" title="Juma TX136 5 接收电路的制作">
+                        <span class="hidden-mobile">Juma TX136 5 接收电路的制作</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'naturewind846/blog-commit-utterance');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
