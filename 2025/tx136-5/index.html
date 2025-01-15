@@ -19,26 +19,31 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。   如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx">
+    <meta name="description" content="日期：2025-01-15 今天开始筹划搭建136kHz所用的天线。 地天线这种天线的形制是将天线端口的两级分别灌入两个相距一定距离的接地棒中。接地棒在地下等效为回路。由于地下的复杂电气环境，这种回路可能很大。 Radio Amateur BG2KAJ - 137kHz 看到了BG2KAJ的文章。感谢可爱姬的经验与启发。 Sp5xsb - EARTH ELECTRODE ANTENNA. Few">
 <meta property="og:type" content="article">
-<meta property="og:title" content="uSDX的功放改造">
-<meta property="og:url" content="http://naturewind846.github.io/2024/usdxlpftransform/index.html">
+<meta property="og:title" content="Juma TX136 4 天线的搭建与调试">
+<meta property="og:url" content="http://naturewind846.github.io/2025/tx136-5/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。   如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx">
+<meta property="og:description" content="日期：2025-01-15 今天开始筹划搭建136kHz所用的天线。 地天线这种天线的形制是将天线端口的两级分别灌入两个相距一定距离的接地棒中。接地棒在地下等效为回路。由于地下的复杂电气环境，这种回路可能很大。 Radio Amateur BG2KAJ - 137kHz 看到了BG2KAJ的文章。感谢可爱姬的经验与启发。 Sp5xsb - EARTH ELECTRODE ANTENNA. Few">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://naturewind846.github.io/img/c6dcb484f3c0d514164355d7a1a7fc22.jpg">
-<meta property="article:published_time" content="2024-10-29T04:56:41.000Z">
-<meta property="article:modified_time" content="2025-01-13T13:58:22.747Z">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-5/g3xbm.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-5/image-20250115145611183.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-5/image-20250115150748020.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-5/image-20250115150756934.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-5/IMG_20250115_144320.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-5/image-20250115153555392.png">
+<meta property="article:published_time" content="2025-01-15T06:48:31.000Z">
+<meta property="article:modified_time" content="2025-01-15T07:51:16.209Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
-<meta property="article:tag" content="uSDX">
+<meta property="article:tag" content="长波">
 <meta property="article:tag" content="DIY制作">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://naturewind846.github.io/img/c6dcb484f3c0d514164355d7a1a7fc22.jpg">
+<meta name="twitter:image" content="http://naturewind846.github.io/2025/tx136-5/g3xbm.jpg">
   
   
   
-  <title>uSDX的功放改造 - NatureWind Blog</title>
+  <title>Juma TX136 4 天线的搭建与调试 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">uSDX的功放改造</span>
+            <span id="subtitle">Juma TX136 4 天线的搭建与调试</span>
           
         </div>
 
@@ -228,8 +233,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-29 12:56" pubdate>
-          2024年10月29日 下午
+        <time datetime="2025-01-15 14:48" pubdate>
+          2025年1月15日 下午
         </time>
       </span>
     
@@ -240,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          534 字
+          654 字
         
       </span>
     
@@ -251,7 +256,7 @@
         
         
         
-          5 分钟
+          6 分钟
         
       </span>
     
@@ -310,105 +315,80 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">uSDX的功放改造</h1>
+            <h1 id="seo-header">Juma TX136 4 天线的搭建与调试</h1>
             
             
               <div class="markdown-body">
                 
-                <p>uSDX虽然做好了，但是20米波段功率不足，只有3.6W，一直是我的心头病。一直想着怎么改造一番。</p>
-<img src="/2024/usdxlpftransform/image-20241116210036546.png" srcset="/img/loading.gif" lazyload class="" title="image-20241116210036546">
+                <p><em>日期：2025-01-15</em></p>
+<p>今天开始筹划搭建136kHz所用的天线。</p>
+<h3 id="地天线"><a href="#地天线" class="headerlink" title="地天线"></a>地天线</h3><p>这种天线的形制是将天线端口的两级分别灌入两个相距一定距离的接地棒中。接地棒在地下等效为回路。由于地下的复杂电气环境，这种回路可能很大。</p>
+<p><a target="_blank" rel="noopener" href="https://www.qsl.net/bg2kaj/Articles/AR_DIY/radio_amateur_bg2kaj__137khz.htm">Radio Amateur BG2KAJ - 137kHz</a></p>
+<p>看到了BG2KAJ的文章。感谢可爱姬的经验与启发。</p>
+<p><a target="_blank" rel="noopener" href="https://www.facebook.com/sp5xsb/posts/earth-electrode-antennafew-days-of-wspr-ing-from-my-location-eirp-power-is-in-ra/588488101277419/">Sp5xsb - EARTH ELECTRODE ANTENNA. Few days of WSPR-ing… | Facebook</a></p>
+<p>感谢SP5XSB的通信实验记录。</p>
+<img src="/2025/tx136-5/g3xbm.jpg" srcset="/img/loading.gif" lazyload class="" title="g3xbm">
 
-<p>如上图，为典型的E类功放构成。Cp为晶体管级间电容，在Datasheet里都有。对于三个并联的BS170，Cp&#x3D;51pF。Cc为补偿电容。L分为Lx和Ls两部分，其中Ls和右侧的C构成谐振，只允许谐振频率经过，LC的Q值当然越大越好，理想情况是正无穷，但同时也会导致功放的带宽变窄。Lx为了提供电抗，消除电压和电流之间的相位差，使功率因数为1。RFC为射频扼流圈，防止高频信号流入电源。RFC没有确定值，一般选用铁氧体磁环绕制，设计时计算出最小值，比它大即可。</p>
-<p>偶然的机会，BI4KSR发给我一份uSDX88s的设计，这个设计用的是T30-2和T30-6，因此匝数和王老师设计的uSDX使用T37大小磁环并不一样。</p>
-<img src="/2024/usdxlpftransform/dcd50b7113c74ffc720523a7b3f0f5d.png" srcset="/img/loading.gif" lazyload class="" title="dcd50b7113c74ffc720523a7b3f0f5d">
+<p><a target="_blank" rel="noopener" href="https://g3xbm-qrp.blogspot.com/2013/01/earth-electrode-antenna-conclusions.html">Roger G3XBM’s (Mainly) Amateur Radio Blog: Earth electrode antenna conclusions (472kHz)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.amateurradio.com/472khz-wspr-using-earth-electrode-antenna/">472kHz WSPR using earth-electrode antenna • AmateurRadio.com</a></p>
+<p>感谢G3XBM的实验与记录。</p>
+<p><a target="_blank" rel="noopener" href="https://people.physics.anu.edu.au/~dxt103/136/earth/">VK1SV 136 kHz fun and games with earth electrodes</a></p>
+<p>感谢VK1SV的实验记录。</p>
+<p>他们证明了这种天线在长波段是可行的。一般呈现50-1000Ω的纯阻性。</p>
+<h3 id="阻抗变换变压器设计与制作"><a href="#阻抗变换变压器设计与制作" class="headerlink" title="阻抗变换变压器设计与制作"></a>阻抗变换变压器设计与制作</h3><p>变压器磁环选用北京798厂的MXO-2000磁环，淘宝有售。<br>该磁环的参数如下：</p>
+<img src="/2025/tx136-5/image-20250115145611183.png" srcset="/img/loading.gif" lazyload class="" title="image-20250115145611183">
 
-<p>同样的电容配置，但是uSDX88s可以出六七瓦的功率。王老师的解答也发过来了。</p>
-<img src="/2024/usdxlpftransform/22f5169862526531854865ea4603ff6.jpg" srcset="/img/loading.gif" lazyload class="" title="22f5169862526531854865ea4603ff6">
+<h4 id="计算MXO-2000磁环的电感系数AL："><a href="#计算MXO-2000磁环的电感系数AL：" class="headerlink" title="计算MXO-2000磁环的电感系数AL："></a>计算MXO-2000磁环的电感系数AL：</h4><p>磁环AL计算公式为：</p>
+<p><code>AL=[（外径-内径）÷（外径＋内径）]×400×高度×（导磁率÷10000）</code></p>
+<p>公式中外径内径取直径，单位均为毫米。即磁环标定值。计算出的AL单位为（nH&#x2F;N²）</p>
+<p>举例来说，对于T10&#x2F;6&#x2F;2，导磁率为1000的磁环，其电感系数为：</p>
+<p><code>AL=[（10-6）÷（10＋6）]×400×2×（1000÷10000）=20nH/N²</code></p>
+<p>计算得到MXO-2000的<strong>AL&#x3D;4.528uH&#x2F;N²</strong></p>
+<p>考虑到其磁导率为2000±25%，AL在 <strong>3.396-5.660uH&#x2F;N²</strong> 间浮动。</p>
+<h4 id="设计变压器挡位："><a href="#设计变压器挡位：" class="headerlink" title="设计变压器挡位："></a>设计变压器挡位：</h4><p>接下来设计变压器的挡位。我们希望无论对于可能出现的任意阻抗，都能变换到50Ω附近并使得VSWR＜1.5。</p>
+<p>VSWR与阻抗Z0联系的公式为</p>
+<img src="/2025/tx136-5/image-20250115150748020.png" srcset="/img/loading.gif" lazyload class="" title="image-20250115150748020">
 
-<p>开始拆焊改绕磁环。</p>
-<p>参数的话，就计算uSDX88S的磁环感值，换算到T37磁环上吧。</p>
+<img src="/2025/tx136-5/image-20250115150756934.png" srcset="/img/loading.gif" lazyload class="" title="image-20250115150756934">
+
+<p>得到：</p>
+<p><code>VSWR=ZL/Z0（当ZL＞Z0时）</code><br><code>VSWR=Z0/ZL（当Z0＞ZL时）</code></p>
+<p>发射机的阻抗为50Ω，那么对于（50÷1.5）到（50×1.5）即33.3-75Ω之间，驻波比满足VSWR＜1.5。</p>
+<p>那么向上，使得75Ω临界值对于上一档也满足VSWR＜1.5的挡位阻抗为（75×1.5）即112.5Ω。<br>得到变压器挡位为：</p>
+<p>…… 4.38Ω  9.87Ω  22.2Ω  <strong>50Ω</strong>  112.5Ω  253.125Ω  569.5Ω ……</p>
+<p>每一挡位之间需乘除 (SWR)²。</p>
+<p>针对一个自行绕制的磁环，我们需要从任一匝数出发来寻找合适的挡位。</p>
+<p>根据经验，变压器的初级绕组电感应该不小于10倍的传输阻抗，即500Ω</p>
+<p>由公式XL&#x3D;2πfL得：L&#x3D;585uH。</p>
+<p>由L&#x3D;AL×N² 得初级绕组匝数为13.1-10.16之间。选取N为12。</p>
+<p>列出次级绕组每种匝数对应的变换阻抗值，最终选取挡位为。</p>
 <table>
 <thead>
 <tr>
-<th>频段</th>
-<th>原始设计L1</th>
-<th>原始设计L2</th>
-<th>计算结果L1</th>
-<th>计算结果L2</th>
-<th>88S L1</th>
-<th>88S L2</th>
+<th align="left">次级匝数</th>
+<th>6</th>
+<th>8</th>
+<th>12</th>
+<th>17</th>
+<th>25</th>
+<th>36</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>28MHz</td>
-<td>8</td>
-<td>5</td>
-<td><strong>7</strong></td>
-<td><strong>5</strong></td>
-<td>6</td>
-<td>5</td>
-</tr>
-<tr>
-<td>21MHz</td>
-<td>9</td>
-<td>6</td>
-<td><strong>8</strong></td>
-<td><strong>6</strong></td>
-<td>7</td>
-<td>5</td>
-</tr>
-<tr>
-<td>14MHz</td>
-<td>12</td>
-<td>8</td>
-<td><strong>10</strong></td>
-<td><strong>8</strong></td>
-<td>9</td>
-<td>7</td>
-</tr>
-<tr>
-<td>10MHz</td>
-<td>12</td>
-<td>8</td>
-<td><strong>11</strong></td>
-<td><strong>8</strong></td>
-<td>11</td>
-<td>8</td>
-</tr>
-<tr>
-<td>7MHz</td>
-<td>15</td>
-<td>9</td>
-<td><strong>14</strong></td>
-<td><strong>9</strong></td>
-<td>13</td>
-<td>9</td>
+<td align="left">对应阻抗</td>
+<td>12.5</td>
+<td>22.2</td>
+<td>50</td>
+<td>100</td>
+<td>217</td>
+<td>450</td>
 </tr>
 </tbody></table>
-<p>计算结果，第二个低通的磁环都一样，只有第一个E类功放的带通磁环电感匝数不一样，按照计算结果重绕14MHz的磁环。</p>
-<img src="/2024/usdxlpftransform/a2185549-b447-4446-8ba8-019e69c615e0.png" srcset="/img/loading.gif" lazyload class="" title="a2185549-b447-4446-8ba8-019e69c615e0">
+<p>它可实现8.3Ω-675Ω之间任意变换SWR＜1.5。</p>
+<h4 id="制作变压器"><a href="#制作变压器" class="headerlink" title="制作变压器"></a>制作变压器</h4><img src="/2025/tx136-5/IMG_20250115_144320.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250115_144320">
 
-<p>上电，测试，功率5.5W，杂散也完美。</p>
-<img src="/2024/usdxlpftransform/105878b1cb145c63d5824853d54b219e.jpg" srcset="/img/loading.gif" lazyload class="" title="105878b1cb145c63d5824853d54b219e">
+<img src="/2025/tx136-5/image-20250115153555392.png" srcset="/img/loading.gif" lazyload class="" title="image-20250115153555392">
 
-<p>非常的惊喜，试试改21MHz和28MHz。</p>
-<img src="/2024/usdxlpftransform/f83762da6976ce0a0cac2a999ce7ddd8.jpg" srcset="/img/loading.gif" lazyload class="" title="f83762da6976ce0a0cac2a999ce7ddd8">
-
-<img src="/2024/usdxlpftransform/c6dcb484f3c0d514164355d7a1a7fc22.jpg" srcset="/img/loading.gif" lazyload class="" title="c6dcb484f3c0d514164355d7a1a7fc22">
-
-<p>21MHz更是来到6W，杂散也有-52dbc。</p>
-<img src="/2024/usdxlpftransform/image-20250113215611765.png" srcset="/img/loading.gif" lazyload class="" title="image-20250113215611765">
-
-<p>28MHz改后虽然只有4.3W，但是杂散合格了，也不错。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>uSDX某些波段觉得功率不够完美的，就是第一个磁环的阻抗匹配没做好。</p>
-<p> 20米段12匝黄磁环改绕10匝</p>
-<p>15米段9匝磁环改绕8匝</p>
-<p>10米段8匝磁环改绕7匝</p>
-<p>实测（13.8V PA bias均为180）：</p>
-<p>20米改后功率3.7w提升至5.5w</p>
-<p>15米改后4.0W提升6.1w</p>
-<p>10米改后2.8w提升4.3w</p>
-<p><strong>足足有1.8dB的提升</strong></p>
 
                 
               </div>
@@ -444,7 +424,7 @@
       
         <a href="/tags/Ham/" class="print-no-link">#Ham</a>
       
-        <a href="/tags/uSDX/" class="print-no-link">#uSDX</a>
+        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
       
         <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
       
@@ -458,8 +438,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>uSDX的功放改造</div>
-      <div>http://naturewind846.github.io/2024/usdxlpftransform/</div>
+      <div>Juma TX136 4 天线的搭建与调试</div>
+      <div>http://naturewind846.github.io/2025/tx136-5/</div>
     </div>
     <div class="license-meta">
       
@@ -471,13 +451,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月29日</div>
+          <div>2025年1月15日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年1月13日</div>
+          <div>2025年1月15日</div>
         </div>
       
       
@@ -508,18 +488,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/helloworld/" title="Hello World! BH3PTS Blog的第一篇文章">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World! BH3PTS Blog的第一篇文章</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/usdxtxtest/" title="uSDX的SSB发射质量如何？测试比较">
-                        <span class="hidden-mobile">uSDX的SSB发射质量如何？测试比较</span>
+                      <a href="/2025/titanic-radio/" title="【翻译】无线电史话：泰坦尼克号上的无线电">
+                        <span class="hidden-mobile">【翻译】无线电史话：泰坦尼克号上的无线电</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
