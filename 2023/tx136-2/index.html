@@ -19,19 +19,19 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日期：2023-12-03 前期准备工作做好了，开始购买物料，立创下单PCB准备制作。   以前从来没有用过焊台或者加热台之类的，考虑到这次的焊点比较多，决定买一个铁板烧试试，练一练自己的焊接水平。   想打一个钢网，但是面积大于100*100的钢网蛮贵的。出于省钱的目的手点焊膏。   铁板烧确实方便，焊接后几乎不需要清洁，PCB表面很干净   焊接主控 dsPIC30F6014A，这个使用拖焊法">
+    <meta name="description" content="日期：2023-12-03 前期准备工作做好了，开始购买物料，立创下单PCB准备制作。   以前从来没有用过焊台或者加热台之类的，考虑到这次的焊点比较多，决定买一个铁板烧试试，练一练自己的焊接水平。   想打一个钢网，但是面积大于100*100的钢网蛮贵的。出于省钱的目的手点焊膏。   铁板烧确实方便，焊接后几乎不需要清洁，PCB表面很干净   焊接主控 dsPIC30F6014A   差不多焊完">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Juma TX136 2 准备、制作与调试">
 <meta property="og:url" content="http://naturewind846.github.io/2023/tx136-2/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="日期：2023-12-03 前期准备工作做好了，开始购买物料，立创下单PCB准备制作。   以前从来没有用过焊台或者加热台之类的，考虑到这次的焊点比较多，决定买一个铁板烧试试，练一练自己的焊接水平。   想打一个钢网，但是面积大于100*100的钢网蛮贵的。出于省钱的目的手点焊膏。   铁板烧确实方便，焊接后几乎不需要清洁，PCB表面很干净   焊接主控 dsPIC30F6014A，这个使用拖焊法">
+<meta property="og:description" content="日期：2023-12-03 前期准备工作做好了，开始购买物料，立创下单PCB准备制作。   以前从来没有用过焊台或者加热台之类的，考虑到这次的焊点比较多，决定买一个铁板烧试试，练一练自己的焊接水平。   想打一个钢网，但是面积大于100*100的钢网蛮贵的。出于省钱的目的手点焊膏。   铁板烧确实方便，焊接后几乎不需要清洁，PCB表面很干净   焊接主控 dsPIC30F6014A   差不多焊完">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/pic_merged_1731510012888.jpg">
 <meta property="article:published_time" content="2023-12-03T12:00:00.000Z">
-<meta property="article:modified_time" content="2025-01-10T15:07:49.771Z">
+<meta property="article:modified_time" content="2025-05-04T14:36:35.845Z">
 <meta property="article:author" content="naturewind846">
-<meta property="article:tag" content="Ham">
 <meta property="article:tag" content="长波">
+<meta property="article:tag" content="Ham">
 <meta property="article:tag" content="CW">
 <meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="JumaTX136">
@@ -254,7 +254,7 @@
         
         
         
-          10 分钟
+          9 分钟
         
       </span>
     
@@ -331,7 +331,7 @@
 <p>铁板烧确实方便，焊接后几乎不需要清洁，PCB表面很干净</p>
 <img src="/2023/tx136-2/IMG_20231127_182757.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20231127_182757">
 
-<p>焊接主控 dsPIC30F6014A，这个使用拖焊法。</p>
+<p>焊接主控 dsPIC30F6014A</p>
 <img src="/2023/tx136-2/IMG_20231121_221258.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20231121_221258">
 
 <p>差不多焊完了</p>
@@ -344,11 +344,9 @@
 <img src="/2023/tx136-2/IMG_20231130_234619.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20231130_234619">
 
 <p>锉刀磨了磨，完美塞进去</p>
-<p>接下来上电，发射，<strong>砰！</strong></p>
-<p>打开一看，功放MOS管炸了，保险丝也报废。哪里出了问题？</p>
+<p>接下来上电，发射，意外的功放MOS管炸了，保险丝也报废。哪里出了问题？</p>
 <p><em>日期：2024-10-30</em></p>
 <p>时隔一年，终于有心情把TX136捡回来了。<br>炸管原因已经很明确了，罪魁祸首是VP5–0067，6绕组变压器。采购时买错变压器了，749196500是贸泽的货号，国内并没有成品买。文档介绍说749196500的每绕组电感足足有82uH，但是VP5-0067的每绕组电感只有6.7uH，买的时候没有检查datasheet，6.7uH用在136kHz的D类推挽电路上电抗太小，电流长的飞快。</p>
-<p>教训是：还是不要图便宜的好。</p>
 <img src="/2023/tx136-2/Screenshot_2024_1113_223732.png" srcset="/img/loading.gif" lazyload class="" title="Screenshot_2024_1113_223732">
 
 <p>痛下狠心，点开了立创海淘。立创可以买贸泽的东西，没有最小交易限额还可以免国际邮费，相当好评。</p>
@@ -363,14 +361,14 @@
 <img src="/2023/tx136-2/qq_pic_merged_1731509174899.jpg" srcset="/img/loading.gif" lazyload class="" title="qq_pic_merged_1731509174899">
 
 <p>接下来的问题是电流异常的大</p>
-<p>这不是D类功放吗，11W的功率怎么跑出13.6V和3.3A的电流。试了试最大功率，触发了电流保护。</p>
-<p>检查电路图，慢慢思考，翻找datasheet。可能是电流测量IC的问题？</p>
+<p>D类功放11W的功率跑出13.6V和3.3A的电流，效率出奇的低，试了试最大功率，触发了电流保护。</p>
+<p>检查电路图，可能是电流测量IC的问题？</p>
 <img src="/2023/tx136-2/e671bead-ba70-4d08-82ee-4aa84ee4e12a.png" srcset="/img/loading.gif" lazyload class="" title="e671bead-ba70-4d08-82ee-4aa84ee4e12a">
 
 <p>原设计用的是MAX4373TESA，记得去年采购时因为四处买不到，在芯查查上查找了pin to pin的替代，淘宝四处问到了一家店MAX4373FESA有货，买来就先焊上了</p>
 <p>查看datasheet，这两个芯片的电流测量增益不一样，一个是20倍，另一个是50倍。看来确实是这里的问题。</p>
 <p>时隔一年，再搜淘宝，啥啥芯片都有了，max4373tesa，下单。过几天到了焊上，一切正常</p>
-<p>实测最高功率档，发射时13.2V 4.7A 机体功率表测量得到功率50W，效率有80％.虽然没有官方给的那么惊人的数据，不过我这个东拼西凑的设备，能够达到这样的成果已经很满意了。</p>
+<p>实测最高功率档，发射时13.2V 4.7A 机体功率表测量得到功率50W，效率有80％。该功率表并没有校准，功率仅供参考</p>
 <p>来张机身内部照。注意看两只脚。因为这个机壳没有卡槽放pcb，我给pcb安装了两个小脚，用的是做pcb电键剩下的零件和磁铁，吸在底下刚刚好。</p>
 <img src="/2023/tx136-2/IMG_20241113_225952.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20241113_225952">
 
@@ -440,9 +438,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
-      
         <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
+      
+        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
       
         <a href="/tags/CW/" class="print-no-link">#CW</a>
       
@@ -481,7 +479,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年1月10日</div>
+          <div>2025年5月4日</div>
         </div>
       
       
