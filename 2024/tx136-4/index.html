@@ -19,21 +19,21 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   寥寥无几的功能。     v115 F4GCB编写的文档，足足三大页的串口指令。 话虽如此，虽然是想写一个GUI的程序。但是我没有接">
+    <meta name="description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 日期：2025-05-06 Juma TX136 串行命令协议介绍（该部分是F4GCB的v1.16第三方固件文档对应部分的翻译与解释，适用于最新的v1.16固件，该协议向下兼容官方的v1.04固件，同时有更多新增的功能） JUMA TX136&#x2F;TX500串行协议是JUMA TX136&#x2F;TX500电台与另一个系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Juma TX136 3 控制软件神通广大，ChatGPT大显神威">
+<meta property="og:title" content="Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件">
 <meta property="og:url" content="http://naturewind846.github.io/2024/tx136-4/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 串口控制上位软件事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。   寥寥无几的功能。     v115 F4GCB编写的文档，足足三大页的串口指令。 话虽如此，虽然是想写一个GUI的程序。但是我没有接">
+<meta property="og:description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 日期：2025-05-06 Juma TX136 串行命令协议介绍（该部分是F4GCB的v1.16第三方固件文档对应部分的翻译与解释，适用于最新的v1.16固件，该协议向下兼容官方的v1.04固件，同时有更多新增的功能） JUMA TX136&#x2F;TX500串行协议是JUMA TX136&#x2F;TX500电台与另一个系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/1730529724-248708-image.webp">
 <meta property="article:published_time" content="2024-11-13T18:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-04T14:38:16.406Z">
+<meta property="article:modified_time" content="2025-05-05T20:58:06.753Z">
 <meta property="article:author" content="naturewind846">
-<meta property="article:tag" content="长波">
 <meta property="article:tag" content="Ham">
-<meta property="article:tag" content="CW">
+<meta property="article:tag" content="长波">
 <meta property="article:tag" content="DIY制作">
+<meta property="article:tag" content="CW">
 <meta property="article:tag" content="JumaTX136">
 <meta property="article:tag" content="长波发射机">
 <meta property="article:tag" content="Python">
@@ -42,7 +42,7 @@
   
   
   
-  <title>Juma TX136 3 控制软件神通广大，ChatGPT大显神威 - NatureWind Blog</title>
+  <title>Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -221,7 +221,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Juma TX136 3 控制软件神通广大，ChatGPT大显神威</span>
+            <span id="subtitle">Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件</span>
           
         </div>
 
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          3.4k 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          10 分钟
+          29 分钟
         
       </span>
     
@@ -314,13 +314,275 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Juma TX136 3 控制软件神通广大，ChatGPT大显神威</h1>
+            <h1 id="seo-header">Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件</h1>
             
             
               <div class="markdown-body">
                 
                 <p><em>日期：2024-11-14</em></p>
 <p>硬件基本折腾完了，现在准备动手写软件。</p>
+<p><em>日期：2025-05-06</em></p>
+<h3 id="Juma-TX136-串行命令协议介绍"><a href="#Juma-TX136-串行命令协议介绍" class="headerlink" title="Juma TX136 串行命令协议介绍"></a>Juma TX136 串行命令协议介绍</h3><p>（该部分是F4GCB的v1.16第三方固件文档对应部分的翻译与解释，适用于最新的v1.16固件，该协议向下兼容官方的v1.04固件，同时有更多新增的功能）</p>
+<p>JUMA TX136&#x2F;TX500串行协议是JUMA TX136&#x2F;TX500电台与另一个系统通信的方式。</p>
+<h4 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h4><p>串行命令报文总是以问号 “?” （0x3F）或等号 “&#x3D;” （0x3D）开头，并总是以回车符␍ “CR”（0x0D）结束。</p>
+<p> “?” 表示查询报文，“&#x3D;”表示设置报文。响应报文中同时还会添加换行符␊LF（0x0A），这使得使用终端程序测试命令过程变得方便。</p>
+<table>
+<thead>
+<tr>
+<th>起始符</th>
+<th>报文</th>
+<th>终止符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>?</td>
+<td>查询报文</td>
+<td>CR</td>
+</tr>
+<tr>
+<td>&#x3D;</td>
+<td>设置报文</td>
+<td>CR</td>
+</tr>
+<tr>
+<td>&#x3D;</td>
+<td>响应报文</td>
+<td>LF CR</td>
+</tr>
+</tbody></table>
+<p>为了提高输入格式的灵活性，下列字符被定义为无动作字符（No action characters）。</p>
+<p><code>0x0A 换行符 ␊  Line feed</code></p>
+<p><code>0x00 空格   ␀  NUL</code></p>
+<p><strong>注意：在TX期间，除了停止发射命令“&#x3D;B0”之外的所有串行命令都被禁用。</strong><br><strong>在REMOTE模式下，处于OPER和TX状态时，所有串行命令都被禁用。</strong></p>
+<h4 id="Juma-TX136-500-串行协议命令表"><a href="#Juma-TX136-500-串行协议命令表" class="headerlink" title="Juma TX136&#x2F;500 串行协议命令表"></a><strong>Juma TX136&#x2F;500 串行协议命令表</strong></h4><p><em>（原英文版表附在文末）</em></p>
+<table>
+<thead>
+<tr>
+<th align="left">询问命令</th>
+<th align="left">设置命令</th>
+<th align="left">功能与参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>?A</strong>CR</td>
+<td align="left"><strong>&#x3D;Ax</strong>CR [ 0 ~ 2 ]</td>
+<td align="left"><strong>前置放大器</strong>：<strong>0</strong> &#x3D; 关闭，<strong>1</strong> &#x3D; 10 dB，<strong>2</strong> &#x3D; 20 dB。</td>
+</tr>
+<tr>
+<td align="left"><strong>?B</strong>CR</td>
+<td align="left"><strong>&#x3D;Bx</strong>CR [ 0 ~ 1 or T ]</td>
+<td align="left"><strong>发射控制</strong>：<strong>0</strong> &#x3D; 停止发射，<strong>1</strong> &#x3D; 发射信标（注意：无论是否为OPER模式都会发射），<strong>1 至 99</strong> &#x3D; SCRIPT模式下发射次数，<strong>T</strong> &#x3D; 发射信息，被用于JUMA软件。</td>
+</tr>
+<tr>
+<td align="left"><strong>?C</strong>CR</td>
+<td align="left"><strong>&#x3D;Cx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>接收转换器</strong>：<strong>0</strong> &#x3D; 关闭，<strong>1</strong> &#x3D; 开启（TX136: 10 MHz，TX500: 3.5 MHz）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?D</strong>CR</td>
+<td align="left"><strong>&#x3D;Dxxx</strong>CR [ 1 ~ 120 ]</td>
+<td align="left"><strong>QRSS&#x2F;DFCW点时间</strong>：设置：<strong>1</strong> 至 <strong>120</strong> 秒。</td>
+</tr>
+<tr>
+<td align="left"><strong>?E</strong>CR</td>
+<td align="left"><strong>&#x3D;Etext</strong>CR</td>
+<td align="left"><strong>CW信标文本</strong>：保存至EEPROM（最多255字符）。有效ASCII：20h（空格）至5Fh（Z）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?F</strong>CR</td>
+<td align="left"><strong>&#x3D;Fxxxxxx</strong>CR</td>
+<td align="left"><strong>频率设置</strong>：TX136：<strong>135700</strong> 至 <strong>137800</strong> Hz，TX500：<strong>472000</strong> 至 <strong>479000</strong> Hz（步进1 Hz）。双频板安装时自动切换波段。</td>
+</tr>
+<tr>
+<td align="left"><strong>?G</strong>CR</td>
+<td align="left"><strong>&#x3D;Gx</strong>CR [ 0 ~ 10 ]</td>
+<td align="left"><strong>发射模式</strong>：<strong>0</strong> &#x3D; CW，<strong>1</strong> &#x3D; QRSS，<strong>2</strong> &#x3D; DFCW，<strong>3</strong> &#x3D; JASON，<strong>4</strong> &#x3D; WSQ2，<strong>5</strong> &#x3D; OPERA，<strong>6</strong> &#x3D; WSPR，<strong>7</strong> &#x3D; FST4W，<strong>8</strong> &#x3D; JT9，<strong>9</strong> &#x3D; REMOTE，<strong>10</strong> &#x3D; SCRIPT。</td>
+</tr>
+<tr>
+<td align="left"><strong>?H</strong>CR</td>
+<td align="left"><strong>&#x3D;Htext</strong>CR</td>
+<td align="left"><strong>信标文本</strong>：保存至EEPROM（最多16字符）。有效ASCII：20h（空格）至5Fh（Z）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?I</strong>CR</td>
+<td align="left"></td>
+<td align="left">系统信息：返回<strong>固件版本</strong>。</td>
+</tr>
+<tr>
+<td align="left"><strong>?IB</strong>CR</td>
+<td align="left"></td>
+<td align="left">系统信息：返回<strong>电池电压</strong>（分辨率10 mV）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?ID</strong>CR</td>
+<td align="left"></td>
+<td align="left">系统信息：返回<strong>电流消耗</strong>（分辨率0.1 A）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?IP</strong>CR</td>
+<td align="left"></td>
+<td align="left">系统信息：返回<strong>发射功率</strong>（分辨率0.1 W）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?IS</strong>CR</td>
+<td align="left"></td>
+<td align="left">系统信息：返回<strong>驻波比</strong>（SWR）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?JF</strong>CR</td>
+<td align="left"><strong>&#x3D;JFx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>JASON帧模式</strong>：<strong>0</strong> &#x3D; 单次，<strong>1</strong> &#x3D; 连续，<strong>2</strong> &#x3D; 发1等1，<strong>3</strong> &#x3D; 发1等2，<strong>4</strong> &#x3D; 发1等3，<strong>5</strong> &#x3D; 发1等4。</td>
+</tr>
+<tr>
+<td align="left"><strong>?JS</strong>CR</td>
+<td align="left"><strong>&#x3D;JSx</strong>CR [ 2 ~ 5 ]</td>
+<td align="left"><strong>JASON速度</strong>：<strong>2</strong> &#x3D; Normal, <strong>3</strong> &#x3D; Normal turbo, <strong>4</strong> &#x3D; Fast, <strong>5</strong> &#x3D; Fast turbo。</td>
+</tr>
+<tr>
+<td align="left"><strong>?K</strong>CR</td>
+<td align="left"><strong>&#x3D;Kx</strong>CR [ 0 ~ 4 ]</td>
+<td align="left"><strong>CW键类型</strong>：<strong>0</strong> &#x3D; 点优先，<strong>1</strong> &#x3D; Iambic A，<strong>2</strong> &#x3D; Iambic B，<strong>3</strong> &#x3D; 直键，<strong>4</strong> &#x3D; 信标模式。</td>
+</tr>
+<tr>
+<td align="left"><strong>?L</strong>CR</td>
+<td align="left"><strong>&#x3D;Llocator</strong>CR</td>
+<td align="left"><strong>网格定位</strong>：设置6位梅登黑格网格。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><strong>&#x3D;Mtext</strong>CR</td>
+<td align="left"><strong>消息文本</strong>：临时存储（最多160字符，不保存）。JUMA软件专用。有效ASCII：20h（空格）至5Fh（Z）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?N</strong>CR</td>
+<td align="left"><strong>&#x3D;Nxxxx</strong>CR [ 1 ~ 3559 ]</td>
+<td align="left"><strong>时钟同步</strong>：设置：<strong>1</strong> 至 <strong>3559</strong> 秒。</td>
+</tr>
+<tr>
+<td align="left"><strong>?O</strong>CR</td>
+<td align="left"><strong>&#x3D;Ox</strong>CR [ 0 ~ 2 ]</td>
+<td align="left"><strong>操作模式</strong>：<strong>0</strong> &#x3D; STBY待机，<strong>1</strong> &#x3D; OPER运行，<strong>2</strong> &#x3D; TUNE调谐。</td>
+</tr>
+<tr>
+<td align="left"><strong>?OF</strong>CR</td>
+<td align="left"><strong>&#x3D;OFx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>OPERA帧模式</strong>：<strong>0</strong> &#x3D; 单次，<strong>1</strong> &#x3D; 连续，<strong>2</strong> &#x3D; 发1等1，<strong>3</strong> &#x3D; 发1等2，<strong>4</strong> &#x3D; 发1等3，<strong>5</strong> &#x3D; 发1等4。</td>
+</tr>
+<tr>
+<td align="left"><strong>?OS</strong>CR</td>
+<td align="left"><strong>&#x3D;OSx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>OPERA速度</strong>：<strong>0</strong> &#x3D; OPERA 2，<strong>1</strong> &#x3D; OPERA 4，<strong>2</strong> &#x3D; OPERA 8，<strong>3</strong> &#x3D; OPERA 16，<strong>4</strong> &#x3D; OPERA 32，<strong>5</strong> &#x3D; OPERA 65。</td>
+</tr>
+<tr>
+<td align="left"><strong>?P</strong>CR</td>
+<td align="left"><strong>&#x3D;Px</strong>CR [ 0 ~ 3 ]</td>
+<td align="left"><strong>发射功率</strong>：<strong>0</strong> &#x3D; 4 W，<strong>1</strong> &#x3D; 15 W，<strong>2</strong> &#x3D; 35 W，<strong>3</strong> &#x3D; 60 W。</td>
+</tr>
+<tr>
+<td align="left"><strong>?Q</strong>CR</td>
+<td align="left"><strong>&#x3D;Qx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>CW&#x2F;QRSS&#x2F;DFCW帧模式</strong>：<strong>0</strong> &#x3D; 单次，<strong>1</strong> &#x3D; 连续，<strong>2</strong> &#x3D; 发1等1，<strong>3</strong> &#x3D; 发1等2，<strong>4</strong> &#x3D; 发1等3，<strong>5</strong> &#x3D; 发1等4。</td>
+</tr>
+<tr>
+<td align="left"><strong>?QF</strong>CR</td>
+<td align="left"><strong>&#x3D;QFx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>WSQ帧模式</strong>：<strong>0</strong> &#x3D; 单次，<strong>1</strong> &#x3D; 连续，<strong>2</strong> &#x3D; 发1等1，<strong>3</strong> &#x3D; 发1等2，<strong>4</strong> &#x3D; 发1等3，<strong>5</strong> &#x3D; 发1等4。</td>
+</tr>
+<tr>
+<td align="left"><strong>?R</strong>CR</td>
+<td align="left"><strong>&#x3D;Rxx</strong>CR [ 1 ~ 50 ]</td>
+<td align="left"><strong>DFCW点划频移</strong>：设置：<strong>1</strong> &#x3D; 0.1 Hz 至 <strong>50</strong> &#x3D; 5.0 Hz。</td>
+</tr>
+<tr>
+<td align="left"><strong>?RS</strong>CR</td>
+<td align="left"><strong>&#x3D;RSx</strong>CR [ 0 or 3 ]</td>
+<td align="left"><strong>REMOTE模式</strong>：<strong>0</strong> &#x3D; JASON（normal），<strong>1</strong> &#x3D; JASON（fast），<strong>2</strong> &#x3D; WSQ2，<strong>3</strong> &#x3D; AFP。</td>
+</tr>
+<tr>
+<td align="left"><strong>?S</strong>CR</td>
+<td align="left"><strong>&#x3D;Sxxx</strong>CR [ 10 ~ 500 ]</td>
+<td align="left"><strong>CW速度</strong>：<strong>10</strong> &#x3D; 1 WPM 至 <strong>500</strong> &#x3D; 50 WPM（步进10）。兼容JUMA软件。</td>
+</tr>
+<tr>
+<td align="left"><strong>?SF</strong>CR</td>
+<td align="left"><strong>&#x3D;SFx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>SCRIPT帧模式</strong>：<strong>0</strong> &#x3D; 单次，<strong>1</strong> &#x3D; 连续。</td>
+</tr>
+<tr>
+<td align="left"><strong>?T</strong>CR</td>
+<td align="left"><strong>&#x3D;Tx</strong>CR [ 0 or 2 ]</td>
+<td align="left"><strong>发射控制</strong>：<strong>0</strong> &#x3D; 自动（程序控制），<strong>1</strong> &#x3D; MOX（PTT输入高电平触发），<strong>2</strong> &#x3D; RTS（PTT输入低电平触发）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?TF</strong>CR</td>
+<td align="left"><strong>&#x3D;TFx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>JT9帧模式</strong>：<strong>0</strong> &#x3D; 单次，<strong>1</strong> &#x3D; 连续，<strong>2</strong> &#x3D; 发1等1，<strong>3</strong> &#x3D; 发1等2，<strong>4</strong> &#x3D; 发1等3，<strong>5</strong> &#x3D; 发1等4。</td>
+</tr>
+<tr>
+<td align="left"><strong>?TS</strong>CR</td>
+<td align="left"><strong>&#x3D;TSx</strong>CR [ 0 ~ 4 ]</td>
+<td align="left"><strong>JT9速度</strong>：<strong>0</strong> &#x3D; JT9-1，<strong>1</strong> &#x3D; JT9-2，<strong>2</strong> &#x3D; JT9-5，<strong>3</strong> &#x3D; JT9-10，<strong>4</strong> &#x3D; JT9-30。</td>
+</tr>
+<tr>
+<td align="left"><strong>?U</strong>CR</td>
+<td align="left"><strong>&#x3D;Utext</strong>CR</td>
+<td align="left"><strong>脚本文本</strong>：保存至EEPROM（最多127字符）。有效ASCII：20h（空格）至5Fh（Z）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?V</strong>CR</td>
+<td align="left"><strong>&#x3D;Vx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>GPS定位开关</strong>：<strong>0</strong> &#x3D; 关闭，<strong>1</strong> &#x3D; 开启。</td>
+</tr>
+<tr>
+<td align="left"><strong>?W</strong>CR</td>
+<td align="left"></td>
+<td align="left"><strong>GPS定位值</strong>：返回“NO GPS”或6字符网格。</td>
+</tr>
+<tr>
+<td align="left"><strong>?WF</strong>CR</td>
+<td align="left"><strong>&#x3D;WFx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>WSPR帧模式</strong>：同JASON帧（<strong>0</strong> 至 <strong>5</strong>）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?WG</strong>CR</td>
+<td align="left"><strong>&#x3D;WGx</strong>CR [ 0 ~ 5 ]</td>
+<td align="left"><strong>FST4W帧模式</strong>：同JASON帧（<strong>0</strong> 至 <strong>5</strong>）。</td>
+</tr>
+<tr>
+<td align="left"><strong>?WP</strong>CR</td>
+<td align="left"><strong>&#x3D;WPxx</strong>CR [ 0 ~ 60 ]</td>
+<td align="left"><strong>WSPR&#x2F;FST4W功率</strong>：设置MAX档功率校准为 <strong>0</strong> 至 <strong>60</strong> dBm。步进遵循WSPR协议。</td>
+</tr>
+<tr>
+<td align="left"><strong>?WS</strong>CR</td>
+<td align="left"><strong>&#x3D;WSx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>WSPR速度</strong>：<strong>0</strong> &#x3D; WSPR-2，<strong>1</strong> &#x3D; WSPR-15。</td>
+</tr>
+<tr>
+<td align="left"><strong>?WT</strong>CR</td>
+<td align="left"><strong>&#x3D;WTx</strong>CR [ 0 ~ 3 ]</td>
+<td align="left"><strong>FST4W速度</strong>：<strong>0</strong> &#x3D; FST4W-120，<strong>1</strong> &#x3D; FST4W-300，<strong>2</strong> &#x3D; FST4W-900，<strong>3</strong> &#x3D; FST4W-1800。</td>
+</tr>
+<tr>
+<td align="left"><strong>?X</strong>CR</td>
+<td align="left"><strong>&#x3D;Xx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>SPARE I&#x2F;O</strong>：双频板安装时：<strong>0</strong> &#x3D; 136 kHz，<strong>1</strong> &#x3D; 500 kHz；否则：<strong>0</strong> &#x3D; 关闭，<strong>1</strong> &#x3D; 开启。</td>
+</tr>
+<tr>
+<td align="left"><strong>?Y</strong>CR</td>
+<td align="left"><strong>&#x3D;Yx</strong>CR [ 0 ~ 2 ]</td>
+<td align="left"><strong>CW识别</strong>：<strong>0</strong> &#x3D; 关闭，<strong>1</strong> &#x3D; 12 WPM，<strong>2</strong> &#x3D; 24 WPM。</td>
+</tr>
+<tr>
+<td align="left"><strong>?Z</strong>CR</td>
+<td align="left"><strong>&#x3D;Zcall</strong>CR</td>
+<td align="left"><strong>呼号</strong>：设置最多10字符的标准或特殊呼号。</td>
+</tr>
+</tbody></table>
+<h4 id="JUMA-TX136-500-软件说明"><a href="#JUMA-TX136-500-软件说明" class="headerlink" title="JUMA TX136-500 软件说明"></a>JUMA TX136-500 软件说明</h4><p>JUMA TX136-500软件可以使用CW、QRSS、DFCW、JASON、WSQ和JT9模式发射信息。<br>发送到JUMA TRX的消息文本不保存在EEPROM中，也不替换信标文本。<br>标签#C（呼号）和#L（定位器）是可用的。在JT9模式下，消息被自动截断为13个字符。</p>
+<p>该消息还可以包含控制字符，用于控制TX136&#x2F;500在传输过程中的参数。这些参数是连续波模式（CW， QRSS， DFCW），CW速度（WPM），CW点时间(s), DFCW dash shift （DDS步数），输出功率（MIN， LOW， HI， MAX），发送频率（Hz）和连续波消息中的播放载波。</p>
+<p>因此，可以使用CW信标模式发送以控制字符\g1或\g2开始的长QRSS或DFCW消息，或者创建一个带有20 s载波的‘ NDB ’（例如：«\G1\D020\C\G0 call»）。标签#C（呼号）和#L（定位器）是可用的</p>
+<p><em>日期：2024-11-14</em></p>
 <h3 id="串口控制上位软件"><a href="#串口控制上位软件" class="headerlink" title="串口控制上位软件"></a>串口控制上位软件</h3><p>事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。</p>
 <img src="/2024/tx136-4/1730530050-118615-image.webp" srcset="/img/loading.gif" lazyload class="" title="1730530050-118615-image">
 
@@ -359,7 +621,8 @@
 <p>至于其他的窗函数、短时FFT计算和小波变换，由于现在的程序已经很满意了，就没有再深入。</p>
 <img src="/2024/tx136-4/421ac1d5-3b9d-4a89-be97-5f0e93409315.png" srcset="/img/loading.gif" lazyload class="" title="421ac1d5-3b9d-4a89-be97-5f0e93409315">
 
-<p>上文提到的所有程序都附在我的github库里： <a target="_blank" rel="noopener" href="https://github.com/naturewind846/JumaTX136Controler">JumaTX136Controler</a></p>
+
+
 <p><em>日期：2024-11-14</em></p>
 <p>Juma TX136项目设计于2009年，当时的计算机上RS232串口是标配，但是现在的电脑上很少见这种接口。因此决定画一个USB转RS232的转接板，并专门设计用于该机器。</p>
 <p>Juma TX136支持1200至115200的常见波特率。选用CH340E和MAX3232EST。这两种芯片都兼容5V和3.3V电平。同时MAX3232EST只需要4个100nF的电容构成电荷泵在低压下实现RS232电平，100nF的电容一抓一大把如是。</p>
@@ -370,6 +633,232 @@
 <img src="/2024/tx136-4/image-20250419231128631.png" srcset="/img/loading.gif" lazyload class="" title="image-20250419231128631">
 
 <p>实测115200波特率可以跑通。</p>
+<p>附录：</p>
+<p>英文版的串行协议命令表格：</p>
+<table>
+<thead>
+<tr>
+<th align="left">串行询问</th>
+<th align="left">串行设置</th>
+<th align="left">功能和参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>?A</strong>CR</td>
+<td align="left"><strong>&#x3D;Ax</strong>CR [ 0 to 2 ]</td>
+<td align="left"><strong>Pre Amplifier</strong>: <strong>0</strong> &#x3D; OFF, <strong>1</strong> &#x3D; 10 dB, <strong>2</strong> &#x3D; 20 dB.</td>
+</tr>
+<tr>
+<td align="left"><strong>?B</strong>CR</td>
+<td align="left"><strong>&#x3D;Bx</strong>CR [ 0 to 1 or T ]</td>
+<td align="left"><strong>TX ON</strong>: <strong>0</strong> &#x3D; stop the TX, <strong>1</strong> &#x3D; run the beacon (caution: force beacon on), <strong>1 to 99</strong> &#x3D; run the TX n times via the script, <strong>T</strong> &#x3D; run the message transmission, used by JUMA software.</td>
+</tr>
+<tr>
+<td align="left"><strong>?C</strong>CR</td>
+<td align="left"><strong>&#x3D;Cx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>RX Converter</strong>: <strong>0</strong> &#x3D; OFF, <strong>1</strong> &#x3D; ON 10 MHz (TX136), 3.5 MHz (TX500).</td>
+</tr>
+<tr>
+<td align="left"><strong>?D</strong>CR</td>
+<td align="left"><strong>&#x3D;Dxxx</strong>CR [ 1 to 120 ]</td>
+<td align="left"><strong>QRSS &amp; DFCW dot time</strong>: Set: <strong>1</strong> to <strong>120</strong> s.</td>
+</tr>
+<tr>
+<td align="left"><strong>?E</strong>CR</td>
+<td align="left"><strong>&#x3D;Etext</strong>CR</td>
+<td align="left"><strong>CW beacon text</strong>: Set and save in EEPROM (up to 255 characters). Valid ASCII: 20h (space) to 5Fh (Z).</td>
+</tr>
+<tr>
+<td align="left"><strong>?F</strong>CR</td>
+<td align="left"><strong>&#x3D;Fxxxxxx</strong>CR</td>
+<td align="left"><strong>Frequency</strong>: Set TX136: <strong>135700</strong> to <strong>137800</strong>, TX500: <strong>472000</strong> to <strong>479000</strong>, step 1 Hz. Band auto-switches if bi-band board installed.</td>
+</tr>
+<tr>
+<td align="left"><strong>?G</strong>CR</td>
+<td align="left"><strong>&#x3D;Gx</strong>CR [ 0 to 10 ]</td>
+<td align="left"><strong>TX Mode</strong>: <strong>0</strong> &#x3D; CW, <strong>1</strong> &#x3D; QRSS, <strong>2</strong> &#x3D; DFCW, <strong>3</strong> &#x3D; JASON, <strong>4</strong> &#x3D; WSQ2, <strong>5</strong> &#x3D; OPERA, <strong>6</strong> &#x3D; WSPR, <strong>7</strong> &#x3D; FST4W, <strong>8</strong> &#x3D; JT9, <strong>9</strong> &#x3D; REMOTE, <strong>10</strong> &#x3D; SCRIPT.</td>
+</tr>
+<tr>
+<td align="left"><strong>?H</strong>CR</td>
+<td align="left"><strong>&#x3D;Htext</strong>CR</td>
+<td align="left"><strong>Beacon text</strong>: Set and save in EEPROM (up to 16 characters). Valid ASCII: 20h (space) to 5Fh (Z).</td>
+</tr>
+<tr>
+<td align="left"><strong>?I</strong>CR</td>
+<td align="left"></td>
+<td align="left">System info: Returns <strong>Firmware Version</strong>.</td>
+</tr>
+<tr>
+<td align="left"><strong>?IB</strong>CR</td>
+<td align="left"></td>
+<td align="left">System info: Returns <strong>Battery Voltage</strong> (10 mV resolution).</td>
+</tr>
+<tr>
+<td align="left"><strong>?ID</strong>CR</td>
+<td align="left"></td>
+<td align="left">System info: Returns <strong>Current Drain</strong> (0.1 A resolution).</td>
+</tr>
+<tr>
+<td align="left"><strong>?IP</strong>CR</td>
+<td align="left"></td>
+<td align="left">System info: Returns <strong>TX Power reading</strong> (0.1 W resolution).</td>
+</tr>
+<tr>
+<td align="left"><strong>?IS</strong>CR</td>
+<td align="left"></td>
+<td align="left">System info: Returns <strong>SWR Meter reading</strong>.</td>
+</tr>
+<tr>
+<td align="left"><strong>?JF</strong>CR</td>
+<td align="left"><strong>&#x3D;JFx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>JASON frame</strong>: <strong>0</strong> &#x3D; one play, <strong>1</strong> &#x3D; continuously, <strong>2</strong> &#x3D; 1 timeslot out of 2, <strong>3</strong> &#x3D; 1 timeslot out of 3, <strong>4</strong> &#x3D; 1 timeslot out of 4, <strong>5</strong> &#x3D; 1 timeslot out of 5.</td>
+</tr>
+<tr>
+<td align="left"><strong>?JS</strong>CR</td>
+<td align="left"><strong>&#x3D;JSx</strong>CR [ 2 to 5 ]</td>
+<td align="left"><strong>JASON speed</strong>: <strong>2</strong> &#x3D; Normal, <strong>3</strong> &#x3D; Normal turbo, <strong>4</strong> &#x3D; Fast, <strong>5</strong> &#x3D; Fast turbo.</td>
+</tr>
+<tr>
+<td align="left"><strong>?K</strong>CR</td>
+<td align="left"><strong>&#x3D;Kx</strong>CR [ 0 to 4 ]</td>
+<td align="left"><strong>CW Keyer Type</strong>: <strong>0</strong> &#x3D; Dot priority, <strong>1</strong> &#x3D; Iambic A, <strong>2</strong> &#x3D; Iambic B, <strong>3</strong> &#x3D; Straight, <strong>4</strong> &#x3D; Beacon.</td>
+</tr>
+<tr>
+<td align="left"><strong>?L</strong>CR</td>
+<td align="left"><strong>&#x3D;Llocator</strong>CR</td>
+<td align="left"><strong>Locator</strong>: Set 6-character Maidenhead grid.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><strong>&#x3D;Mtext</strong>CR</td>
+<td align="left"><strong>Message text</strong>: until 160 characters. No save in EEPROM. Used by JUMA software. Valid ASCII characters : 20h (space) to 5Fh (Z).</td>
+</tr>
+<tr>
+<td align="left"><strong>?N</strong>CR</td>
+<td align="left"><strong>&#x3D;Nxxxx</strong>CR [ 1 to 3559 ]</td>
+<td align="left"><strong>Synchronization Timer</strong>: Set: <strong>1</strong> to <strong>3559</strong> s.</td>
+</tr>
+<tr>
+<td align="left"><strong>?O</strong>CR</td>
+<td align="left"><strong>&#x3D;Ox</strong>CR [ 0 to 2 ]</td>
+<td align="left"><strong>Operating mode</strong>: <strong>0</strong> &#x3D; Stand By, <strong>1</strong> &#x3D; Operation, <strong>2</strong> &#x3D; Tune.</td>
+</tr>
+<tr>
+<td align="left"><strong>?OF</strong>CR</td>
+<td align="left"><strong>&#x3D;OFx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>OPERA frame</strong>: Same options as JASON frame (<strong>0</strong> to <strong>5</strong>).</td>
+</tr>
+<tr>
+<td align="left"><strong>?OS</strong>CR</td>
+<td align="left"><strong>&#x3D;OSx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>OPERA speed</strong>: <strong>0</strong> &#x3D; OPERA 2, <strong>1</strong> &#x3D; OPERA 4, <strong>2</strong> &#x3D; OPERA 8, <strong>3</strong> &#x3D; OPERA 16, <strong>4</strong> &#x3D; OPERA 32, <strong>5</strong> &#x3D; OPERA 65.</td>
+</tr>
+<tr>
+<td align="left"><strong>?P</strong>CR</td>
+<td align="left"><strong>&#x3D;Px</strong>CR [ 0 to 3 ]</td>
+<td align="left"><strong>TX power</strong>: <strong>0</strong> &#x3D; 4 W, <strong>1</strong> &#x3D; 15 W, <strong>2</strong> &#x3D; 35 W, <strong>3</strong> &#x3D; 60 W.</td>
+</tr>
+<tr>
+<td align="left"><strong>?Q</strong>CR</td>
+<td align="left"><strong>&#x3D;Qx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>CW&#x2F;QRSS&#x2F;DFCW frame</strong>: <strong>0</strong> &#x3D; one play, <strong>1</strong> &#x3D; continuously, <strong>2</strong> &#x3D; 1 timeslot out of 2, <strong>3</strong> &#x3D; 1 timeslot out of 3, <strong>4</strong> &#x3D; 1 timeslot out of 4, <strong>5</strong> &#x3D; 1 timeslot out of 5.</td>
+</tr>
+<tr>
+<td align="left"><strong>?QF</strong>CR</td>
+<td align="left"><strong>&#x3D;QFx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>WSQ frame</strong>: <strong>0</strong> &#x3D; one play, <strong>1</strong> &#x3D; continuously, <strong>2</strong> &#x3D; 1 timeslot out of 2, <strong>3</strong> &#x3D; 1 timeslot out of 3, <strong>4</strong> &#x3D; 1 timeslot out of 4, <strong>5</strong> &#x3D; 1 timeslot out of 5.</td>
+</tr>
+<tr>
+<td align="left"><strong>?R</strong>CR</td>
+<td align="left"><strong>&#x3D;Rxx</strong>CR [ 1 to 50 ]</td>
+<td align="left"><strong>DFCW dash shift</strong>: Set: <strong>1</strong> &#x3D; 0.1 Hz to <strong>50</strong> &#x3D; 5.0 Hz.</td>
+</tr>
+<tr>
+<td align="left"><strong>?RS</strong>CR</td>
+<td align="left"><strong>&#x3D;RSx</strong>CR [ 0 or 3 ]</td>
+<td align="left"><strong>External REMOTE</strong>: <strong>0</strong> &#x3D; JASON (normal), <strong>1</strong> &#x3D; JASON (fast), <strong>2</strong> &#x3D; WSQ2, <strong>3</strong> &#x3D; AFP.</td>
+</tr>
+<tr>
+<td align="left"><strong>?S</strong>CR</td>
+<td align="left"><strong>&#x3D;Sxxx</strong>CR [ 10 to 500 ]</td>
+<td align="left"><strong>CW speed</strong>: Set: <strong>10</strong> &#x3D; 1 WPM to <strong>500</strong> &#x3D; 50 WPM (step 10). Compatible with JUMA software.</td>
+</tr>
+<tr>
+<td align="left"><strong>?SF</strong>CR</td>
+<td align="left"><strong>&#x3D;SFx</strong>CR [ 0 to 1 ]</td>
+<td align="left"><strong>SCRIPT frame</strong>: <strong>0</strong> &#x3D; one play, <strong>1</strong> &#x3D; continuously.</td>
+</tr>
+<tr>
+<td align="left"><strong>?T</strong>CR</td>
+<td align="left"><strong>&#x3D;Tx</strong>CR [ 0 or 2 ]</td>
+<td align="left"><strong>TX Control</strong>: <strong>0</strong> &#x3D; Auto (program), <strong>1</strong> &#x3D; MOX (high level on PTT IN), <strong>2</strong> &#x3D; RTS (low level on PTT IN).</td>
+</tr>
+<tr>
+<td align="left"><strong>?TF</strong>CR</td>
+<td align="left"><strong>&#x3D;TFx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>JT9 frame</strong>: Same options as JASON frame (<strong>0</strong> to <strong>5</strong>).</td>
+</tr>
+<tr>
+<td align="left"><strong>?TS</strong>CR</td>
+<td align="left"><strong>&#x3D;TSx</strong>CR [ 0 to 4 ]</td>
+<td align="left"><strong>JT9 speed</strong>: <strong>0</strong> &#x3D; JT9-1, <strong>1</strong> &#x3D; JT9-2, <strong>2</strong> &#x3D; JT9-5, <strong>3</strong> &#x3D; JT9-10, <strong>4</strong> &#x3D; JT9-30.</td>
+</tr>
+<tr>
+<td align="left"><strong>?U</strong>CR</td>
+<td align="left"><strong>&#x3D;Utext</strong>CR</td>
+<td align="left"><strong>SCRIPT text</strong>:  until 127 characters. Set and save in EEPROM. Valid ASCII characters : 20h (space) to 5Fh (Z).</td>
+</tr>
+<tr>
+<td align="left"><strong>?V</strong>CR</td>
+<td align="left"><strong>&#x3D;Vx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>GPS locator selection</strong>: <strong>0</strong> &#x3D; OFF, <strong>1</strong> &#x3D; ON.</td>
+</tr>
+<tr>
+<td align="left"><strong>?W</strong>CR</td>
+<td align="left"></td>
+<td align="left"><strong>GPS locator value</strong>: Returns ‘NO GPS’ or 6-character grid.</td>
+</tr>
+<tr>
+<td align="left"><strong>?WF</strong>CR</td>
+<td align="left"><strong>&#x3D;WFx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>WSPR frame</strong>: <strong>0</strong> &#x3D; one play, <strong>1</strong> &#x3D; continuously, <strong>2</strong> &#x3D; 1 timeslot out of 2, <strong>3</strong> &#x3D; 1 timeslot out of 3, <strong>4</strong> &#x3D; 1 timeslot out of 4, <strong>5</strong> &#x3D; 1 timeslot out of 5.</td>
+</tr>
+<tr>
+<td align="left"><strong>?WG</strong>CR</td>
+<td align="left"><strong>&#x3D;WGx</strong>CR [ 0 to 5 ]</td>
+<td align="left"><strong>FST4W frame</strong>: <strong>0</strong> &#x3D; one play, <strong>1</strong> &#x3D; continuously, <strong>2</strong> &#x3D; 1 timeslot out of 2, <strong>3</strong> &#x3D; 1 timeslot out of 3, <strong>4</strong> &#x3D; 1 timeslot out of 4, <strong>5</strong> &#x3D; 1 timeslot out of 5.</td>
+</tr>
+<tr>
+<td align="left"><strong>?WP</strong>CR</td>
+<td align="left"><strong>&#x3D;WPxx</strong>CR [ 0 to 60 ]</td>
+<td align="left"><strong>WSPR&#x2F;FST4W power</strong>: Set: <strong>0</strong> to <strong>60</strong> dBm for PWR MAX. Value set with a step according to WSPR protocol.</td>
+</tr>
+<tr>
+<td align="left"><strong>?WS</strong>CR</td>
+<td align="left"><strong>&#x3D;WSx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>WSPR speed</strong>: <strong>0</strong> &#x3D; WSPR-2, <strong>1</strong> &#x3D; WSPR-15.</td>
+</tr>
+<tr>
+<td align="left"><strong>?WT</strong>CR</td>
+<td align="left"><strong>&#x3D;WTx</strong>CR [ 0 to 3 ]</td>
+<td align="left"><strong>FST4W speed</strong>: <strong>0</strong> &#x3D; FST4W-120, <strong>1</strong> &#x3D; FST4W-300, <strong>2</strong> &#x3D; FST4W-900, <strong>3</strong> &#x3D; FST4W-1800.</td>
+</tr>
+<tr>
+<td align="left"><strong>?X</strong>CR</td>
+<td align="left"><strong>&#x3D;Xx</strong>CR [ 0 or 1 ]</td>
+<td align="left"><strong>SPARE I&#x2F;O</strong>: If TX136-500 bi-band board installed: <strong>0</strong> &#x3D; 136 kHz, <strong>1</strong> &#x3D; 500 kHz. Else: <strong>0</strong> &#x3D; OFF, <strong>1</strong> &#x3D; ON.</td>
+</tr>
+<tr>
+<td align="left"><strong>?Y</strong>CR</td>
+<td align="left"><strong>&#x3D;Yx</strong>CR [ 0 to 2 ]</td>
+<td align="left"><strong>CW Identity</strong>: <strong>0</strong> &#x3D; OFF, <strong>1</strong> &#x3D; 12 WPM, <strong>2</strong> &#x3D; 24 WPM.</td>
+</tr>
+<tr>
+<td align="left"><strong>?Z</strong>CR</td>
+<td align="left"><strong>&#x3D;Zcall</strong>CR</td>
+<td align="left"><strong>Callsign</strong>:  Set a standard or a compound callsign with 10 characters max.</td>
+</tr>
+</tbody></table>
 
                 
               </div>
@@ -403,13 +892,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
-      
         <a href="/tags/Ham/" class="print-no-link">#Ham</a>
       
-        <a href="/tags/CW/" class="print-no-link">#CW</a>
+        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
       
         <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
+      
+        <a href="/tags/CW/" class="print-no-link">#CW</a>
       
         <a href="/tags/JumaTX136/" class="print-no-link">#JumaTX136</a>
       
@@ -427,7 +916,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Juma TX136 3 控制软件神通广大，ChatGPT大显神威</div>
+      <div>Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件</div>
       <div>http://naturewind846.github.io/2024/tx136-4/</div>
     </div>
     <div class="license-meta">
@@ -446,7 +935,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年5月4日</div>
+          <div>2025年5月6日</div>
         </div>
       
       
