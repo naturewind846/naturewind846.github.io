@@ -21,17 +21,17 @@
   
     <meta name="description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 日期：2025-05-06 Juma TX136 串行命令协议介绍（该部分是F4GCB的v1.16第三方固件文档对应部分的翻译与解释，适用于最新的v1.16固件，该协议向下兼容官方的v1.04固件，同时有更多新增的功能） JUMA TX136&#x2F;TX500串行协议是JUMA TX136&#x2F;TX500电台与另一个系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件">
+<meta property="og:title" content="Juma TX136 3 串行协议与控制软件">
 <meta property="og:url" content="http://naturewind846.github.io/2024/tx136-4/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
 <meta property="og:description" content="日期：2024-11-14 硬件基本折腾完了，现在准备动手写软件。 日期：2025-05-06 Juma TX136 串行命令协议介绍（该部分是F4GCB的v1.16第三方固件文档对应部分的翻译与解释，适用于最新的v1.16固件，该协议向下兼容官方的v1.04固件，同时有更多新增的功能） JUMA TX136&#x2F;TX500串行协议是JUMA TX136&#x2F;TX500电台与另一个系统">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/1730529724-248708-image.webp">
 <meta property="article:published_time" content="2024-11-13T18:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-05T20:58:06.753Z">
+<meta property="article:modified_time" content="2025-05-05T21:07:53.955Z">
 <meta property="article:author" content="naturewind846">
-<meta property="article:tag" content="长波">
 <meta property="article:tag" content="Ham">
+<meta property="article:tag" content="长波">
 <meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="CW">
 <meta property="article:tag" content="JumaTX136">
@@ -42,7 +42,7 @@
   
   
   
-  <title>Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件 - NatureWind Blog</title>
+  <title>Juma TX136 3 串行协议与控制软件 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -221,7 +221,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件</span>
+            <span id="subtitle">Juma TX136 3 串行协议与控制软件</span>
           
         </div>
 
@@ -314,7 +314,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件</h1>
+            <h1 id="seo-header">Juma TX136 3 串行协议与控制软件</h1>
             
             
               <div class="markdown-body">
@@ -581,7 +581,7 @@
 </tbody></table>
 <h4 id="JUMA-TX136-500-软件说明"><a href="#JUMA-TX136-500-软件说明" class="headerlink" title="JUMA TX136-500 软件说明"></a>JUMA TX136-500 软件说明</h4><p>JUMA TX136-500软件可以使用CW、QRSS、DFCW、JASON、WSQ和JT9模式发射信息。<br>发送到JUMA TRX的消息文本不保存在EEPROM中，也不替换信标文本。<br>标签#C（呼号）和#L（定位器）是可用的。在JT9模式下，消息被自动截断为13个字符。</p>
 <p>该消息还可以包含控制字符，用于控制TX136&#x2F;500在传输过程中的参数。这些参数是连续波模式（CW， QRSS， DFCW），CW速度（WPM），CW点时间(s), DFCW dash shift （DDS步数），输出功率（MIN， LOW， HI， MAX），发送频率（Hz）和连续波消息中的播放载波。</p>
-<p>因此，可以使用CW信标模式发送以控制字符\g1或\g2开始的长QRSS或DFCW消息，或者创建一个带有20 s载波的‘ NDB ’（例如：«\G1\D020\C\G0 call»）。标签#C（呼号）和#L（定位器）是可用的</p>
+<p>因此，可以使用CW信标模式发送以控制字符\g1或\g2开始的长QRSS或DFCW消息，或者创建一个带有20 s载波的NDB信标（例如：«\G1\D020\C\G0 call»）。标签#C（呼号）和#L（定位器）同样是可用的。</p>
 <p><em>日期：2024-11-14</em></p>
 <h3 id="串口控制上位软件"><a href="#串口控制上位软件" class="headerlink" title="串口控制上位软件"></a>串口控制上位软件</h3><p>事实上JumaTX136是有电脑控制软件的，原作者写了一份。但是这个软件只和作者亲自编写的v104固件匹配。这个固件问题相比于最新的v115，只支持CW QRSS和Beacon。</p>
 <img src="/2024/tx136-4/1730530050-118615-image.webp" srcset="/img/loading.gif" lazyload class="" title="1730530050-118615-image">
@@ -892,9 +892,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
-      
         <a href="/tags/Ham/" class="print-no-link">#Ham</a>
+      
+        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
       
         <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
       
@@ -916,7 +916,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Juma TX136 3 Juma TX136 串行协议介绍与串口控制软件</div>
+      <div>Juma TX136 3 串行协议与控制软件</div>
       <div>http://naturewind846.github.io/2024/tx136-4/</div>
     </div>
     <div class="license-meta">
