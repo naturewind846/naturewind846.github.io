@@ -19,21 +19,23 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日期：2025-06-02 过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。 AFSK模块的重写（未完待续）">
+    <meta name="description" content="日期：2025-06-02 过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。 日期：2025-06-07   目前的软件进度如图。 GUI界面使用ttkbootstrap， 一种基于python自带的tkinter的美化库，带有很多有意思的小组件。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Juma TX136 5 重写控制软件">
 <meta property="og:url" content="http://naturewind846.github.io/2025/tx136-6/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="日期：2025-06-02 过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。 AFSK模块的重写（未完待续）">
+<meta property="og:description" content="日期：2025-06-02 过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。 日期：2025-06-07   目前的软件进度如图。 GUI界面使用ttkbootstrap， 一种基于python自带的tkinter的美化库，带有很多有意思的小组件。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-6/image-20250608022243843.png">
 <meta property="article:published_time" content="2025-06-02T13:17:42.000Z">
-<meta property="article:modified_time" content="2025-06-02T14:22:03.464Z">
+<meta property="article:modified_time" content="2025-06-07T18:40:15.669Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
 <meta property="article:tag" content="JumaTX136">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://naturewind846.github.io/2025/tx136-6/image-20250608022243843.png">
   
   
   
@@ -239,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          106 字
+          476 字
         
       </span>
     
@@ -250,7 +252,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -316,7 +318,26 @@
                 
                 <p><em>日期：2025-06-02</em></p>
 <p>过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。<br>计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。</p>
-<h2 id="AFSK模块的重写"><a href="#AFSK模块的重写" class="headerlink" title="AFSK模块的重写"></a>AFSK模块的重写</h2><p>（未完待续）</p>
+<p><em>日期：2025-06-07</em></p>
+<img src="/2025/tx136-6/image-20250608022243843.png" srcset="/img/loading.gif" lazyload class="" title="image-20250608022243843">
+
+<p>目前的软件进度如图。</p>
+<p>GUI界面使用ttkbootstrap， 一种基于python自带的tkinter的美化库，带有很多有意思的小组件。</p>
+<p>控制功能已经做的差不多了，正在慢慢优化和debug。</p>
+<p>相比原本的程序，现在主线程、串口接收、串口发送都有各自的线程，接收和发送根据波特率来自适应轮询避免占用过多资源。</p>
+<p>GUI绘制用ttk里的StringVar来刷新，命令存储时定义了类似这样的字典</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-string">&quot;command&quot;</span>: <span class="hljs-string">&quot;A&quot;</span>,<br><span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;pre_amplifier&quot;</span>,<br><span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-built_in">None</span>,<br><span class="hljs-string">&quot;value_type&quot;</span>: <span class="hljs-string">&quot;str&quot;</span>,<br><span class="hljs-string">&quot;value_mapping&quot;</span>: &#123;<span class="hljs-number">0</span>: <span class="hljs-string">&quot;OFF&quot;</span>, <span class="hljs-number">1</span>: <span class="hljs-string">&quot;10 dB&quot;</span>, <span class="hljs-number">2</span>: <span class="hljs-string">&quot;20 dB&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>内部读取、写入、接收与发送命令操作都使用name字段来操作，刷新不在GUI层，而是在命令读取到时直接在data_access里更新。预先根据需要的值定义了StringVar、IntVar和DoubleVar，刷新GUI时省劲，但是读取值要绕一下，想不到更好的办法了。</p>
+<p>今天做的：</p>
+<p>加入子窗口的存在性检查，如果子窗口已经存在则前置该窗口。</p>
+<p>解决终端模式的一点问题（奇怪，为什么以前用text的icursor方法能跑通不报错，今天翻看源码发现ttk.Text没有icursor方法，看来以后还是少用try-exception）</p>
+<hr>
+<p>未来期望：</p>
+<p>FSK模式加入更多的FFT频率估算算法</p>
+<p>写好参数本地存储功能</p>
+<p>界面优化微调</p>
+<p>修复bug</p>
 
                 
               </div>
@@ -387,7 +408,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月2日</div>
+          <div>2025年6月8日</div>
         </div>
       
       
