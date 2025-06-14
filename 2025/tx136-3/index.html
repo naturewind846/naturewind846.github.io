@@ -26,33 +26,16 @@
 <meta property="og:site_name" content="NatureWind Blog">
 <meta property="og:description" content="时间：2025-06-13 该项目的需求起源于：  我没有在136kHz可靠的接收器 Juma TX136在机内有来自LCD1602的干扰。  有了TinySA Ultra后，该机器作为信号发生器可以输出最低-115dbm的参考信号，结合衰减器可以输出最低-145dbm的高达4.4GHz的纯净正弦波，在此基础上可以测量出我手头很多设备的灵敏度。   uSDX在136kHz的灵敏度大约只有-80db">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_142733.jpg">
-<meta property="og:image" content="https://icas.to/idc-136-kit/basic.jpg">
-<meta property="og:image" content="https://icas.to/idc-136ii/idc-136ii-kit-2.jpg">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614103729672.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/SCH_mianSch_1-P1_2025-06-14.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614103600445.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614103847552.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104503335.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104043967.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104242102.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104625691.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250614_104813.jpg">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614105826313.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_172825.jpg">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8AC4.BMP">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8B16.BMP">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8B63.BMP">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_172842.jpg">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8BA3.BMP">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_172900.jpg">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614105106546.png">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614105250096.png">
+<meta property="og:image" content="http://naturewind846.github.io/img/136kHz%E6%8E%A5%E6%94%B6%E8%AE%BE%E5%A4%87">
 <meta property="article:published_time" content="2025-06-13T06:20:48.000Z">
-<meta property="article:modified_time" content="2025-06-14T03:26:12.318Z">
+<meta property="article:modified_time" content="2025-06-14T15:04:40.870Z">
 <meta property="article:author" content="naturewind846">
+<meta property="article:tag" content="Ham">
+<meta property="article:tag" content="长波">
+<meta property="article:tag" content="DIY制作">
+<meta property="article:tag" content="JumaTX136">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_142733.jpg">
+<meta name="twitter:image" content="http://naturewind846.github.io/img/136kHz%E6%8E%A5%E6%94%B6%E8%AE%BE%E5%A4%87">
   
   
   
@@ -258,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          838 字
+          1k 字
         
       </span>
     
@@ -269,7 +252,7 @@
         
         
         
-          7 分钟
+          9 分钟
         
       </span>
     
@@ -342,14 +325,14 @@
 <p>有了TinySA Ultra后，该机器作为信号发生器可以输出最低-115dbm的参考信号，结合衰减器可以输出最低-145dbm的高达4.4GHz的纯净正弦波，在此基础上可以测量出我手头很多设备的灵敏度。</p>
 <img src="/2025/tx136-3/IMG_20250613_142733.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_142733">
 
-<p>uSDX在136kHz的灵敏度大约只有-80dbm，RTL-SDR表现同样很差。如果是使用Juma TX136的机内上变频器变频到10MHz段配合RTL-SDR接收，灵敏度表现可以低于-120dbm，但是由于于LCD亮度、对比度和蜂鸣器使用<strong>PWM调制波</strong>来控制，在136kHz附近有很严重的机内干扰</p>
-<h3 id="设计来源"><a href="#设计来源" class="headerlink" title="设计来源"></a>设计来源</h3><p>该设计来源于icas.io 的一种直接变频接收机 <a target="_blank" rel="noopener" href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a></p>
+<p>uSDX在136kHz的灵敏度大约只有-80dbm，RTL-SDR表现同样很差。如果是使用Juma TX136的机内上变频器变频到10MHz段配合RTL-SDR接收，灵敏度表现可以低于-120dbm，但是由于于LCD亮度、对比度和蜂鸣器使用<strong>PWM调制波</strong>来控制，在136kHz附近有很严重的机内干扰。</p>
+<h3 id="设计原理图来源"><a href="#设计原理图来源" class="headerlink" title="设计原理图来源"></a>设计原理图来源</h3><p>该设计的原理图来源于icas.io 的一种直接变频接收机套件 <a target="_blank" rel="noopener" href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a></p>
 <p><img src="https://icas.to/idc-136-kit/basic.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p><img src="https://icas.to/idc-136ii/idc-136ii-kit-2.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
 <img src="/2025/tx136-3/image-20250614103729672.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103729672">
 
-<p>原套件已经停产，只有电路图开源。在该项目电路图基础上我在嘉立创绘制如下的电路与PCB</p>
-<img src="/2025/tx136-3/SCH_mianSch_1-P1_2025-06-14.png" srcset="/img/loading.gif" lazyload class="" title="SCH_mianSch_1-P1_2025-06-14">
+<p>原套件已经停产，只有附在套件安装说明里的电路图。在该项目电路图基础上我在嘉立创绘制如下的电路与PCB，并稍微改动</p>
+
 
 <img src="/2025/tx136-3/image-20250614103600445.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103600445">
 
@@ -359,7 +342,7 @@
 <p>此处的电源主线电阻由100Ω经过测量导致的压降太大，调整至10Ω&#x2F;0Ω. 1N4004也可以根据需要选择拆除</p>
 <img src="/2025/tx136-3/image-20250614104503335.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104503335">
 
-<p>此处改用8MHz的有源晶振，并加上一些滤波电路。CD4060后的选择电路保留，其实只需要焊接4引脚的100n电容即可</p>
+<p>此处改用8MHz的有源晶振，并加上一些滤波电路。CD4060后的选择电路保留，其实只需要焊接4引脚的100n电容即可。另一个引脚输出62.5kHz的中频。CD4060本身带载能力不强，且用RC组成的振荡电路，最高频率不可以大于650kHz，如果外接晶振，晶振最大不可以大于3.5MHz。故用有源晶振直接驱动。如果将晶振直接接入SA602混频器，频率稳定性难以保证，需要用温补晶振电路。</p>
 <img src="/2025/tx136-3/image-20250614104043967.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104043967">
 
 <p>此处NE5534运放的反馈电阻电位器选用50K，同时兼容3296W &#x2F; 3362P两种常见的电位器。</p>
@@ -384,7 +367,7 @@
 <p>初始中周尚未调整合适。中周此处相当于可变电感器。注意要使用没有磁性的螺丝刀调节中周</p>
 <img src="/2025/tx136-3/5ACD8B16.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B16">
 
-<p>调整后大约这样子。为了更加精确的调节，将该曲线的比例刻度调小，适当调节参考电平如下：</p>
+<p>调整后S21幅频曲线如图。为了更加精确的调节，可以将该曲线的比例刻度调小，适当调节参考电平如下：</p>
 <img src="/2025/tx136-3/5ACD8B63.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B63">
 
 <p>调节电位器来调整NE5534运放的放大系数。实际放大系数可以调整到十多个dB，不过并不需要那么大的增益。留好增益裕量，我只调到3dB。</p>
@@ -400,7 +383,11 @@
 
 
 <p>测量得到灵敏度在-120dbm左右（12dB SIGNAL CW 500Hz 137000Hz）频偏大约1-2Hz</p>
-<h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><img src="/2025/tx136-3/image-20250614105106546.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105106546">
+<img src="/2025/tx136-3/136kHzRX.jpg" srcset="/img/loading.gif" lazyload class="" title="136kHz接收设备">
+
+<p>接收设备像这样，将电路板装进铝合金外壳，捆绑上电池。天线来源于BG5ACF的赠送（感谢！）</p>
+<h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><p>立创eda专业版工程文件点击下载： [136kHz 接收器工程文件](&#x2F;about&#x2F;136khz RX_2025-06-14.epro) </p>
+<img src="/2025/tx136-3/image-20250614105106546.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105106546">
 
 <p>TPJ701黄色中周 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=912493884700">收音机调频中周7*7全套现货 TP701 &#x2F; TP702 &#x2F; TPJ701 带电容-淘宝网</a></p>
 <img src="/2025/tx136-3/image-20250614105250096.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105250096">
@@ -414,6 +401,40 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="category-chain-item">无线电</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
+      
+        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
+      
+        <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
+      
+        <a href="/tags/JumaTX136/" class="print-no-link">#JumaTX136</a>
+      
+    </div>
   
 </div>
 
