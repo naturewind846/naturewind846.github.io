@@ -19,27 +19,44 @@
   <meta name="author" content="naturewind846">
   <meta name="keywords" content="">
   
-    <meta name="description" content="日期：2025-06-02 过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。 日期：2025-06-07   目前的软件进度如图。 GUI界面使用ttkbootstrap， 一种基于python自带的tkinter的美化库，带有很多有意思的小组件。">
+    <meta name="description" content="时间：2025-06-13 该项目的需求起源于：  我没有在136kHz可靠的接收器 Juma TX136在机内有来自LCD1602的干扰。  有了TinySA Ultra后，该机器作为信号发生器可以输出最低-115dbm的参考信号，结合衰减器可以输出最低-145dbm的高达4.4GHz的纯净正弦波，在此基础上可以测量出我手头很多设备的灵敏度。   uSDX在136kHz的灵敏度大约只有-80db">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Juma TX136 5 重写控制软件">
-<meta property="og:url" content="http://naturewind846.github.io/2025/tx136-6/index.html">
+<meta property="og:title" content="Juma TX136 番外 DIY接收机">
+<meta property="og:url" content="http://naturewind846.github.io/2025/tx136-3/index.html">
 <meta property="og:site_name" content="NatureWind Blog">
-<meta property="og:description" content="日期：2025-06-02 过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。 日期：2025-06-07   目前的软件进度如图。 GUI界面使用ttkbootstrap， 一种基于python自带的tkinter的美化库，带有很多有意思的小组件。">
+<meta property="og:description" content="时间：2025-06-13 该项目的需求起源于：  我没有在136kHz可靠的接收器 Juma TX136在机内有来自LCD1602的干扰。  有了TinySA Ultra后，该机器作为信号发生器可以输出最低-115dbm的参考信号，结合衰减器可以输出最低-145dbm的高达4.4GHz的纯净正弦波，在此基础上可以测量出我手头很多设备的灵敏度。   uSDX在136kHz的灵敏度大约只有-80db">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-6/image-20250608022243843.png">
-<meta property="article:published_time" content="2025-06-02T13:17:42.000Z">
-<meta property="article:modified_time" content="2025-06-08T16:42:06.969Z">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_142733.jpg">
+<meta property="og:image" content="https://icas.to/idc-136-kit/basic.jpg">
+<meta property="og:image" content="https://icas.to/idc-136ii/idc-136ii-kit-2.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614103729672.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/SCH_mianSch_1-P1_2025-06-14.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614103600445.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614103847552.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104503335.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104043967.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104242102.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614104625691.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250614_104813.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614105826313.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_172825.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8AC4.BMP">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8B16.BMP">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8B63.BMP">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_172842.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/5ACD8BA3.BMP">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_172900.jpg">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614105106546.png">
+<meta property="og:image" content="http://naturewind846.github.io/2025/tx136-3/image-20250614105250096.png">
+<meta property="article:published_time" content="2025-06-13T06:20:48.000Z">
+<meta property="article:modified_time" content="2025-06-14T03:26:12.318Z">
 <meta property="article:author" content="naturewind846">
-<meta property="article:tag" content="Ham">
-<meta property="article:tag" content="JumaTX136">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://naturewind846.github.io/2025/tx136-6/image-20250608022243843.png">
+<meta name="twitter:image" content="http://naturewind846.github.io/2025/tx136-3/IMG_20250613_142733.jpg">
   
   
   
-  <title>Juma TX136 5 重写控制软件 - NatureWind Blog</title>
+  <title>Juma TX136 番外 DIY接收机 - NatureWind Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +235,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Juma TX136 5 重写控制软件</span>
+            <span id="subtitle">Juma TX136 番外 DIY接收机</span>
           
         </div>
 
@@ -229,8 +246,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-02 21:17" pubdate>
-          2025年6月2日 晚上
+        <time datetime="2025-06-13 14:20" pubdate>
+          2025年6月13日 下午
         </time>
       </span>
     
@@ -241,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          496 字
+          838 字
         
       </span>
     
@@ -252,7 +269,7 @@
         
         
         
-          5 分钟
+          7 分钟
         
       </span>
     
@@ -311,37 +328,84 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Juma TX136 5 重写控制软件</h1>
+            <h1 id="seo-header">Juma TX136 番外 DIY接收机</h1>
             
             
               <div class="markdown-body">
                 
-                <p><em>日期：2025-06-02</em></p>
-<p>过去的软件按照现在的眼光看很幼稚且很原始。一个是GUI和串口高度绑定，另一个是没有多线程的操作，导致软件等待读取指令时会周期性卡顿一下。<br>计划重写的新软件会按照一定的逻辑来慢慢重写，界面也会优化一些。</p>
-<p><em>日期：2025-06-07</em></p>
-<img src="/2025/tx136-6/image-20250608022243843.png" srcset="/img/loading.gif" lazyload class="" title="image-20250608022243843">
+                <p><em>时间：2025-06-13</em></p>
+<p>该项目的需求起源于：</p>
+<ol>
+<li>我没有在136kHz可靠的接收器</li>
+<li>Juma TX136在机内有来自LCD1602的干扰。</li>
+</ol>
+<p>有了TinySA Ultra后，该机器作为信号发生器可以输出最低-115dbm的参考信号，结合衰减器可以输出最低-145dbm的高达4.4GHz的纯净正弦波，在此基础上可以测量出我手头很多设备的灵敏度。</p>
+<img src="/2025/tx136-3/IMG_20250613_142733.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_142733">
 
-<p>目前的软件进度如图。</p>
-<p>GUI界面使用ttkbootstrap， 一种基于python自带的tkinter的美化库，带有很多有意思的小组件。</p>
-<p>控制功能已经做的差不多了，正在慢慢优化和debug。</p>
-<p>相比原本的程序，现在主线程、串口接收、串口发送都有各自的线程，接收和发送根据波特率来自适应轮询避免占用过多资源。</p>
-<p>GUI绘制用ttk里的StringVar来刷新，命令存储时定义了类似这样的字典</p>
-<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-string">&quot;command&quot;</span>: <span class="hljs-string">&quot;A&quot;</span>,<br><span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;pre_amplifier&quot;</span>,<br><span class="hljs-string">&quot;value&quot;</span>: <span class="hljs-built_in">None</span>,<br><span class="hljs-string">&quot;value_type&quot;</span>: <span class="hljs-string">&quot;str&quot;</span>,<br><span class="hljs-string">&quot;value_mapping&quot;</span>: &#123;<span class="hljs-number">0</span>: <span class="hljs-string">&quot;OFF&quot;</span>, <span class="hljs-number">1</span>: <span class="hljs-string">&quot;10 dB&quot;</span>, <span class="hljs-number">2</span>: <span class="hljs-string">&quot;20 dB&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>uSDX在136kHz的灵敏度大约只有-80dbm，RTL-SDR表现同样很差。如果是使用Juma TX136的机内上变频器变频到10MHz段配合RTL-SDR接收，灵敏度表现可以低于-120dbm，但是由于于LCD亮度、对比度和蜂鸣器使用<strong>PWM调制波</strong>来控制，在136kHz附近有很严重的机内干扰</p>
+<h3 id="设计来源"><a href="#设计来源" class="headerlink" title="设计来源"></a>设计来源</h3><p>该设计来源于icas.io 的一种直接变频接收机 <a target="_blank" rel="noopener" href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a></p>
+<p><img src="https://icas.to/idc-136-kit/basic.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://icas.to/idc-136ii/idc-136ii-kit-2.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<img src="/2025/tx136-3/image-20250614103729672.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103729672">
 
-<p>内部读取、写入、接收与发送命令操作都使用name字段来操作，刷新不在GUI层，而是在命令读取到时直接在data_access里更新。预先根据需要的值定义了StringVar、IntVar和DoubleVar，刷新GUI时省劲，但是读取值要绕一下，想不到更好的办法了。</p>
-<p>今天做的：</p>
-<p>加入子窗口的存在性检查，如果子窗口已经存在则前置该窗口。</p>
-<p>解决终端模式的一点问题（奇怪，为什么以前用text的icursor方法能跑通不报错，今天翻看源码发现ttk.Text没有icursor方法，看来以后还是少用try-exception）</p>
-<hr>
-<p><em>日期：2025-06-09</em></p>
-<p>今天做的：</p>
-<p>写好了本地参数存储功能</p>
-<hr>
-<p>未来期望：</p>
-<p>FSK模式加入更多的FFT频率估算算法</p>
-<p>写好参数本地存储功能</p>
-<p>界面优化微调</p>
-<p>修复bug</p>
+<p>原套件已经停产，只有电路图开源。在该项目电路图基础上我在嘉立创绘制如下的电路与PCB</p>
+<img src="/2025/tx136-3/SCH_mianSch_1-P1_2025-06-14.png" srcset="/img/loading.gif" lazyload class="" title="SCH_mianSch_1-P1_2025-06-14">
+
+<img src="/2025/tx136-3/image-20250614103600445.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103600445">
+
+<p>相比原版有以下修改：</p>
+<img src="/2025/tx136-3/image-20250614103847552.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103847552">
+
+<p>此处的电源主线电阻由100Ω经过测量导致的压降太大，调整至10Ω&#x2F;0Ω. 1N4004也可以根据需要选择拆除</p>
+<img src="/2025/tx136-3/image-20250614104503335.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104503335">
+
+<p>此处改用8MHz的有源晶振，并加上一些滤波电路。CD4060后的选择电路保留，其实只需要焊接4引脚的100n电容即可</p>
+<img src="/2025/tx136-3/image-20250614104043967.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104043967">
+
+<p>此处NE5534运放的反馈电阻电位器选用50K，同时兼容3296W &#x2F; 3362P两种常见的电位器。</p>
+<img src="/2025/tx136-3/image-20250614104242102.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104242102">
+
+<p>此处LED经测量，选用1K电阻时消耗8mA的电流，但是整个板子才消耗32mA的电流，遂改成10K，亮度同样很大，整机电流降到24mA</p>
+<img src="/2025/tx136-3/image-20250614104625691.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104625691">
+
+<p>此处50Ω匹配高阻天线的地方加上一个切换开关。大多数情况下不需要这个电阻。</p>
+<h3 id="焊接与调试"><a href="#焊接与调试" class="headerlink" title="焊接与调试"></a>焊接与调试</h3><img src="/2025/tx136-3/IMG_20250614_104813.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250614_104813">
+
+<p>打板出来如图。画板时有考虑到塞进铝合金盒子里。</p>
+<img src="/2025/tx136-3/image-20250614105826313.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105826313">
+
+<p>焊接完成。使用NanoVNA来测量S21的系统增益。同时调节中周。为了保护元件，考虑到NanoVNA最小输出功率为-11dbm，我在测量时加入30dB衰减器校准后进行测量。也可以在调节中周时不焊接SA612</p>
+<img src="/2025/tx136-3/IMG_20250613_172825.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172825">
+
+
+
+<img src="/2025/tx136-3/5ACD8AC4.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8AC4">
+
+<p>初始中周尚未调整合适。中周此处相当于可变电感器。注意要使用没有磁性的螺丝刀调节中周</p>
+<img src="/2025/tx136-3/5ACD8B16.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B16">
+
+<p>调整后大约这样子。为了更加精确的调节，将该曲线的比例刻度调小，适当调节参考电平如下：</p>
+<img src="/2025/tx136-3/5ACD8B63.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B63">
+
+<p>调节电位器来调整NE5534运放的放大系数。实际放大系数可以调整到十多个dB，不过并不需要那么大的增益。留好增益裕量，我只调到3dB。</p>
+<img src="/2025/tx136-3/IMG_20250613_172842.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172842">
+
+<img src="/2025/tx136-3/5ACD8BA3.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8BA3">
+
+<p>最后调整完带宽大约为4kHz</p>
+<p>如法炮制，调节好另一个接收器</p>
+<img src="/2025/tx136-3/IMG_20250613_172900.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172900">
+
+<h3 id="接收效果："><a href="#接收效果：" class="headerlink" title="接收效果："></a>接收效果：</h3><p>使用HDSDR软件和FSKviewer来尝试接收DFCW-3。发射机放在家里，使用大约1米高的小环（50Ω电阻）发射，在室外楼后接收</p>
+
+
+<p>测量得到灵敏度在-120dbm左右（12dB SIGNAL CW 500Hz 137000Hz）频偏大约1-2Hz</p>
+<h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><img src="/2025/tx136-3/image-20250614105106546.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105106546">
+
+<p>TPJ701黄色中周 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=912493884700">收音机调频中周7*7全套现货 TP701 &#x2F; TP702 &#x2F; TPJ701 带电容-淘宝网</a></p>
+<img src="/2025/tx136-3/image-20250614105250096.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105250096">
+
+<p>54x23x80外壳 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=637586984116">54*23 铝合金外壳 铝型材外壳 铝盒 铝壳 壳体 仪表壳体 电源盒-淘宝网</a></p>
 
                 
               </div>
@@ -350,40 +414,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%97%A0%E7%BA%BF%E7%94%B5/" class="category-chain-item">无线电</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
-      
-        <a href="/tags/JumaTX136/" class="print-no-link">#JumaTX136</a>
-      
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
-      
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
-      
-    </div>
   
 </div>
 
@@ -393,8 +423,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Juma TX136 5 重写控制软件</div>
-      <div>http://naturewind846.github.io/2025/tx136-6/</div>
+      <div>Juma TX136 番外 DIY接收机</div>
+      <div>http://naturewind846.github.io/2025/tx136-3/</div>
     </div>
     <div class="license-meta">
       
@@ -406,13 +436,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年6月2日</div>
+          <div>2025年6月13日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月9日</div>
+          <div>2025年6月14日</div>
         </div>
       
       
@@ -443,18 +473,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/tx136-3/" title="Juma TX136 番外 DIY接收机">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Juma TX136 番外 DIY接收机</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/tx136-5/" title="Juma TX136 4 天线的搭建与调试">
-                        <span class="hidden-mobile">Juma TX136 4 天线的搭建与调试</span>
+                      <a href="/2025/tx136-6/" title="Juma TX136 5 重写控制软件">
+                        <span class="hidden-mobile">Juma TX136 5 重写控制软件</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
