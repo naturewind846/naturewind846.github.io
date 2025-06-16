@@ -28,10 +28,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/136kHz%E6%8E%A5%E6%94%B6%E8%AE%BE%E5%A4%87.jpg">
 <meta property="article:published_time" content="2025-06-13T06:20:48.000Z">
-<meta property="article:modified_time" content="2025-06-14T15:15:11.743Z">
+<meta property="article:modified_time" content="2025-06-16T14:46:20.060Z">
 <meta property="article:author" content="naturewind846">
-<meta property="article:tag" content="Ham">
 <meta property="article:tag" content="长波">
+<meta property="article:tag" content="Ham">
 <meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="JumaTX136">
 <meta name="twitter:card" content="summary_large_image">
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.2k 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -326,51 +326,54 @@
 <img src="/2025/tx136-3/IMG_20250613_142733.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_142733">
 
 <p>uSDX在136kHz的灵敏度大约只有-80dbm，RTL-SDR表现同样很差。如果是使用Juma TX136的机内上变频器变频到10MHz段配合RTL-SDR接收，灵敏度表现可以低于-120dbm，但是由于于LCD亮度、对比度和蜂鸣器使用<strong>PWM调制波</strong>来控制，在136kHz附近有很严重的机内干扰。</p>
-<h3 id="设计原理图来源"><a href="#设计原理图来源" class="headerlink" title="设计原理图来源"></a>设计原理图来源</h3><p>该设计的原理图来源于icas.io 的一种直接变频接收机套件 <a target="_blank" rel="noopener" href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a></p>
-<p><img src="https://icas.to/idc-136-kit/basic.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p><img src="https://icas.to/idc-136ii/idc-136ii-kit-2.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="设计原理图来源"><a href="#设计原理图来源" class="headerlink" title="设计原理图来源"></a>设计原理图来源</h3><p>该设计的原理图来源于icas.to 的一种直接变频接收机套件</p>
+<p>官网指路： <a target="_blank" rel="noopener" href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a></p>
+<img src="/2025/tx136-3/image-20250616223701417.png" srcset="/img/loading.gif" lazyload class="" title="image-20250616223701417">
+
+<img src="/2025/tx136-3/idc-136ii-kit-2.jpg" srcset="/img/loading.gif" lazyload class="" title="idc-136ii-kit-2">
+
 <img src="/2025/tx136-3/image-20250614103729672.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103729672">
 
-<p>原套件已经停产，只有附在套件安装说明里的电路图。在该项目电路图基础上我在嘉立创绘制如下的电路与PCB，并稍微改动</p>
+<p>原套件已经停产，只有附在套件安装说明里的电路图。在该项目电路图基础上我在嘉立创绘制如下的电路与PCB，并稍微改动。接收原理基本保持一致，信号首先进入MMBFJ310作为缓冲的源极跟随器，然后通过三个黄色中周（作用为可变电感）为核心的带通滤波器，使用最高可用于10MHz的NE5534运放放大补偿带通损耗。最后使用SA602变换到声卡可接收的频率。</p>
+<p>中频采用8MHz的有源晶振，经过CD4060分频后输出稳定的125kHz中频信号。可以将136kHz的信号下变频到11kHz。</p>
 
 
-<img src="/2025/tx136-3/image-20250614103600445.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103600445">
+<img src="/2025/tx136-3/image-20250616222453529.png" srcset="/img/loading.gif" lazyload class="" title="image-20250616222453529">
 
 <p>相比原版有以下修改：</p>
-<img src="/2025/tx136-3/image-20250614103847552.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103847552">
+<img src="/2025/tx136-3/%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9.png" srcset="/img/loading.gif" lazyload class="" title="修改内容">
 
-<p>此处的电源主线电阻由100Ω经过测量导致的压降太大，调整至10Ω&#x2F;0Ω. 1N4004也可以根据需要选择拆除</p>
-<img src="/2025/tx136-3/image-20250614104503335.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104503335">
-
-<p>此处改用8MHz的有源晶振，并加上一些滤波电路。CD4060后的选择电路保留，其实只需要焊接4引脚的100n电容即可。另一个引脚输出62.5kHz的中频。CD4060本身带载能力不强，且用RC组成的振荡电路，最高频率不可以大于650kHz，如果外接晶振，晶振最大不可以大于3.5MHz。故用有源晶振直接驱动。如果将晶振直接接入SA602混频器，频率稳定性难以保证，需要用温补晶振电路。</p>
-<img src="/2025/tx136-3/image-20250614104043967.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104043967">
-
-<p>此处NE5534运放的反馈电阻电位器选用50K，同时兼容3296W &#x2F; 3362P两种常见的电位器。</p>
-<img src="/2025/tx136-3/image-20250614104242102.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104242102">
-
-<p>此处LED经测量，选用1K电阻时消耗8mA的电流，但是整个板子才消耗32mA的电流，遂改成10K，亮度同样很大，整机电流降到24mA</p>
-<img src="/2025/tx136-3/image-20250614104625691.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614104625691">
-
-<p>此处50Ω匹配高阻天线的地方加上一个切换开关。大多数情况下不需要这个电阻。</p>
+<ol>
+<li><p>电源主线电阻100Ω导致的压降太大，调整至10Ω或0Ω。1N4004也可以根据需要选择拆除</p>
+</li>
+<li><p>改用8MHz的有源晶振，并加上一些抗干扰的元件。CD4060后的6引脚电容保留，其实<strong>只需要焊接4引脚的100n电容即可</strong>。6引脚输出62.5kHz的中频。CD4060本身带载能力不强，且用RC组成的振荡电路，最高频率不可以大于650kHz，如果外接晶振，晶振最大不可以大于3.5MHz。故用有源晶振直接驱动。如果将晶振直接接入SA602混频器，频率精度与稳定性难以保证接收长时间的QRSS。</p>
+</li>
+<li><p>此处NE5534运放的反馈电阻电位器选用50K，同时兼容3296W &#x2F; 3362P两种常见的电位器。</p>
+</li>
+<li><p>50Ω电阻用于匹配高阻天线的地方加上一个切换开关。该电阻似乎降低信号强度，大多数情况下不需要这个电阻。</p>
+</li>
+<li><p>LED经测量，选用1K限流电阻时消耗8mA的电流，但是整个板子才消耗32mA的电流，遂改成10K，亮度同样很大，整机电流降到24mA</p>
+</li>
+</ol>
 <h3 id="焊接与调试"><a href="#焊接与调试" class="headerlink" title="焊接与调试"></a>焊接与调试</h3><img src="/2025/tx136-3/IMG_20250614_104813.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250614_104813">
 
 <p>打板出来如图。画板时有考虑到塞进铝合金盒子里。</p>
 <img src="/2025/tx136-3/image-20250614105826313.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105826313">
 
-<p>焊接完成。使用NanoVNA来测量S21的系统增益。同时调节中周。为了保护元件，考虑到NanoVNA最小输出功率为-11dbm，我在测量时加入30dB衰减器校准后进行测量。也可以在调节中周时不焊接SA612</p>
+<p>焊接完成。使用NanoVNA来测量S21的系统增益。同时调节中周。为了保护元件，考虑到NanoVNA最小输出功率为-11dbm，我在测量时加入30dB衰减器校准后进行测量。也可以在调节中周时不焊接SA602</p>
 <img src="/2025/tx136-3/IMG_20250613_172825.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172825">
 
 
 
 <img src="/2025/tx136-3/5ACD8AC4.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8AC4">
 
-<p>初始中周尚未调整合适。中周此处相当于可变电感器。注意要使用没有磁性的螺丝刀调节中周</p>
+<p>初始状态中周需要调整。中周此处相当于可变电感器。注意要使用没有磁性的螺丝刀调节</p>
 <img src="/2025/tx136-3/5ACD8B16.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B16">
 
 <p>调整后S21幅频曲线如图。为了更加精确的调节，可以将该曲线的比例刻度调小，适当调节参考电平如下：</p>
 <img src="/2025/tx136-3/5ACD8B63.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B63">
 
-<p>调节电位器来调整NE5534运放的放大系数。实际放大系数可以调整到十多个dB，不过并不需要那么大的增益。留好增益裕量，我只调到3dB。</p>
+<p>调节电位器来调整NE5534运放的放大系数。实际放大系数可以调整到十多个dB，不过并不需要那么大的增益。留好增益裕量。</p>
 <img src="/2025/tx136-3/IMG_20250613_172842.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172842">
 
 <img src="/2025/tx136-3/5ACD8BA3.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8BA3">
@@ -379,14 +382,14 @@
 <p>如法炮制，调节好另一个接收器</p>
 <img src="/2025/tx136-3/IMG_20250613_172900.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172900">
 
-<h3 id="接收效果："><a href="#接收效果：" class="headerlink" title="接收效果："></a>接收效果：</h3><p>使用HDSDR软件和FSKviewer来尝试接收DFCW-3。发射机放在家里，使用大约1米高的小环（50Ω电阻）发射，在室外楼后接收</p>
+<h3 id="接收效果："><a href="#接收效果：" class="headerlink" title="接收效果："></a>接收效果：</h3><p>使用HDSDR软件和FSKviewer来尝试接收DFCW-3。发射机放在家里，使用大约1米高的小环行波（50Ω电阻吸收能量）发射，在室外楼后接收</p>
 
 
-<p>测量得到灵敏度在-120dbm左右（12dB SIGNAL CW 500Hz 137000Hz）频偏大约1-2Hz</p>
+<p>测量得到灵敏度在-120dbm左右（12dB SIGNAL CW 500Hz 137000Hz）频偏大约1Hz</p>
 <img src="/2025/tx136-3/136kHzRX.jpg" srcset="/img/loading.gif" lazyload class="" title="136kHz接收设备">
 
 <p>接收设备像这样，将电路板装进铝合金外壳，捆绑上电池。天线来源于BG5ACF的赠送（感谢！）</p>
-<h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><p>立创eda专业版工程文件点击下载： [136kHz 接收器工程文件](<a href="https://naturewind846.github.io/files/136khz">https://naturewind846.github.io/files/136khz</a> RX_2025-06-14.epro) </p>
+<h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><p><strong>立创eda专业版工程文件</strong>点击下载： [136kHz 接收器工程文件](<a href="https://naturewind846.github.io/files/136khz">https://naturewind846.github.io/files/136khz</a> RX_2025-06-14.epro) </p>
 <img src="/2025/tx136-3/image-20250614105106546.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105106546">
 
 <p>TPJ701黄色中周 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=912493884700">收音机调频中周7*7全套现货 TP701 &#x2F; TP702 &#x2F; TPJ701 带电容-淘宝网</a></p>
@@ -426,9 +429,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
-      
         <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
+      
+        <a href="/tags/Ham/" class="print-no-link">#Ham</a>
       
         <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
       
@@ -463,7 +466,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月14日</div>
+          <div>2025年6月16日</div>
         </div>
       
       
