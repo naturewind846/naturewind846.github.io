@@ -28,10 +28,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/136kHz%E6%8E%A5%E6%94%B6%E8%AE%BE%E5%A4%87.jpg">
 <meta property="article:published_time" content="2025-06-13T06:20:48.000Z">
-<meta property="article:modified_time" content="2025-06-16T14:46:20.060Z">
+<meta property="article:modified_time" content="2025-06-18T11:35:19.998Z">
 <meta property="article:author" content="naturewind846">
-<meta property="article:tag" content="长波">
 <meta property="article:tag" content="Ham">
+<meta property="article:tag" content="长波">
 <meta property="article:tag" content="DIY制作">
 <meta property="article:tag" content="JumaTX136">
 <meta name="twitter:card" content="summary_large_image">
@@ -252,7 +252,7 @@
         
         
         
-          10 分钟
+          11 分钟
         
       </span>
     
@@ -325,7 +325,7 @@
 <p>有了TinySA Ultra后，该机器作为信号发生器可以输出最低-115dbm的参考信号，结合衰减器可以输出最低-145dbm的高达4.4GHz的纯净正弦波，在此基础上可以测量出我手头很多设备的灵敏度。</p>
 <img src="/2025/tx136-3/IMG_20250613_142733.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_142733">
 
-<p>uSDX在136kHz的灵敏度大约只有-80dbm，RTL-SDR表现同样很差。如果是使用Juma TX136的机内上变频器变频到10MHz段配合RTL-SDR接收，灵敏度表现可以低于-120dbm，但是由于于LCD亮度、对比度和蜂鸣器使用<strong>PWM调制波</strong>来控制，在136kHz附近有很严重的机内干扰。</p>
+<p>uSDX在136kHz的灵敏度大约只有-80dbm，RTL-SDR表现同样很差。如果是使用Juma TX136的机内上变频器变频到10MHz段配合RTL-SDR接收，灵敏度表现可以低于-120dbm，但是由于LCD1602亮度、对比度使用单片机输出<strong>PWM调制波</strong>来控制，在136kHz附近有机内干扰。</p>
 <h3 id="设计原理图来源"><a href="#设计原理图来源" class="headerlink" title="设计原理图来源"></a>设计原理图来源</h3><p>该设计的原理图来源于icas.to 的一种直接变频接收机套件</p>
 <p>官网指路： <a target="_blank" rel="noopener" href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a></p>
 <img src="/2025/tx136-3/image-20250616223701417.png" srcset="/img/loading.gif" lazyload class="" title="image-20250616223701417">
@@ -344,16 +344,11 @@
 <img src="/2025/tx136-3/%E4%BF%AE%E6%94%B9%E5%86%85%E5%AE%B9.png" srcset="/img/loading.gif" lazyload class="" title="修改内容">
 
 <ol>
-<li><p>电源主线电阻100Ω导致的压降太大，调整至10Ω或0Ω。1N4004也可以根据需要选择拆除</p>
-</li>
-<li><p>改用8MHz的有源晶振，并加上一些抗干扰的元件。CD4060后的6引脚电容保留，其实<strong>只需要焊接4引脚的100n电容即可</strong>。6引脚输出62.5kHz的中频。CD4060本身带载能力不强，且用RC组成的振荡电路，最高频率不可以大于650kHz，如果外接晶振，晶振最大不可以大于3.5MHz。故用有源晶振直接驱动。如果将晶振直接接入SA602混频器，频率精度与稳定性难以保证接收长时间的QRSS。</p>
-</li>
-<li><p>此处NE5534运放的反馈电阻电位器选用50K，同时兼容3296W &#x2F; 3362P两种常见的电位器。</p>
-</li>
-<li><p>50Ω电阻用于匹配高阻天线的地方加上一个切换开关。该电阻似乎降低信号强度，大多数情况下不需要这个电阻。</p>
-</li>
-<li><p>LED经测量，选用1K限流电阻时消耗8mA的电流，但是整个板子才消耗32mA的电流，遂改成10K，亮度同样很大，整机电流降到24mA</p>
-</li>
+<li>电源主线电阻100Ω导致的压降太大，调整至10Ω或0Ω。1N4004也可以根据需要选择拆除</li>
+<li>改用8MHz的有源晶振，并加上一些抗干扰的元件。<strong>使用CD4060时只需要焊接4引脚的100n电容</strong>。CD4060本身带载能力不强，且用RC组成的振荡电路，最高频率不可以大于650kHz，如果外接晶振，5V工作电压下典型输入为7MHz，但实测8MHz可以工作。74HC4060可以替换且性能更好。当使用74HC4060时，注意74HC4060的引脚排布与CD4060有差异，此时<strong>需要焊接6引脚的100n电容，不焊接4引脚</strong>。如果将晶振直接接入SA602混频器，频率精度与稳定性难以保证接收长时间的QRSS。</li>
+<li>此处NE5534运放的反馈电阻电位器选用50K，同时兼容3296W &#x2F; 3362P两种常见的电位器。</li>
+<li>50Ω电阻用于匹配高阻天线的地方加上一个切换开关。该电阻似乎降低信号强度，大多数情况下不需要这个电阻。</li>
+<li>LED经测量，选用1K限流电阻时消耗8mA的电流，但是整个板子才消耗32mA的电流，遂改成10K，亮度同样很大，整机电流降到24mA</li>
 </ol>
 <h3 id="焊接与调试"><a href="#焊接与调试" class="headerlink" title="焊接与调试"></a>焊接与调试</h3><img src="/2025/tx136-3/IMG_20250614_104813.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250614_104813">
 
@@ -383,13 +378,16 @@
 <img src="/2025/tx136-3/IMG_20250613_172900.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172900">
 
 <h3 id="接收效果："><a href="#接收效果：" class="headerlink" title="接收效果："></a>接收效果：</h3><p>使用HDSDR软件和FSKviewer来尝试接收DFCW-3。发射机放在家里，使用大约1米高的小环行波（50Ω电阻吸收能量）发射，在室外楼后接收</p>
+<img src="/2025/tx136-3/image-20250618193217086.png" srcset="/img/loading.gif" lazyload class="" title="image-20250618193217086">
+
+<p>使用HDSDR的原因是它占用资源相比于sdr#更少，而sdr++不能识别外接的cm108b声卡。此外HDSDR可以很方便的设置LO本振，显示更人性化。</p>
 
 
 <p>测量得到灵敏度在-120dbm左右（12dB SIGNAL CW 500Hz 137000Hz）频偏大约1Hz</p>
 <img src="/2025/tx136-3/136kHzRX.jpg" srcset="/img/loading.gif" lazyload class="" title="136kHz接收设备">
 
 <p>接收设备像这样，将电路板装进铝合金外壳，捆绑上电池。天线来源于BG5ACF的赠送（感谢！）</p>
-<h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><p><strong>立创eda专业版工程文件</strong>点击下载： [136kHz 接收器工程文件](<a href="https://naturewind846.github.io/files/136khz">https://naturewind846.github.io/files/136khz</a> RX_2025-06-14.epro) </p>
+<h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><p><strong>立创eda专业版工程文件</strong>点击下载： [136kHz 接收器工程文件](<a href="https://naturewind846.github.io/files/136khz">https://naturewind846.github.io/files/136khz</a> RX_2025-06-18.epro) </p>
 <img src="/2025/tx136-3/image-20250614105106546.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105106546">
 
 <p>TPJ701黄色中周 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=912493884700">收音机调频中周7*7全套现货 TP701 &#x2F; TP702 &#x2F; TPJ701 带电容-淘宝网</a></p>
@@ -429,9 +427,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
-      
         <a href="/tags/Ham/" class="print-no-link">#Ham</a>
+      
+        <a href="/tags/%E9%95%BF%E6%B3%A2/" class="print-no-link">#长波</a>
       
         <a href="/tags/DIY%E5%88%B6%E4%BD%9C/" class="print-no-link">#DIY制作</a>
       
@@ -466,7 +464,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月16日</div>
+          <div>2025年6月18日</div>
         </div>
       
       
