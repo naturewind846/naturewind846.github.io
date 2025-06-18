@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/136kHz%E6%8E%A5%E6%94%B6%E8%AE%BE%E5%A4%87.jpg">
 <meta property="article:published_time" content="2025-06-13T06:20:48.000Z">
-<meta property="article:modified_time" content="2025-06-18T11:35:19.998Z">
+<meta property="article:modified_time" content="2025-06-18T15:09:56.654Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="Ham">
 <meta property="article:tag" content="长波">
@@ -334,10 +334,11 @@
 
 <img src="/2025/tx136-3/image-20250614103729672.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614103729672">
 
-<p>原套件已经停产，只有附在套件安装说明里的电路图。在该项目电路图基础上我在嘉立创绘制如下的电路与PCB，并稍微改动。接收原理基本保持一致，信号首先进入MMBFJ310作为缓冲的源极跟随器，然后通过三个黄色中周（作用为可变电感）为核心的带通滤波器，使用最高可用于10MHz的NE5534运放放大补偿带通损耗。最后使用SA602变换到声卡可接收的频率。</p>
+<p>原套件已经停产，只有附在套件安装说明里的电路图。在该项目电路图基础上我在嘉立创绘制如下的电路与PCB，并稍微改动。</p>
+<img src="/2025/tx136-3/SCH_mianSch_1-P1_2025-06-14.png" srcset="/img/loading.gif" lazyload class="" title="SCH_mianSch_1-P1_2025-06-14">
+
+<p>接收原理基本保持一致，信号首先进入MMBFJ310作为缓冲的源极跟随器，然后通过三个黄色中周（作用为可变电感）为核心的带通滤波器，使用最高可用于10MHz的NE5534运放放大补偿带通损耗。最后使用SA602变换到声卡可接收的频率。</p>
 <p>中频采用8MHz的有源晶振，经过CD4060分频后输出稳定的125kHz中频信号。可以将136kHz的信号下变频到11kHz。</p>
-
-
 <img src="/2025/tx136-3/image-20250616222453529.png" srcset="/img/loading.gif" lazyload class="" title="image-20250616222453529">
 
 <p>相比原版有以下修改：</p>
@@ -381,7 +382,7 @@
 <img src="/2025/tx136-3/image-20250618193217086.png" srcset="/img/loading.gif" lazyload class="" title="image-20250618193217086">
 
 <p>使用HDSDR的原因是它占用资源相比于sdr#更少，而sdr++不能识别外接的cm108b声卡。此外HDSDR可以很方便的设置LO本振，显示更人性化。</p>
-
+<img src="/2025/tx136-3/2025-06-13-151910.jpg" srcset="/img/loading.gif" lazyload class="" title="屏幕截图">
 
 <p>测量得到灵敏度在-120dbm左右（12dB SIGNAL CW 500Hz 137000Hz）频偏大约1Hz</p>
 <img src="/2025/tx136-3/136kHzRX.jpg" srcset="/img/loading.gif" lazyload class="" title="136kHz接收设备">
