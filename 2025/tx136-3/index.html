@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://naturewind846.github.io/img/136kHz%E6%8E%A5%E6%94%B6%E8%AE%BE%E5%A4%87.jpg">
 <meta property="article:published_time" content="2025-06-13T06:20:48.000Z">
-<meta property="article:modified_time" content="2025-06-18T15:38:23.219Z">
+<meta property="article:modified_time" content="2025-06-19T08:26:40.182Z">
 <meta property="article:author" content="naturewind846">
 <meta property="article:tag" content="长波">
 <meta property="article:tag" content="Ham">
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.4k 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          11 分钟
+          12 分钟
         
       </span>
     
@@ -328,6 +328,11 @@
 <p>uSDX在136kHz的灵敏度大约只有-80dbm，RTL-SDR表现同样很差。如果是使用Juma TX136的机内上变频器变频到10MHz段配合RTL-SDR接收，灵敏度表现可以低于-120dbm，但是由于LCD1602亮度、对比度使用单片机输出<strong>PWM调制波</strong>来控制，在136kHz附近有机内干扰。</p>
 <h3 id="设计原理图来源"><a href="#设计原理图来源" class="headerlink" title="设计原理图来源"></a>设计原理图来源</h3><p>该设计的原理图来源于icas.to 的一种直接变频接收机套件</p>
 <p>官网指路： <a target="_blank" rel="noopener" href="https://icas.to/lineup/idc-136ii-kit-eng.htm">136kHz Band DC Receiver</a></p>
+<p>原介绍如下：</p>
+<blockquote>
+<p>SDR ソフトウエアを利用した 136kHz 帯専用の DC (ダイレクトコンバージョン）受信機キットです。<br> 全て DIP 部品で組立られ、部品点数も少ないため、短時間で容易に組立可能です。<br> 従来の DC 受信機では、イメージがでて実用的ではないものが殆どでしたが、本機は BPF を<br> 採用することによりイメージを抑圧し、且つ復調には Windows パソコンのサウンドカードを<br> 利用することにより、分解能精度を 0.1Hz 程度まで上げることができます。<br> メイン受信機として、又はサブモニター用としてご使用頂けます。</p>
+<p>■ 詳細<br> 受信周波数：　101 ～ 149kHz<br>  (48kHz サウンドカードを使用した場合）<br> 中心周波数：　125kHz,　8MHz を 64 分周<br> 電源：　外部 DC 9V～ 13.8V 、約 30mA<br> 寸法：　本体基板サイズ 77 x 43mm</p>
+</blockquote>
 <img src="/2025/tx136-3/image-20250616223701417.png" srcset="/img/loading.gif" lazyload class="" title="image-20250616223701417">
 
 <img src="/2025/tx136-3/idc-136ii-kit-2.jpg" srcset="/img/loading.gif" lazyload class="" title="idc-136ii-kit-2">
@@ -366,18 +371,15 @@
 <p>初始状态中周需要调整。中周此处相当于可变电感器。注意要使用没有磁性的螺丝刀调节</p>
 <img src="/2025/tx136-3/5ACD8B16.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B16">
 
-<p>调整后S21幅频曲线如图。为了更加精确的调节，可以将该曲线的比例刻度调小，适当调节参考电平如下：</p>
-<img src="/2025/tx136-3/5ACD8B63.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B63">
-
-<p>调节电位器来调整NE5534运放的放大系数。实际放大系数可以调整到十多个dB，不过并不需要那么大的增益。留好增益裕量。</p>
+<p>调整后S21幅频曲线如图，最后调整完带宽大约为4kHz。为了更加精确的调节，可以将该曲线的比例刻度调小，适当调节参考电平。</p>
 <img src="/2025/tx136-3/IMG_20250613_172842.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172842">
 
-<img src="/2025/tx136-3/5ACD8BA3.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8BA3">
-
-<p>最后调整完带宽大约为4kHz</p>
-<p>如法炮制，调节好另一个接收器</p>
+<p>调节电位器来调整NE5534运放的放大系数。实际放大系数可以调整到十多个dB，不过并不需要那么大的增益。留好增益裕量。</p>
 <img src="/2025/tx136-3/IMG_20250613_172900.jpg" srcset="/img/loading.gif" lazyload class="" title="IMG_20250613_172900">
 
+<img src="/2025/tx136-3/5ACD8B63.BMP" srcset="/img/loading.gif" lazyload class="" title="5ACD8B63">
+
+<p>最后调整完的结果。</p>
 <h3 id="接收效果："><a href="#接收效果：" class="headerlink" title="接收效果："></a>接收效果：</h3><p>使用HDSDR软件和FSKviewer来尝试接收DFCW-3。发射机放在家里，使用大约1米高的小环行波（50Ω电阻吸收能量）发射，在室外楼后接收</p>
 <img src="/2025/tx136-3/image-20250618193217086.png" srcset="/img/loading.gif" lazyload class="" title="image-20250618193217086">
 
@@ -388,13 +390,16 @@
 <img src="/2025/tx136-3/136kHzRX.jpg" srcset="/img/loading.gif" lazyload class="" title="136kHz接收设备">
 
 <p>接收设备像这样，将电路板装进铝合金外壳，捆绑上电池。天线来源于BG5ACF的赠送（感谢！）</p>
+<img src="/2025/tx136-3/f10e480d8400348c0ab58b9548ca6ffb.jpg" srcset="/img/loading.gif" lazyload class="" title="f10e480d8400348c0ab58b9548ca6ffb">
+
 <h3 id="电路图-PCB-元件购买链接公开"><a href="#电路图-PCB-元件购买链接公开" class="headerlink" title="电路图 &#x2F; PCB &#x2F; 元件购买链接公开"></a>电路图 &#x2F; PCB &#x2F; 元件购买链接公开</h3><p><strong>立创eda专业版工程文件</strong>点击下载： <a href="https://naturewind846.github.io/files/136khz_RX_2025-06-18.epro">136kHz 接收器工程文件</a> </p>
+<p><strong>立创FA 铝合金壳体</strong>设计分享 <a target="_blank" rel="noopener" href="https://ke.jlcfa.com/share/D4BD083D1B334E79AAE4DBD80874A2A1/456116144273743874">【嘉立创FA铝合金壳体】</a> </p>
 <img src="/2025/tx136-3/image-20250614105106546.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105106546">
 
 <p>TPJ701黄色中周 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=912493884700">收音机调频中周7*7全套现货 TP701 &#x2F; TP702 &#x2F; TPJ701 带电容-淘宝网</a></p>
 <img src="/2025/tx136-3/image-20250614105250096.png" srcset="/img/loading.gif" lazyload class="" title="image-20250614105250096">
 
-<p>54x23x80外壳 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=637586984116">54*23 铝合金外壳 铝型材外壳 铝盒 铝壳 壳体 仪表壳体 电源盒-淘宝网</a></p>
+<p>54x23x80外壳 可以自行购买钻孔 链接<a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=637586984116">54*23 铝合金外壳 铝型材外壳 铝盒 铝壳 壳体 仪表壳体 电源盒-淘宝网</a></p>
 
                 
               </div>
@@ -465,7 +470,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年6月18日</div>
+          <div>2025年6月19日</div>
         </div>
       
       
